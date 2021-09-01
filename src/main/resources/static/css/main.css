@@ -1,0 +1,200 @@
+main {
+  width: 100%;
+}
+
+section {
+  width: 1080px;
+  height: 500px;
+  margin: 70px auto;
+}
+
+section h4 {
+  color: #13aa92;
+}
+
+#visual {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#visual .slider img {
+  margin: 0 auto;
+}
+
+/* ---- bxSlider start ----*/
+.bx-wrapper {
+  position: relative;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+
+.bx-wrapper {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  background: #e9e5e2;
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: 0.85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 30px;
+  height: 50px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+
+.bx-wrapper .bx-prev {
+  left: 200px;
+  background: url(../images/main/btn_slide_prev.png) no-repeat 0 0;
+}
+
+.bx-wrapper .bx-next {
+  right: 200px;
+  background: url(../images/main/btn_slide_next.png) no-repeat 0 0;
+}
+
+/* ---- bxSlider end -----*/
+
+section .title {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+section .title > span > a {
+  font-size: 14px;
+  color: #777;
+  text-decoration: none;
+}
+
+section .lectures {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.lectures .lecture {
+  width: 240px;
+  margin-right: 40px;
+}
+
+.lectures .lecture .img_lecture {
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.lectures .lecture:hover .img_lecture > img {
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
+.lectures .lecture p {
+  width: 100%;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #555;
+}
+
+.lectures .lecture h4 {
+  margin-bottom: 1em;
+}
+
+.lecture .star > img {
+  padding-top: 1px;
+}
+
+.lecture .star .rw_total {
+  font-size: 14px;
+  color: #777;
+  margin-left: 4px;
+}
+
+#bnr {
+  height: 100px;
+  background: url(../images/main/bnr.jpg) 0 0 no-repeat;
+  cursor: pointer;
+  margin-bottom: 100px;
+}
+
+#aroundMe {
+  height: 420px;
+}
+
+.around {
+  width: 100%;
+  height: 320px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  text-align: center;
+}
+
+.around > div {
+  width: 60px;
+  height: 60px;
+  background: url(../images/main/ic_place.png) 0 0 no-repeat;
+  margin: 80px auto 20px;
+}
+
+.around > h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #ccc;
+}
+
+.around > p {
+  font-size: 14px;
+  color: #ccc;
+}

@@ -1,0 +1,238 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin: 1em 0;
+}
+
+#content {
+  width: 100%;
+  height: auto;
+}
+
+#content .wrap {
+  width: 1000px;
+  margin: 30px auto;
+}
+
+#content .title {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#sort {
+  width: 80px;
+  height: 20px;
+  border: none;
+}
+
+section .lectures {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.lectures .lecture {
+  width: 240px;
+  margin-bottom: 70px;
+}
+
+.lectures .lecture .img_lecture {
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.lectures .lecture:hover .img_lecture > img {
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
+.lectures .lecture p {
+  width: 100%;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #555;
+}
+
+.lectures .lecture h4 {
+  margin-bottom: 1em;
+}
+
+.lecture .star > img {
+  padding-top: 1px;
+}
+
+.lecture .star .rw_total {
+  font-size: 14px;
+  color: #777;
+  margin-left: 4px;
+  padding-bottom: 10px;
+}
+
+.pager {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+
+.pager > span {
+  width: 30px;
+  height: 30px;
+  color: #777;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pager > span:nth-child(2) {
+  color: #13aa92;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#contentheader {
+	position: relative;
+	margin: 30px auto;
+	width: 1000px;
+	margin-top: 60px;
+}
+
+#profile {
+	position: absolute;
+}
+
+.nickname {
+	position: relative;
+	left: 100px;
+	font-size: 28px;
+}
+
+.modify {
+	position: relative;
+	left: 300px;
+	bottom: 65px;
+}
+
+
+#modify_btn {
+    width: 60px;
+    height: 26px;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 15px;
+    font: Noto Sans KR;
+    color: #777777;
+    text-align: center;
+}
+
+.email {
+	position: absolute;
+	left: 100px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #777777;
+	top: 50px;
+}
+
+#notification {
+	position: absolute;
+	z-index: 9999;
+	right: 0px;
+	cursor: pointer;
+}
+
+#tabwrap {
+	position: relative;
+	width: 100%	;
+	height: 88px;
+	margin-top: 30px;
+}
+
+.tab button {
+	float: left;
+	width: 333px;
+	height: 44px;
+	text-align: center;
+	font-size: 16px;
+	background: #f5f5f5;
+	border: none;
+	cursor: pointer;
+	color: #777777;	
+	z-index: 9999;
+}
+
+
+.tab button:hover {
+	color: #ffffff;
+	background: #13aa92;
+}
+
+#btn1 {
+	color: #ffffff;
+	background: #13aa92;
+	border-right: solid 1px #eeeeee;
+	border-bottom: solid 1px #eeeeee;
+}
+
+#btn2 {
+	border-left: solid 1px #eeeeee;
+	border-right: solid 1px #eeeeee;
+	border-bottom: solid 1px #eeeeee;
+}
+
+#btn3 {
+	border-left: solid 1px #eeeeee;
+	border-bottom: solid 1px #eeeeee;
+}
+
+#btn4 {
+	border-right: solid 1px #eeeeee;
+	border-top: solid 1px #eeeeee;
+}
+
+#btn5 {
+	border-left: solid 1px #eeeeee;
+	border-right: solid 1px #eeeeee;
+	border-top: solid 1px #eeeeee;
+}
+
+#btn6 {
+	border-left: solid 1px #eeeeee;
+	border-top: solid 1px #eeeeee;
+}

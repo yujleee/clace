@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lecture">
+
+	<resultMap type="lectureVo" id="listBestlectureMap">
+		<result column="lec_no" property="lec_no"/>
+		<result column="lec_image" property="lec_image"/>
+		<result column="lec_name" property="lec_name"/>
+		<result column="lec_price" property="lec_price"/>
+		<result column="lec_sale" property="lec_sale"/>
+		<result column="lec_grade" property="lec_grade"/>
+		<association property="paymentVo" column="pay_no" resultMap="paymentMap"/>
+	</resultMap>
+
+	<resultMap type="paymentVo" id="paymentMap">
+		<id property="pay_no" column="pay_no" />
+	</resultMap> 
+<!-- <select id="findAll" resultType="lectureVo">
+ 	select * from lecture
+</select>
+ -->
+  <select id="listBestLecture" resultMap="listBestlectureMap">
+	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no
+	from lecture l, (select l.lec_no, nvl(count(pay_no),0) cnt 
+	from payment p right join lecture l on l.lec_no = p.lec_no 
+	group by l.lec_no order by cnt desc) pay
+	where l.lec_no = pay.lec_no order by pay.cnt desc
+  </select>
+  
+  <select id="listSaleLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no 
+	from lecture l where lec_sale > 0 order by lec_sale desc
+  </select>
+  
+  <select id="listNewLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no 
+	from lecture l order by lec_reg desc
+  </select>
+  
+  <select id="listAroundMe" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, lec_no  
+  	from lecture where lec_place like '%'||#{place}||'%'
+  </select>
+  
+</mapper>
