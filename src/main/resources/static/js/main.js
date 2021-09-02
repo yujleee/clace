@@ -1,7 +1,7 @@
 $(function () {
   $('.slider').bxSlider({
     auto: true,
-    speed: 1500,
+    speed: 1200,
     controls: true,
     easing: 'linear',
     pager: true,
@@ -27,7 +27,7 @@ $(function () {
       success: function (data) {
 	 	$.each(data, function (i, lecture) {
           let con = $('<div></div>').addClass('lecture');
-          let a = $('<a></a>').attr('href', `detailLecture.html?lec_no=${lecture.lec_no}`);
+          let a = $('<a></a>').attr('href', `detailLecture.do?lec_no=${lecture.lec_no}`);
           let img_lecture = $('<div></div>').addClass('img_lecture');
           let img = $('<img/>').attr({
             src: `images/lecture/${lecture.lec_image}`,

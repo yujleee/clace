@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/newClass.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/lectureList.js"></script>
-    <title>신규 클래스</title>
+    <title>특가할인 클래스</title>
 </head>
 <body>
 	<%@include file ="header.jsp" %>

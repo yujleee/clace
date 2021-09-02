@@ -20,7 +20,7 @@
       <div class="headerwrap">
         <div id="navTop">
           <h1>
-            <a href="index.html"><img src="images/main/logo.png" width="120" alt="클레이스" /></a>
+            <a href="index.do"><img src="images/main/logo.png" width="120" alt="클레이스" /></a>
           </h1>
           <div class="search">
             <input type="search" placeholder="듣고 싶은 클래스가 있으신가요?" name="search" />
@@ -42,9 +42,9 @@
           <ul>
             <li></li>
             <li><a href="#">추천 클래스</a></li>
-            <li><a href="ddd.html">특가 할인</a></li>
-            <li><a href="newLecture.html">신규 클래스</a></li>
-            <li><a href="community.html">커뮤니티</a></li>
+            <li><a href="#">특가 할인</a></li>
+            <li><a href="newLecture.do">신규 클래스</a></li>
+            <li><a href="#">커뮤니티</a></li>
           </ul>
         </nav>
       </div>
@@ -65,7 +65,7 @@
       <section id="recommand">
         <div class="title">
           <h3>지금 핫한 클래스</h3>
-          <span><a href="#">더보기</a></span>
+          <span><a href="bestLecture.do">더보기</a></span>
         </div>
         <div class="lectures"></div>
       </section>

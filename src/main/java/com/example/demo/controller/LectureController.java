@@ -24,7 +24,14 @@ public class LectureController {
 	
 	@RequestMapping("/index.do")
 	public void index() {
-		
+	}
+
+	@RequestMapping("/newLecture.do")
+	public void newLecture() {
+	}
+	
+	@RequestMapping("/bestLecture.do")
+	public void bestLecture() {
 	}
 	
 	@RequestMapping("/listBestLecture")
