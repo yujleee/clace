@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypage">
+
+  <!-- 회원정보수정 -->
+  <select id="getMemberInfo" resultType="memberVo">
+    select mem_no,mem_id,mem_name,mem_pwd,mem_nickname,mem_profile,mem_phone,
+    mem_email,mem_type,mem_date,mem_gender,job_no,age_no
+    from member where mem_no=#{mem_no}
+  </select>
+  
+  <update id="updateMemberInfo" parameterType="memberVo">
+  	update member set mem_pwd=#{mem_pwd},mem_nickname=#{mem_nickname},
+  	mem_profile=#{mem_profile},mem_phone=#{mem_phone},mem_email=#{mem_email}
+  	,mem_gender=#{mem_gender},job_no=#{job_no},age_no=#{age_no}
+  	where mem_no=#{mem_no}
+  </update>
+  
+  <delete id="deleteMemberInfo">
+  	delete from member where mem_no=#{mem_no}
+  </delete>
+  
+  <!-- 나의게시물 -->
+   <select id="listMyBoard" resultType="boardVo">
+  	select brd_no,brd_title,brd_date from board where mem_no=#{mem_no}
+  </select>
+  
+  <select id="detailMyBoard" resultType="boardVo">
+  	select * from board where brd_no=#{brd_no}
+  </select>
+  
+  <!-- 나의 수강클래스찜 -->
+  <select id="listMyZzimLecture" resultType="lectureVo">
+  	select l.lec_no,lec_name,lec_price,lec_place 
+	from zzim z, lecture l
+	where z.lec_no = l.lec_no and 
+	mem_no=#{mem_no}
+  </select>
+  
+  <!-- 나의리뷰 -->
+  <select id="listMyReview" resultType="reviewVo">
+  	select re_no,lec_name,re_title,re_conent
+	from review r,lecture l
+	where r.lec_no = l.lec_no and mem_no=#{mem_no}
+  </select>
+  
+</mapper>
