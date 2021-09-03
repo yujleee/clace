@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+  <select id="isMember" resultType="memberVO">
+    select * from member where mem_id=#{mem_id} and mem_pwd=#{mem_pwd}
+  </select>
+  
+  <select id="getMember" resultType="memberVO">
+  	select * from member where mem_id=#{mem_id}
+  </select>
+  
+  <insert id="insertMember" parameterType="memberVO">
+  	insert into member(mem_no,mem_id, mem_name, mem_pwd, mem_nickname, mem_profile,mem_phone, mem_email, mem_type, mem_date, mem_gender, job_no, age_no) 
+  	values(#{mem_no}, #{mem_id},#{mem_name},#{mem_pwd},#{mem_nickname},'profile.jpg',#{mem_phone},#{mem_email},'CW',sysdate,#{mem_gender},#{job_no},#{age_no})  
+  </insert>
+  
+  <select id="getMem_no" resultType="int">
+ 	 select nvl(max(mem_no),0)+1 from member
+  </select>
+</mapper>
