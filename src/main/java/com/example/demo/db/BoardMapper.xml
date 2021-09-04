@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+  <select id="findAll" resultType="boardVO">
+    select * from board order by brd_no
+  </select>
+  
+
+  <insert id="insert" parameterType="boardVO">
+  	insert into board(brd_no,brd_title,brd_content,brd_date,brd_rec,
+  	brd_viewc,brd_hashtag,mem_no,brd_pwd) 
+  	values(#{brd_no},#{brd_title},#{brd_content},sysdate,
+  	#{brd_rec},0,#{brd_hashtag},#{mem_no},#{brd_pwd})
+  </insert>
+  
+  <select id="getNextNo" resultType="int">
+  	select nvl(max(no),0)+1 from board
+  </select>
+  
+  <select id="getBoard" resultType="boardVO">
+  	select * from board where no=#{no}
+  </select>
+  
+  <update id="updateBrd_viewc" parameterType="int">
+  	update board set brd_viewc=brd_viewc + 1 where brd_no=#{brd_no}
+  </update>
+  
+  <update id="updateBoard" parameterType="boardVO">
+  	update board set brd_title=#{brd_title},
+  	brd_content=#{brd_content},
+  	where brd_no=#{brd_no} and pwd=#{pwd}
+  </update>
+  
+  <delete id="deleteBoard" >
+  	delete board where no=#{no} and brd_pwd=#{brd_pwd}
+  </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,7 +11,7 @@
 	<hr>
 	<form action="deleteBoard.do" method="post">
 		<input type="hidden" name="no" value="${no }">
-		글암호 : <input type="password" name="pwd">
+		글암호 : <input type="password" name="brd_pwd">
 		<input type="submit" value="삭제">
 	</form>
 </body>

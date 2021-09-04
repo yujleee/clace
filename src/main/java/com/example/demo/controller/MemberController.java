@@ -32,6 +32,13 @@ public class MemberController {
 		
 	}
 	
+	/**
+	 * 로그인 화면에서 사용자가 입력한 정보에 대한 로그인 처리
+	 * @param session 상태유지
+	 * @param mem_id	사용자가 입력한 아이디
+	 * @param mem_pwd	사용자가 입력한 암호
+	 * @return
+	 */
 	@RequestMapping(value="/login.do",method = RequestMethod.POST)
 	public ModelAndView loginSubmit(HttpSession session,
 			String mem_id,

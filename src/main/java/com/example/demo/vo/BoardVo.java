@@ -2,7 +2,7 @@ package com.example.demo.vo;
 
 import java.util.Date;
 
-public class CommunityVo {
+public class BoardVo {
 	private int brd_no;
 	private String brd_title;
 	private String brd_content;
@@ -11,6 +11,14 @@ public class CommunityVo {
 	private int brd_viewc;
 	private String brd_hashtag;
 	private int mem_no;
+	private String brd_pwd;
+		
+	public String getBrd_pwd() {
+		return brd_pwd;
+	}
+	public void setBrd_pwd(String brd_pwd) {
+		this.brd_pwd = brd_pwd;
+	}
 	public int getBrd_no() {
 		return brd_no;
 	}
@@ -59,8 +67,9 @@ public class CommunityVo {
 	public void setMem_no(int mem_no) {
 		this.mem_no = mem_no;
 	}
-	public CommunityVo(int brd_no, String brd_title, String brd_content, Date brd_date, int brd_rec, int brd_viewc,
-			String brd_hashtag, int mem_no) {
+
+	public BoardVo(int brd_no, String brd_title, String brd_content, Date brd_date, int brd_rec, int brd_viewc,
+			String brd_hashtag, int mem_no, String brd_pwd) {
 		super();
 		this.brd_no = brd_no;
 		this.brd_title = brd_title;
@@ -70,8 +79,9 @@ public class CommunityVo {
 		this.brd_viewc = brd_viewc;
 		this.brd_hashtag = brd_hashtag;
 		this.mem_no = mem_no;
+		this.brd_pwd = brd_pwd;
 	}
-	public CommunityVo() {
+	public BoardVo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
