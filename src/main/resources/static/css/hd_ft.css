@@ -1,13 +1,29 @@
 header {
   width: 100%;
-  height: 140px;
+  height: 190px;
   border-bottom: 1px solid #eee;
+}
+
+#nevUser{
+	height: 36px;
+	background: #f5f5f5;
+}
+
+#nevUser .headerwrap{
+	display:flex;
+	justify-content: flex-end;
+	padding: 8px 60px 0 60px;
+	
+}
+
+#nevUser .headerwrap a{
+	color: #777;
 }
 
 header .headerwrap {
   width: 1080px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding-top: 30px;
 }
 
 #navTop {

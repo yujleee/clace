@@ -19,8 +19,9 @@ h3 {
   font-size: 28px;
 }
 
-h4 {
+.lectures .lecture h4{
   font-size: 18px;
+  color: #13aa92;
 }
 
 p {
@@ -57,7 +58,7 @@ p {
 section .lectures {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
