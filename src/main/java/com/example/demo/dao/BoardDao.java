@@ -23,8 +23,8 @@ public class BoardDao {
 		return DBManager.insertBoard(b);
 	}
 	
-	public BoardVo getBoard(int no) {
-		return DBManager.getBoard(no);
+	public BoardVo getBoard(int brd_no) {
+		return DBManager.getBoard(brd_no);
 	}
 	
 	public void updateBrd_viewc(int no) {
@@ -36,7 +36,7 @@ public class BoardDao {
 		return DBManager.updateBoard(b);
 	}
 	
-	public int delelte(int brd_no,String brd_pwd) {
+	public int delete(int brd_no,String brd_pwd) {
 		return DBManager.deleteBoard(brd_no,brd_pwd);
 	}
 }

@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +21,7 @@ public class BoardController {
 	}
 	
 //	/**
-//	 * 리스트보드 화면으로 넘어가도록 하고 싶었다 -> 이 목적은 뭘까요?
+//	 * 리스트보드 화면으로 넘어가도록 하고 싶었다 -> 이 목적은 ?
 //	 * @return
 //	 */
 //	@RequestMapping("/")
@@ -34,8 +36,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/detailBoard.do")
-	public void detail(Model model, int no) {
-		dao.updateBrd_viewc(no);
+	public void detail(HttpServletRequest request, Model model, int no) {
+		//dao.updateBrd_viewc(no);
 		model.addAttribute("b",dao.getBoard(no));
 	}
 }

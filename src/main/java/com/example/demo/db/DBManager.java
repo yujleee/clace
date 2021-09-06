@@ -98,7 +98,7 @@ public class DBManager {
 
 	
 	public static int updateBoard(BoardVo b) {
-		System.out.println("메니너에서:"+b);
+		//System.out.println("매니저에서:"+b);
 		SqlSession session = factory.openSession(true);
 		int re = session.update("board.updateBoard", b);
 		session.close();

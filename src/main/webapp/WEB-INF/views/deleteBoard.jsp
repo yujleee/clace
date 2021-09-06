@@ -10,7 +10,7 @@
 	<h2>게시물 삭제</h2>
 	<hr>
 	<form action="deleteBoard.do" method="post">
-		<input type="hidden" name="no" value="${no }">
+		<input type="hidden" name="brd_no" value="${b.brd_no }">
 		글암호 : <input type="password" name="brd_pwd">
 		<input type="submit" value="삭제">
 	</form>

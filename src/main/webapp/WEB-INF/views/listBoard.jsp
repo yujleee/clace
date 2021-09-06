@@ -4,30 +4,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".detail").click(function(){
+		let no = $(this).attr("no");
+		//alert(no);
+		location.href = "detailBoard.do?no="+no;
+	});
+});
+</script>
 </head>
 <body>
 	<h2>커뮤니티 자유게시판</h2>
-	<a href="insertCommunity.do">등록</a>
+	<a href="insertBoard.do">등록</a>
 	<hr>
 	<table border="1" width="80%">
 	<tr>
+			<th>글번호</th>
 			<th>제목</th>
-			<th>글쓴이</th>
 			<th>작성일</th>
-			<th>추천</th>
+			<!--  <th>추천</th>-->
 			<th>조회</th>
 	</tr>
 	
 	<c:forEach var="b" items="${list }">
-		<tr><a href="detailBoard.do?no=${b.brd_no }">
-		<td>${b.brd_title }</td>	
-		<td>${b.writer }</td>		
+		<tr class="detail" no=${b.brd_no }>
+		
+		<td>${b.brd_no }</td>	
+		<td>${b.brd_title }</td>		
 			<td>${b.brd_date }</td>
-			<td>${b.brd_rec }</td>
+			<!--  <td>${b.brd_rec }</td> -->
 			<td>${b.brd_viewc }</td>
-		</a></tr>	
+		</tr>	
 	</c:forEach>
 	</table>
 </body>

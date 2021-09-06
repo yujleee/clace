@@ -49,6 +49,7 @@ public class MemberController {
 		
 		if(dao.isMember(mem_id, mem_pwd)) {
 			MemberVo m = dao.getMember(mem_id);
+			System.out.println("로그인한 사용자:"+m);
 			session.setAttribute("loginM", m);
 			mav.setViewName("redirect:/loginOK.do");
 		}else {
