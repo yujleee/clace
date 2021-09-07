@@ -90,6 +90,10 @@ public class DBManager {
 		return b;
 	}
 	
+	/**
+	 *  조회수 증가 
+	 * @param no
+	 */
 	public static void updateBrd_viewc(int no) {
 		SqlSession session = factory.openSession(true);
 		session.update("board.updateBrd_viewc", no);

@@ -27,6 +27,10 @@ public class BoardDao {
 		return DBManager.getBoard(brd_no);
 	}
 	
+	/**조회수 증가 
+	 * 
+	 * @param no
+	 */
 	public void updateBrd_viewc(int no) {
 		DBManager.updateBrd_viewc(no);
 	}

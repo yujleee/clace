@@ -37,7 +37,7 @@ public class BoardController {
 	
 	@RequestMapping("/detailBoard.do")
 	public void detail(HttpServletRequest request, Model model, int no) {
-		//dao.updateBrd_viewc(no);
+		dao.updateBrd_viewc(no);
 		model.addAttribute("b",dao.getBoard(no));
 	}
 }
