@@ -13,10 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/hd_ft.css" />
-    <link rel="stylesheet" href="css/newClass.css" />
+    <link rel="stylesheet" href="css/listClass.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/lectureList.js"></script>
-    <title>클레이스: 추천 클래스</title>
+    <script src="js/search.js"></script>
+    <title>클레이스: ${keyword } 검색 결과</title>
 </head>
 <body>
 	<%@include file ="header.jsp" %>
@@ -29,7 +29,7 @@
     <section id="content">
       <div class="wrap">
         <div class="title">
-          <h3>클래스 검색 결과</h3>
+          <h3>'${keyword }' 검색 결과</h3>
           <form>
             <select name="sort" id="sort">
               <option value="popular">인기순</option>

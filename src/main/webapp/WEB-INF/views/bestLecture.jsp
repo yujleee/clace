@@ -13,9 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/hd_ft.css" />
-    <link rel="stylesheet" href="css/newClass.css" />
+    <link rel="stylesheet" href="css/listClass.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/lectureList.js"></script>
     <title>클레이스: 지금 핫한 클래스</title>
 </head>
 <body>

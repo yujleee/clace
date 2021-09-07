@@ -58,13 +58,18 @@ p {
 section .lectures {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .lectures .lecture {
   width: 240px;
   margin-bottom: 70px;
+  margin-right: 10px;
+}
+
+.lectures .lecture:nth-child(n/4){
+	margin-right: 0;
 }
 
 .lectures .lecture .img_lecture {

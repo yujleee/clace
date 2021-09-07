@@ -13,9 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/hd_ft.css" />
-    <link rel="stylesheet" href="css/newClass.css" />
+    <link rel="stylesheet" href="css/listClass.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/lectureList.js"></script>
     <title>클레이스: 추천 클래스</title>
 </head>
 <body>
@@ -29,7 +28,7 @@
     <section id="content">
       <div class="wrap">
         <div class="title">
-          <h3>지금 핫한 클래스</h3>
+          <h3>추천 클래스</h3>
           <form>
             <select name="sort" id="sort">
               <option value="popular">인기순</option>

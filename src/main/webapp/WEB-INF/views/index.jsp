@@ -24,6 +24,10 @@
 		<div id="nevUser">
 			<div class="headerwrap">
 				<span class="login"><a href="#">로그인/회원가입</a></span>
+				<div class="userLogin">
+					<span class="currentUser">ㅇㅇ(hi00)님</span>
+					<span class="logout"><a href="#">로그아웃</a></span>
+				</div>
 			</div>
 		</div>
 		<div class="headerwrap">
@@ -33,8 +37,16 @@
 						alt="클레이스" /></a>
 				</h1>
 				<div class="search">
-					<form action="searchLecture/keyword" id="searchForm">				
-						<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?" name="search" id="search"/>
+					<form action="searchLecture" method="get" id="searchForm">
+						<c:choose>
+							<c:when test="${keyword eq null}">
+								<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?"  name="keyword"
+									id="keyword" />
+							</c:when>
+							<c:otherwise>
+								<input type="search" value="${keyword }" autocomplete="name" name="keyword" id="keyword" />
+							</c:otherwise>
+						</c:choose>
 						<input type="submit" value="" class="ic_search"></input>
 					</form>
 				</div>
@@ -72,7 +84,7 @@
 	<section id="visual">
 		<ul class="slider">
 			<li><img src="images/main/vi1.jpg" alt="배너1" /></li>
-			<li><img src="images/main/vi2.jpg" alt="배너2" /></li>
+			<li><img src="images/main/vi3.jpg" alt="배너2" /></li>
 		</ul>
 	</section>
 	<main>

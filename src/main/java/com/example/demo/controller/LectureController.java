@@ -226,13 +226,14 @@ public class LectureController {
 		if (end > total) {
 			end = total;
 		}
-
+		
 		HashMap map = new HashMap<>();
 		map.put("start", start);
 		map.put("end", end);
 		map.put("keyword", keyword);
-
+		
 		model.addAttribute("list", dao.searchLecture(map));
+		model.addAttribute("keyword", keyword);
 		model.addAttribute("totalPage", LectureDao.totalPage);
 	}
 

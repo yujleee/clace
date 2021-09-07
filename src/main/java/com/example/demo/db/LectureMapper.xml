@@ -105,15 +105,16 @@
   
   <select id="searchLecture" resultType="lectureVo">
   	select lec_image, lec_name, lec_price, lec_sale, lec_grade
-	from member m, lecture l, creator c,
+	from member m, lecture l, creator c, category cate,
 	(select l.lec_no, nvl(count(pay_no),0) cnt from payment p right join lecture l 
 	on l.lec_no = p.lec_no group by l.lec_no order by cnt desc) pay,
 	(select rownum n, lec_no from (select * from lecture order by lec_reg desc))page 
 	where l.lec_no = page.lec_no and n between #{start} and #{end} and 
-	l.lec_no = pay.lec_no and l.cr_no = c.cr_no and
+	l.lec_no = pay.lec_no and l.cr_no = c.cr_no and l.lec_category = cate.cate_no and
 	c.mem_no = m.mem_no and (m.mem_nickname like '%'||#{keyword}||'%'
 	or lec_name like '%'||#{keyword}||'%' or lec_place like '%'||#{keyword}||'%' or 
-	lec_content like '%'||#{keyword}||'%') order by pay.cnt desc
+	lec_content like '%'||#{keyword}||'%' or lec_hashtag like '%'||#{keyword}||'%' or
+	 cate_title like '%'||#{keyword}||'%') order by pay.cnt desc
   </select>
   
 </mapper>

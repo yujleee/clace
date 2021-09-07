@@ -9,7 +9,7 @@ $(function () {
     pager: true,
     onSlideBefore: function ($slideElement, oldIndex, newIndex) {
       if ((oldIndex == 0, newIndex == 1)) {
-        $('.bx-wrapper').css('background', '#4360ff');
+        $('.bx-wrapper').css('background', '#ff97b7');
       } else if ((oldIndex == 1, newIndex == 0)) {
         $('.bx-wrapper').css('background', '#e9e5e2');
       }
