@@ -30,6 +30,15 @@
 				</div>
 			</div>
 		</div>
+		<div id="recentKeyword">
+			<div class="headerwrap">
+				<div class="top">
+					<h4>최근 검색어</h4>
+					<span class="deleteAll">모두 삭제</span>
+				</div>
+				<ul class="recent"></ul>
+			</div>
+		</div>
 		<div class="headerwrap">
 			<div id="navTop">
 				<h1>
@@ -38,15 +47,8 @@
 				</h1>
 				<div class="search">
 					<form action="searchLecture" method="get" id="searchForm">
-						<c:choose>
-							<c:when test="${keyword eq null}">
 								<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?"  name="keyword"
 									id="keyword" />
-							</c:when>
-							<c:otherwise>
-								<input type="search" value="${keyword }" autocomplete="name" name="keyword" id="keyword" />
-							</c:otherwise>
-						</c:choose>
 						<input type="submit" value="" class="ic_search"></input>
 					</form>
 				</div>
