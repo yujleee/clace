@@ -19,8 +19,9 @@ h3 {
   font-size: 28px;
 }
 
-h4 {
+.lectures .lecture h4{
   font-size: 18px;
+  color: #13aa92;
 }
 
 p {
@@ -57,13 +58,18 @@ p {
 section .lectures {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .lectures .lecture {
   width: 240px;
   margin-bottom: 70px;
+  margin-right: 10px;
+}
+
+.lectures .lecture:nth-child(n/4){
+	margin-right: 0;
 }
 
 .lectures .lecture .img_lecture {

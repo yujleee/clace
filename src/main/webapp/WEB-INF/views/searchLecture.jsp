@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="css/hd_ft.css" />
     <link rel="stylesheet" href="css/listClass.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>클레이스: 지금 핫한 클래스</title>
+    <script src="js/search.js"></script>
+    <title>클레이스: ${keyword } 검색 결과</title>
 </head>
 <body>
 	<%@include file ="header.jsp" %>
@@ -28,11 +29,11 @@
     <section id="content">
       <div class="wrap">
         <div class="title">
-          <h3>지금 핫한 클래스</h3>
+          <h3>'${keyword }' 검색 결과</h3>
           <form>
             <select name="sort" id="sort">
               <option value="popular">인기순</option>
-              <option value="maxr">최고가순</option>
+              <option value="max">최고가순</option>
               <option value="popular">최저가순</option>
               <option value="review">후기순</option>
             </select>
@@ -60,7 +61,7 @@
         <div class="pager">
           	<c:forEach var="i" begin="1" end="${totalPage }">
 				<!-- 상태유지한 TotalPage까지 페이지번호 출력-->
-				<a href="bestLecture?pageNum=${i }">${i }</a>&nbsp;
+				<a href="searchLecture?pageNum=${i }">${i }</a>&nbsp;
 			</c:forEach>
         </div>
       </div>

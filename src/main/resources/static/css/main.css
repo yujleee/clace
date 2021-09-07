@@ -40,7 +40,7 @@ section h4 {
   -moz-box-shadow: 0 0 5px #ccc;
   -webkit-box-shadow: 0 0 5px #ccc;
   box-shadow: 0 0 5px #ccc;
-  background: #e9e5e2;
+  background: #ff97b7;
 }
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
@@ -121,7 +121,7 @@ section .title > span > a {
 section .lectures {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
