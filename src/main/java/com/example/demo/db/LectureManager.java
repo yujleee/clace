@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.example.demo.vo.CategoryVo;
 import com.example.demo.vo.LectureVo;
 
 public class LectureManager {
@@ -81,6 +82,20 @@ public class LectureManager {
 		return n; 
 	}
 	
+	public static int getTotalSearchLecture(String keyword) { 
+		SqlSession session = factory.openSession(); 
+		int n = session.selectOne("lecture.getTotalCategoryLecture", keyword);
+		session.close(); 
+		return n; 
+	}
+	
+	public static int getTotalCategoryLecture(String category) { 
+		SqlSession session = factory.openSession(); 
+		int n = session.selectOne("lecture.getTotalCategoryLecture", category);
+		session.close(); 
+		return n; 
+	}
+	
 	public static List<LectureVo> listBest(HashMap map){ 
 		SqlSession session = factory.openSession(); 
 		List<LectureVo> list = session.selectList("lecture.listBestLecture", map); 
@@ -138,6 +153,21 @@ public class LectureManager {
 		session.close(); 
 		return list;
 	}
+	
+	public static List<LectureVo> categoryLecture(HashMap map){ 
+		SqlSession session = factory.openSession(); 
+		List<LectureVo> list = session.selectList("lecture.categoryLecture", map); 
+		session.close(); 
+		return list;
+	}
+	
+	public static List<CategoryVo> listCategory(){ 
+		SqlSession session = factory.openSession(); 
+		List<CategoryVo> list = session.selectList("lecture.listCategory"); 
+		session.close(); 
+		return list;
+	}
+	
 	
 
 

@@ -17,6 +17,7 @@
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/search.js"></script>
+<script src="js/category.js"></script>
 <title>클레이스</title>
 </head>
 <body>
@@ -63,13 +64,16 @@
 							alt="마이페이지" /></a></li>
 				</ul>
 			</div>
+			<div id="category">
+				<ul></ul>
+			</div>
 			<nav>
 				<ul>
-					<li></li>
+					<li class="menu"></li>
 					<li><a href="recommandLecture?age=2&gender=2&job=3">추천 클래스</a></li>
 					<li><a href="saleLecture">특가 할인</a></li>
 					<li><a href="bestLecture">핫한 클래스</a></li>
-					<li><a href="newLecture">신규 클래스</a></li>
+					<li><a href="newLecture">새로운 클래스</a></li>
 				</ul>
 			</nav>
 		</div>

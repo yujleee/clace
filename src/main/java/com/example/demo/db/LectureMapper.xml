@@ -54,6 +54,21 @@
   	where (age_no = #{age_no} or job_no= #{job_no} or lec_gender= #{lec_gender})
   </select> 
   
+  <select id="getTotalCategoryLecture" resultType="int">
+  	select count(*) from lecture l, category 
+	where l.lec_category=cate_no and cate_title=#{category}
+  </select> 
+  
+  <select id="getTotalSearchLecture" resultType="int"> 
+  	select count(*) from lecture l, member m, creator c, category cate
+	where l.cr_no = c.cr_no and l.lec_category = cate.cate_no and
+	c.mem_no = m.mem_no and (m.mem_nickname like '%'||#{keyword}||'%'
+	or lec_name like '%'||#{keyword}||'%' or lec_place like '%'||#{keyword}||'%' or 
+	lec_content like '%'||#{keyword}||'%' or lec_hashtag like '%'||#{keyword}||'%' or
+	cate_title like '%'||#{keyword}||'%')
+  </select>
+  
+  
   <select id="listBestLecture" resultMap="listBestlectureMap">
   	select l.lec_no, l.lec_name, l.lec_price, l.lec_sale, l.lec_grade, l.lec_image
 	from lecture l, (select l.lec_no, nvl(count(pay_no),0) cnt 
@@ -116,5 +131,17 @@
 	lec_content like '%'||#{keyword}||'%' or lec_hashtag like '%'||#{keyword}||'%' or
 	 cate_title like '%'||#{keyword}||'%') order by pay.cnt desc
   </select>
+  
+	<select id="listCategory" resultType="categoryVo">
+		select cate_title from category
+	</select>
+	
+	<select id="categoryLecture" resultType="lectureVo">
+		select lec_image, lec_name, lec_price, lec_sale, lec_grade
+		from lecture l, category cate, (select rownum n, lec_no from 
+		(select * from lecture order by lec_no))page 
+		where l.lec_category = cate.cate_no and l.lec_no = page.lec_no 
+		and cate_title= #{category} and n between #{start} and #{end}
+	</select>
   
 </mapper>

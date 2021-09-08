@@ -20,11 +20,6 @@
 <body>
 	<%@include file ="header.jsp" %>
     <!-- end header-->
-    <div id="fixed"><img src="images/main/btn_talk.png" alt="실시간 문의" /></div>
-    <div id="btn_top">
-      <a href="#navTop" class="topBtn"><img src="images/main/btn_top.png" alt="top" /></a>
-    </div>
-    <!-- end buttons-->
     <section id="content">
       <div class="wrap">
         <div class="title">

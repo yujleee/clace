@@ -37,14 +37,14 @@ header .headerwrap {
 
 #recentKeyword{
 	width: 100%;
-	height: 100px;
+	height: 200px;
 	background: #fff;
 	position: absolute;
 	height: 200px;
 	z-index: 1000;
 	top: 120px;
 	padding: 20px;
-	box-shadow: 2px 4px 2px rgba(222,222,222,0.4);
+	box-shadow: 0 8px 10px 0 rgb(0 0 0 / 10%);
 	display:none;
 }
 
@@ -68,7 +68,7 @@ header .headerwrap {
 	float: left;
 	margin-right: 10px;
 	border-radius: 30px;
-	border: 1px solid #eee;
+	border: 1px solid #ccc;
 	height: 1em;
 	padding: 4px 10px;
 	line-height: 1em;
@@ -77,8 +77,8 @@ header .headerwrap {
 #recentKeyword .headerwrap .recent > li:hover{
 	background: #13aa92;
 	color: #fff;
+	border-color: #13aa92;
 }
-
 
 #navTop {
 	display: flex;
@@ -151,6 +151,41 @@ input[name='search']::placeholder {
 	cursor: pointer;
 }
 
+#category{
+	width: 1050px;
+	height: 200px;
+	position: absolute;
+	top: 191px;
+	z-index:1000;
+	display: none;
+}
+
+#category ul{
+	height: 160px;
+	background: #fff;
+	padding: 20px 40px;
+	margin-left: 30px;
+	box-shadow: 8px 8px 16px 0 rgb(0 0 0 / 10%);
+}
+
+#category > ul > li {
+	float: left;
+	width: 230px;
+	margin: 1em 0;
+}
+
+#category > ul > li > a{
+	display: block;
+	width: auto;
+	height: 1em;
+	color: #777;
+}
+
+
+#category > ul > li > a:hover{
+	color: #13aa92;
+}
+
 nav {
 	width: 100%;
 	padding: 20px 0;
@@ -191,6 +226,7 @@ nav ul>li:last-child {
 }
 
 /* ------------------- header end -------------------- */
+
 #fixed {
 	width: 50px;
 	height: 50px;
@@ -210,6 +246,57 @@ nav ul>li:last-child {
 	z-index: 9999;
 	transition: all 1s;
 }
+
+/* ---------------- fixed button end -----------------*/
+
+#chat{
+	width: 400px;
+	height: 500px;
+	border: 1px solid #ccc;
+	background: #fff;
+	z-index: 9999;
+	box-shadow: 8px 8px 16px 0 rgb(0 0 0 / 10%);
+	position: fixed;
+	bottom: 100px;
+	right: -100px;
+	display:none;
+}
+
+#chat h4{
+	height: 40px;
+	line-height: 40px;
+	background: #13aa92;
+	color: #fff;
+	text-align: center;
+}
+
+#chat .showMsg{
+	width: 100%;
+	height: 360px;
+}
+
+#chat .inputMsg{
+	height: 100px;
+	padding : 10px 1em;
+}
+
+#chat .inputMsg input{
+	width: 80%;
+	height: 40px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#chat .inputMsg button{
+	width: 15%;
+	height: 40px;
+	border: none;
+	border-radius: 5px;
+	background: #13aa92;
+	color: #fff;
+	margin-left: 5px;
+}
+/* ---------------- chatting end --------------------------*/
 
 footer {
 	width: 100%;

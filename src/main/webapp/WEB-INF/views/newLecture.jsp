@@ -15,21 +15,15 @@
     <link rel="stylesheet" href="css/hd_ft.css" />
     <link rel="stylesheet" href="css/listClass.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/lectureList.js"></script>
-    <title>클레이스: 신규 클래스</title>
+    <title>클레이스: 새로운 클래스</title>
 </head>
 <body>
 	<%@include file ="header.jsp" %>
     <!-- end header-->
-    <div id="fixed"><img src="images/main/btn_talk.png" alt="실시간 문의" /></div>
-    <div id="btn_top">
-      <a href="#navTop" class="topBtn"><img src="images/main/btn_top.png" alt="top" /></a>
-    </div>
-    <!-- end buttons-->
     <section id="content">
       <div class="wrap">
         <div class="title">
-          <h3>신규 클래스</h3>
+          <h3>새로운 클래스</h3>
           <form>
             <select name="sort" id="sort">
               <option value="sortBest">인기순</option>

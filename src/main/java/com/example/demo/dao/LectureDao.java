@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.db.LectureManager;
+import com.example.demo.vo.CategoryVo;
 import com.example.demo.vo.LectureVo;
 
 @Repository
@@ -45,6 +46,14 @@ public class LectureDao {
 		return LectureManager.getTotalRecommandLecture(age, gender, job);
 	} 
 	
+	public int getTotalSearchLecture(String keyword) {
+		return LectureManager.getTotalSearchLecture(keyword);
+	} 
+	
+	public int getTotalCategoryLecture(String category) {
+		return LectureManager.getTotalCategoryLecture(category);
+	} 
+	
 	public List<LectureVo> listBest(HashMap map){
 		return LectureManager.listBest(map);
 	}
@@ -75,6 +84,14 @@ public class LectureDao {
 	
 	public List<LectureVo> searchLecture(HashMap map){
 		return LectureManager.searchLecture(map);
+	}
+	
+	public List<LectureVo> categoryLecture(HashMap map){
+		return LectureManager.categoryLecture(map);
+	}
+	
+	public List<CategoryVo> listCategory(){
+		return LectureManager.listCategory();
 	}
 	
 

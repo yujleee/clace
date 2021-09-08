@@ -13,6 +13,9 @@
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/hd_ft.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/search.js"></script>
+<script src="js/category.js"></script>
+<script src="js/chat.js"></script>
 <title>클레이스</title>
 </head>
 <body>
@@ -66,9 +69,12 @@
 							alt="마이페이지" /></a></li>
 				</ul>
 			</div>
+			<div id="category">
+				<ul></ul>
+			</div>
 			<nav>
 				<ul>
-					<li></li>
+					<li class="menu"></li>
 					<li><a href="recommandLecture?age=2&gender=2&job=3">추천 클래스</a></li>
 					<li><a href="saleLecture">특가 할인</a></li>
 					<li><a href="bestLecture">핫한 클래스</a></li>
@@ -78,5 +84,21 @@
 		</div>
 	</header>
 	<!-- end header-->
+	<div id="fixed">
+		<img src="images/main/btn_talk.png" alt="실시간 문의" />
+	</div>
+	<div id="btn_top">
+		<a href="#navTop" class="topBtn"><img
+			src="images/main/btn_top.png" alt="top" /></a>
+	</div>
+	<!-- end buttons-->
+	<div id="chat">
+		<h4>실시간 문의</h4>
+		<div class="showMsg"></div>
+		<div class="inputMsg">
+			<input type="text" id="msg" />
+			<button class="btnSend">전송</button>
+		</div>
+	</div>
 </body>
 </html>
