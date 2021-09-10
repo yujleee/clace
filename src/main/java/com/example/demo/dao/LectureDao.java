@@ -11,10 +11,9 @@ import com.example.demo.vo.LectureVo;
 
 @Repository
 public class LectureDao {
-	
-	public static int pageSize = 12; //한 화면에 보여줄 클래스
-	public static int totalLecture;
 	public static int totalPage;
+	public static int totalLecture;
+	public static int pageSize = 12;
 
 	public List<LectureVo> listBestLecture() {
 		return LectureManager.listBestLecture();
@@ -28,7 +27,6 @@ public class LectureDao {
 		return LectureManager.listNewLecture();
 	}
 
-	
 	public List<LectureVo> listAroundMe(String place){ 
 		System.out.println("Dao:"+ place); 
 		return LectureManager.listAroundMe(place); 
@@ -92,7 +90,6 @@ public class LectureDao {
 	
 	public List<CategoryVo> listCategory(){
 		return LectureManager.listCategory();
-	}
-	
+	}	
 
 }

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +15,12 @@
 <script src="js/search.js"></script>
 <script src="js/category.js"></script>
 <script src="js/chat.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/hd_ft.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <title>클레이스</title>
 </head>
 <body>
@@ -94,5 +99,38 @@
 	</div>
 	<!-- end buttons-->
 	<%@include file ="chat.jsp" %>
+      <div class="headerwrap">
+        <div id="navTop">
+          <h1>
+            <a href="index.do"><img src="images/main/logo.png" width="120" alt="클레이스" /></a>
+          </h1>
+          <div class="search">
+            <input type="search" placeholder="듣고 싶은 클래스가 있으신가요?" name="search" />
+            <span class="ic_search"></span>
+          </div>
+          <ul class="gnbIcons">
+            <li>
+              <a href="#"><img src="images/main/ic_home.png" alt="강사홈" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
+            </li>
+          </ul>
+        </div>
+        <nav>
+          <ul>
+            <li></li>
+            <li><a href="#">추천 클래스</a></li>
+            <li><a href="#">특가 할인</a></li>
+            <li><a href="newLecture.do">신규 클래스</a></li>
+            <li><a href="#">커뮤니티</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- end header-->
 </body>
 </html>

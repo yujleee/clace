@@ -1,15 +1,16 @@
 header {
-	width: 100%;
-	height: 190px;
-	border-bottom: 1px solid #eee;
+  width: 100%;
+  height: 140px;
+  border-bottom: 1px solid #eee;
 }
 
 header .headerwrap {
-	width: 1080px;
-	margin: 0 auto;
-	padding-top: 30px;
+  width: 1080px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
+<<<<<<< HEAD
 #nevUser {
 	height: 36px;
 	background: #f5f5f5;
@@ -80,75 +81,69 @@ header .headerwrap {
 	border-color: #13aa92;
 }
 
+=======
+>>>>>>> origin/main
 #navTop {
-	display: flex;
-	justify-content: space-around;
-	padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
 }
 
 #navTop h1 {
-	width: 120px;
-	height: 40px;
-	cursor: pointer;
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
 }
 
-#navTop h1>a {
-	width: 120px;
-	height: 40px;
+#navTop h1 > a {
+  width: 120px;
+  height: 40px;
 }
 
 .search {
-	width: 360px;
-	height: 40px;
-	background: #f5f5f5;
-	border-radius: 40px;
-	position: relative;
+  width: 360px;
+  height: 40px;
+  background: #f5f5f5;
+  border-radius: 40px;
+  position: relative;
 }
 
 .search input {
-	width: 360px;
-	height: 40px;
-	background: #f5f5f5;
-	border-radius: 40px;
-	border: none;
-	color: #555;
-	font-size: 0.9em;
-	padding-left: 1em;
-}
-
-#keyword:focus {
-	color: #333;
-	font-weight: 600;
-	outline: none;
-	box-shadow: 0 0 0 1px #13aa92;
+  width: 360px;
+  height: 40px;
+  background: #f5f5f5;
+  border-radius: 40px;
+  border: none;
+  color: #555;
 }
 
 input[name='search']::placeholder {
-	color: #ccc;
-	font-size: 14px;
+  color: #ccc;
+  font-size: 14px;
+  padding-left: 10px;
 }
 
 .search .ic_search {
-	width: 22px;
-	height: 22px;
-	background: url(../images/main/ic_search.png) center center no-repeat;
-	position: absolute;
-	top: 10px;
-	right: 20px;
-	cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: url(../images/main/ic_search.png) 0 0 no-repeat;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
 }
 
 .navTop .gnbIcons {
-	width: 220px;
-	height: 42px;
+  width: 220px;
+  height: 42px;
 }
 
-.gnbIcons>li {
-	width: 42px;
-	height: 42px;
-	margin-right: 10px;
-	display: inline-block;
-	cursor: pointer;
+.gnbIcons > li {
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 #category{
@@ -187,64 +182,63 @@ input[name='search']::placeholder {
 }
 
 nav {
-	width: 100%;
-	padding: 20px 0;
+  width: 100%;
+  padding: 20px 0;
 }
 
 nav ul {
-	height: 42px;
-	display: flex;
-	justify-content: space-around;
+  height: 42px;
+  display: flex;
+  justify-content: space-around;
 }
 
-nav ul>li {
-	align-items: center;
-	padding-top: 8px;
-	margin-left: -20px;
+nav ul > li {
+  align-items: center;
+  padding-top: 8px;
+  margin-left: -20px;
 }
 
-nav ul>li>a {
-	color: #555;
-	text-decoration: none;
-	font-size: 18px;
+nav ul > li > a {
+  color: #555;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-nav ul>li>a:hover {
-	font-weight: 500;
-	color: #13aa92;
+nav ul > li > a:hover {
+  color: #13aa92;
 }
 
-nav ul>li:first-child {
-	width: 32px;
-	height: 32px;
-	background: url(../images/main/ic_menu.png) 0 0 no-repeat;
-	cursor: pointer;
+nav ul > li:first-child {
+  width: 32px;
+  height: 32px;
+  background: url(../images/main/ic_menu.png) 0 0 no-repeat;
+  cursor: pointer;
 }
 
-nav ul>li:last-child {
-	margin-right: 50px;
+nav ul > li:last-child {
+  margin-right: 50px;
 }
 
 /* ------------------- header end -------------------- */
 
 #fixed {
-	width: 50px;
-	height: 50px;
-	position: fixed;
-	right: 50px;
-	bottom: 120px;
-	z-index: 9999;
-	cursor: pointer;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 50px;
+  bottom: 120px;
+  z-index: 9999;
+  cursor: pointer;
 }
 
 #btn_top {
-	width: 50px;
-	height: 50px;
-	position: fixed;
-	right: 50px;
-	bottom: 50px;
-	z-index: 9999;
-	transition: all 1s;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 9999;
+  transition: all 1s;
 }
 
 /* ---------------- fixed button end -----------------*/
@@ -328,44 +322,44 @@ nav ul>li:last-child {
 /* ---------------- chatting end --------------------------*/
 
 footer {
-	width: 100%;
-	height: 100px;
-	background: #f5f5f5;
+  width: 100%;
+  height: 100px;
+  background: #f5f5f5;
 }
 
 footer .ftWrap {
-	width: 1080px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 40px;
+  width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
 }
 
 .ftWrap h1 {
-	width: 112px;
-	height: 38px;
-	background: url(../images/main/logo_ft.png) 0 0 no-repeat;
-	padding-bottom: 10px;
+  width: 112px;
+  height: 38px;
+  background: url(../images/main/logo_ft.png) 0 0 no-repeat;
+  padding-bottom: 10px;
 }
 
 .ftWrap ul {
-	width: 700px;
-	height: 30px;
+  width: 700px;
+  height: 30px;
 }
 
-.ftWrap ul>li {
-	color: #aaa;
-	float: left;
-	margin-right: 30px;
-	padding-right: 30px;
-	border-right: 1px solid #aaa;
+.ftWrap ul > li {
+  color: #aaa;
+  float: left;
+  margin-right: 30px;
+  padding-right: 30px;
+  border-right: 1px solid #aaa;
 }
 
-.ftWrap ul>li:last-child {
-	border: none;
-	padding-right: 0;
-	margin: 0;
+.ftWrap ul > li:last-child {
+  border: none;
+  padding-right: 0;
+  margin: 0;
 }
 
 /* ------------------- footer end -------------------- */

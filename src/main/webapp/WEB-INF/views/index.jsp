@@ -27,8 +27,8 @@
 			<div class="headerwrap">
 				<span class="login"><a href="#">로그인/회원가입</a></span>
 				<div class="userLogin">
-					<span class="currentUser">ㅇㅇ(hi00)님</span>
-					<span class="logout"><a href="#">로그아웃</a></span>
+					<span class="currentUser">ㅇㅇ(hi00)님</span> <span class="logout"><a
+						href="#">로그아웃</a></span>
 				</div>
 			</div>
 		</div>
@@ -49,9 +49,9 @@
 				</h1>
 				<div class="search">
 					<form action="searchLecture" method="get" id="searchForm">
-								<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?"  name="keyword"
-									id="keyword" />
-						<input type="submit" value="" class="ic_search"></input>
+						<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?"
+							name="keyword" id="keyword" /> <input type="submit" value=""
+							class="ic_search"></input>
 					</form>
 				</div>
 				<ul class="gnbIcons">
@@ -61,8 +61,8 @@
 							src="images/main/ic_comu.png" alt="커뮤니티" /></a></li>
 					<li><a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
 					</li>
-					<li><a href="Mypage.do"><img src="images/detail/profile_user.png"
-							alt="마이페이지" /></a></li>
+					<li><a href="Mypage.do"><img
+							src="images/detail/profile_user.png" alt="마이페이지" /></a></li>
 				</ul>
 			</div>
 			<div id="category">
@@ -91,7 +91,9 @@
 	<div id="chat">
 		<div class="chatTop">
 			<h4>실시간 문의</h4>
-			<button class="btnClose"><img src="images/main/btn_chatClose.png" width="80%" alt="창닫기" /></button>
+			<button class="btnClose">
+				<img src="images/main/btn_chatClose.png" width="80%" alt="창닫기" />
+			</button>
 		</div>
 		<div class="showMsg"></div>
 		<div class="inputMsg">

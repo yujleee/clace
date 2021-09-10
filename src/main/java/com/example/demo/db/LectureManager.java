@@ -24,34 +24,10 @@ public class LectureManager {
 			System.out.println(e.getMessage());
 		}
 	}
-
+	
 	public static List<LectureVo> listBestLecture(){
 		SqlSession session = factory.openSession();
-		List<LectureVo> list = session.selectList("lecture.mainBestLecture");
-		session.close();
-		return list;
-	}
-
-
-	public static List<LectureVo> listSaleLecture(){ 
-		SqlSession session = factory.openSession(); 
-		List<LectureVo> list = session.selectList("lecture.mainSaleLecture"); 
-		session.close(); 
-		return list; 
-	}
-
-	public static List<LectureVo> listNewLecture(){ 
-		SqlSession session = factory.openSession(); 
-		List<LectureVo> list = session.selectList("lecture.mainNewLecture"); 
-		session.close(); 
-		return list; 
-	}
-
-
-	public static List<LectureVo> listAroundMe(String place){ 
-		SqlSession session = factory.openSession(); 
-		System.out.println("매니저: "+place); 
-		List<LectureVo> list = session.selectList("lecture.mainAroundMe", place); 
+		List<LectureVo> list = session.selectList("lecture.listBestLecture");
 		session.close();
 		return list; 
 	}
@@ -167,10 +143,31 @@ public class LectureManager {
 		session.close(); 
 		return list;
 	}
-	
-	
-
-
 
 	
+	  public static List<LectureVo> listSaleLecture(){ 
+		  SqlSession session = factory.openSession(); 
+		  List<LectureVo> list = session.selectList("lecture.listSaleLecture"); 
+		  session.close(); 
+		  return list; 
+	  }
+	 
+	  public static List<LectureVo> listNewLecture(){ 
+		  SqlSession session = factory.openSession(); 
+		  List<LectureVo> list = session.selectList("lecture.listNewLecture"); 
+		  session.close(); 
+		  return list; 
+	  }
+	  
+	
+		
+	  public static List<LectureVo> listAroundMe(String place){ 
+		  SqlSession session = factory.openSession(); System.out.println("매니저: "+place); 
+		  List<LectureVo> list = session.selectList("lecture.listAroundMe", place); 
+		  session.close();
+		  return list; 
+	  }
+		 
+	  
+	  
 }
