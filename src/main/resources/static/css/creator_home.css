@@ -1,0 +1,219 @@
+body{
+	margin:0px;
+	height: 100%;
+	font: Noto Sans KR;
+}
+div{
+	box-sizing: border-box;
+}
+
+#wrapper{
+	width: 100%;
+	height: 100%;
+	position: relative;                   
+
+}
+
+#contentwrapper{
+	position: relative;
+	width: 1000px;
+	margin: 30px auto;
+	margin-top: 60px;
+}
+
+#content {
+  width: 100%;
+  height: auto;
+}
+
+#content .wrap {
+  width: 1000px;
+  margin: 30px auto;
+}
+
+#creator{
+	position: relative;
+	
+}
+#profile{
+	position: absolute;
+	width: 80px;
+	height: 80px;
+}
+#cr_nickname{
+	position: relative;
+	left: 100px;
+	font-size: 28px;	
+}
+#cr_modify{
+	position: absolute;
+	left: 280px;
+	bottom: 10px;
+}
+#modify_btn{
+	width: 100px;
+    height: 26px;
+    border: solid 1px #cccccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 15px;
+    font: Noto Sans KR;
+    color: #777777;
+    text-align: center;
+}
+#email{
+	position: absolute;
+	left: 100px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #777;
+	top: 50px;
+}
+#like_box{
+	background: #eeeeee;
+	float: right;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+
+}
+#like_img{
+	float: left;
+}
+
+#like_cnt{
+	font-size: 21px;
+	color: #13aa92;
+	float: right;
+	padding-top:3px;
+	
+}
+.empty{
+	width: 100%;
+	height: 44px;
+	position: relative;
+}
+#category{
+	position: relative;
+	width: 100%;
+	height: 44px;
+	margin-top: 30px;
+}
+
+#btn1{
+	color: #ffffff;
+	background: #13aa92;
+	z-index: 9999;
+}
+#category button{
+	margin: 0px;
+	width: 250px;
+	height: 44px;
+	text-align: center;
+	font-size: 16px;
+	color: #777777;
+	background: #f5f5f5;
+	float: left;
+	border: none;
+	border-right : solid 1px #eeeeee;
+	cursor: pointer;
+	z-index: 9999;
+	
+}
+#category button:hover{
+	color:#ffffff;
+	background: #13aa92;
+}
+
+#title{
+	position: relative;
+
+}
+
+section .lectures {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.lectures .lecture {
+  width: 240px;
+  margin-bottom: 70px;
+}
+
+.lectures .lecture .img_lecture {
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.lectures .lecture:hover .img_lecture > img {
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
+.lectures .lecture p {
+  width: 100%;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #555;
+}
+
+.lectures .lecture h4 {
+  margin-bottom: 1em;
+}
+
+.lecture .star > img {
+  padding-top: 1px;
+}
+
+.lecture .star .rw_total {
+  font-size: 14px;
+  color: #777;
+  margin-left: 4px;
+  padding-bottom: 10px;
+}
+
+.pager {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+
+.pager > span {
+  width: 30px;
+  height: 30px;
+  color: #777;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pager > span:nth-child(2) {
+  color: #13aa92;
+}
+
+#my_lecture{
+	display: block;
+	position: static;
+	width: 100%;
+}
+.my_lecture_table{
+	padding: 5px;
+	text-align: center;
+	border: solid 1px;
+	width: 100%;
+	padding: 0px;
+
+}
+
+#row_1 td{
+	border-bottom: solid 1px;
+}
+
+
+
