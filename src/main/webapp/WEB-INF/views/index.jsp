@@ -18,6 +18,7 @@
 <script src="js/main.js"></script>
 <script src="js/search.js"></script>
 <script src="js/category.js"></script>
+<script src="js/chat.js"></script>
 <title>클레이스</title>
 </head>
 <body>
@@ -87,6 +88,19 @@
 			src="images/main/btn_top.png" alt="top" /></a>
 	</div>
 	<!-- end buttons-->
+	<div id="chat">
+		<div class="chatTop">
+			<h4>실시간 문의</h4>
+			<button class="btnClose"><img src="images/main/btn_chatClose.png" width="80%" alt="창닫기" /></button>
+		</div>
+		<div class="showMsg"></div>
+		<div class="inputMsg">
+			<input type="text" id="msg" placeholder="보낼 메세지를 입력해주세요" />
+			<button class="btnSend">전송</button>
+		</div>
+		<input type="hidden" value="3" id="sessionUserId">
+	</div>
+	<!-- end chat -->
 	<section id="visual">
 		<ul class="slider">
 			<li><img src="images/main/vi1.jpg" alt="배너1" /></li>

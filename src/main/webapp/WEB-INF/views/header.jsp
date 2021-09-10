@@ -24,8 +24,8 @@
 			<div class="headerwrap">
 				<span class="login"><a href="#">로그인/회원가입</a></span>
 				<div class="userLogin">
-					<span class="currentUser">ㅇㅇ(hi00)님</span>
-					<span class="logout"><a href="#">로그아웃</a></span>
+					<span class="currentUser">ㅇㅇ(hi00)님</span> <span class="logout"><a
+						href="#">로그아웃</a></span>
 				</div>
 			</div>
 		</div>
@@ -48,11 +48,12 @@
 					<form action="searchLecture" method="get" id="searchForm">
 						<c:choose>
 							<c:when test="${keyword eq null}">
-								<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?"  name="keyword"
-									id="keyword" />
+								<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?"
+									name="keyword" id="keyword" />
 							</c:when>
 							<c:otherwise>
-								<input type="search" value="${keyword }" autocomplete="name" name="keyword" id="keyword" />
+								<input type="search" value="${keyword }" autocomplete="name"
+									name="keyword" id="keyword" />
 							</c:otherwise>
 						</c:choose>
 						<input type="submit" value="" class="ic_search"></input>
@@ -65,7 +66,7 @@
 							src="images/main/ic_comu.png" alt="커뮤니티" /></a></li>
 					<li><a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
 					</li>
-					<li><a href="#"><img src="images/detail/profile_user.png"
+					<li><a href="myPage.do"><img src="images/detail/profile_user.png"
 							alt="마이페이지" /></a></li>
 				</ul>
 			</div>
@@ -92,13 +93,6 @@
 			src="images/main/btn_top.png" alt="top" /></a>
 	</div>
 	<!-- end buttons-->
-	<div id="chat">
-		<h4>실시간 문의</h4>
-		<div class="showMsg"></div>
-		<div class="inputMsg">
-			<input type="text" id="msg" />
-			<button class="btnSend">전송</button>
-		</div>
-	</div>
+	<%@include file ="chat.jsp" %>
 </body>
 </html>
