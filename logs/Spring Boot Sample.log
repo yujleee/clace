@@ -1,0 +1,103 @@
+2021/09/08 16:51:43,453
+			[INFO ]
+			[org.springframework.boot.StartupInfoLogger] [restartedMain]- Starting ClaceJspApplication using Java 16.0.2 on ZENBOOK-YUJEONG with PID 28064 (C:\stsTest0819_a\clace_jsp\target\classes started by YUJEONG in C:\stsTest0819_a\clace_jsp)
+ -2021/09/08 16:51:43,461
+			[INFO ]
+			[org.springframework.boot.SpringApplication] [restartedMain]- No active profile set, falling back to default profiles: default
+ -2021/09/08 16:51:44,274
+			[WARN ]
+			[org.mybatis.logging.Logger] [restartedMain]- No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+ -2021/09/08 16:51:44,801
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Initializing ProtocolHandler ["http-nio-8080"]
+ -2021/09/08 16:51:44,802
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting service [Tomcat]
+ -2021/09/08 16:51:44,802
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting Servlet engine: [Apache Tomcat/9.0.52]
+ -2021/09/08 16:51:45,041
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+ -2021/09/08 16:51:45,053
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Initializing Spring embedded WebApplicationContext
+ -2021/09/08 16:51:45,667
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting ProtocolHandler ["http-nio-8080"]
+ -2021/09/08 16:51:45,724
+			[INFO ]
+			[org.springframework.boot.StartupInfoLogger] [restartedMain]- Started ClaceJspApplication in 2.666 seconds (JVM running for 4.068)
+ -2021/09/08 16:51:51,551
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [http-nio-8080-exec-1]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+ -2021/09/08 17:06:06,311
+			[INFO ]
+			[org.springframework.boot.StartupInfoLogger] [restartedMain]- Starting ClaceJspApplication using Java 16.0.2 on ZENBOOK-YUJEONG with PID 28064 (C:\stsTest0819_a\clace_jsp\target\classes started by YUJEONG in C:\stsTest0819_a\clace_jsp)
+ -2021/09/08 17:06:06,312
+			[INFO ]
+			[org.springframework.boot.SpringApplication] [restartedMain]- No active profile set, falling back to default profiles: default
+ -2021/09/08 17:06:06,559
+			[WARN ]
+			[org.mybatis.logging.Logger] [restartedMain]- No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+ -2021/09/08 17:06:06,605
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Initializing ProtocolHandler ["http-nio-8080"]
+ -2021/09/08 17:06:06,606
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting service [Tomcat]
+ -2021/09/08 17:06:06,606
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting Servlet engine: [Apache Tomcat/9.0.52]
+ -2021/09/08 17:06:06,698
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+ -2021/09/08 17:06:06,701
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Initializing Spring embedded WebApplicationContext
+ -2021/09/08 17:06:06,831
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting ProtocolHandler ["http-nio-8080"]
+ -2021/09/08 17:06:06,839
+			[INFO ]
+			[org.springframework.boot.StartupInfoLogger] [restartedMain]- Started ClaceJspApplication in 0.591 seconds (JVM running for 865.183)
+ -2021/09/08 17:07:16,723
+			[INFO ]
+			[org.springframework.boot.StartupInfoLogger] [restartedMain]- Starting ClaceJspApplication using Java 16.0.2 on ZENBOOK-YUJEONG with PID 28064 (C:\stsTest0819_a\clace_jsp\target\classes started by YUJEONG in C:\stsTest0819_a\clace_jsp)
+ -2021/09/08 17:07:16,724
+			[INFO ]
+			[org.springframework.boot.SpringApplication] [restartedMain]- No active profile set, falling back to default profiles: default
+ -2021/09/08 17:07:16,959
+			[WARN ]
+			[org.mybatis.logging.Logger] [restartedMain]- No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+ -2021/09/08 17:07:17,001
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Initializing ProtocolHandler ["http-nio-8080"]
+ -2021/09/08 17:07:17,002
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting service [Tomcat]
+ -2021/09/08 17:07:17,002
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting Servlet engine: [Apache Tomcat/9.0.52]
+ -2021/09/08 17:07:17,088
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+ -2021/09/08 17:07:17,091
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Initializing Spring embedded WebApplicationContext
+ -2021/09/08 17:07:17,200
+			[INFO ]
+			[org.apache.juli.logging.DirectJDKLog] [restartedMain]- Starting ProtocolHandler ["http-nio-8080"]
+ -2021/09/08 17:07:17,207
+			[INFO ]
+			[org.springframework.boot.StartupInfoLogger] [restartedMain]- Started ClaceJspApplication in 0.545 seconds (JVM running for 935.551)
+ -2021/09/08 17:19:43,109
+			[INFO ]
+			[org.springframework.boot.StartupInfoLogger] [restartedMain]- Starting ClaceJspApplication using Java 16.0.2 on ZENBOOK-YUJEONG with PID 584 (C:\stsTest0819_a\clace_jsp\target\classes started by YUJEONG in C:\stsTest0819_a\clace_jsp)
+ -2021/09/08 17:19:43,117
+			[INFO ]
+			[org.springframework.boot.SpringApplication] [restartedMain]- No active profile set, falling back to default profiles: default
+ -2021/09/08 17:19:43,865
+			[WARN ]
+			[org.mybatis.logging.Logger] [restartedMain]- No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+ -
