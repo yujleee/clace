@@ -44,7 +44,7 @@
             <li><a href="#">추천 클래스</a></li>
             <li><a href="#">특가 할인</a></li>
             <li><a href="newLecture.do">신규 클래스</a></li>
-            <li><a href="#">커뮤니티</a></li>
+            <li><a href="listBoard.do">커뮤니티</a></li>
           </ul>
         </nav>
       </div>

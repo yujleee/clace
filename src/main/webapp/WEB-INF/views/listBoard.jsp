@@ -42,5 +42,11 @@ $(function(){
 		</tr>	
 	</c:forEach>
 	</table>
+	
+	<!-- 페이징 기능 추가 -->
+	<c:forEach var="i" begin="1" end="${totalPage }">
+		<a href="listBoard.do?pageNUM=${i }">${i }</a>&nbsp;
+	</c:forEach>
+	
 </body>
 </html>

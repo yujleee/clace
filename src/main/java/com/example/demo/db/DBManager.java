@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.example.demo.vo.BoardVo;
 import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.PaymentVo;
 
 public class DBManager {
 	
@@ -62,9 +63,9 @@ public class DBManager {
 	}
 	
 	//게시판 부분
-	 public static List<BoardVo> listBoard(){
+	 public static List<BoardVo> listBoard(HashMap map){
 		SqlSession session = factory.openSession();
-		List<BoardVo> list = session.selectList("board.findAll");
+		List<BoardVo> list = session.selectList("board.findAll",map);
 		session.close();
 		return list;
 	}
@@ -119,7 +120,40 @@ public class DBManager {
 		session.close();
 		return re;
 	}
-	 
-	 
+	 /**
+	  * 게시판 페이징
+	  * @return
+	  */
+	public static int getTotalRecord() {
+		SqlSession session = factory.openSession();
+		int n = session.selectOne("board.totalRecord");
+		session.close();
+		return n;
+	}
+	
+	/**
+	 *  결제 정보 db에 insert
+	 * @param p
+	 * @return
+	 */
+	public static int insertPayment(PaymentVo p) {
+		SqlSession session = factory.openSession(true);
+		int re = session.insert("payment.insertPayment", p);
+		session.close();
+		return re;
+	}
+	
+	public static int getPay_no() {
+		SqlSession session = factory.openSession();
+		int p = session.selectOne("payment.getPay_no");
+		session.close();
+		return p;
+	}
+	public static PaymentVo getPayment(int pay_no) {
+		SqlSession session = factory.openSession();
+		PaymentVo p = session.selectOne("payment.getPayment", pay_no);
+		session.close();
+		return p;
+	}
 	
 }

@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -11,8 +12,12 @@ import com.example.demo.vo.BoardVo;
 @Repository
 public class BoardDao {
 	
-	public List<BoardVo> findAll(){
-		return DBManager.listBoard();
+	public static int pageSIZE = 10;
+	public static int totalRecord;
+	public static int totalPage;
+
+	public List<BoardVo> findAll(HashMap map){
+		return DBManager.listBoard(map);
 	}
 	
 	public int getNextNo() {
@@ -42,6 +47,14 @@ public class BoardDao {
 	
 	public int delete(int brd_no,String brd_pwd) {
 		return DBManager.deleteBoard(brd_no,brd_pwd);
+	}
+	
+	/**
+	 * 페이징 처리
+	 * @return
+	 */
+	public int getTotalRecord() {
+		return DBManager.getTotalRecord();
 	}
 }
 

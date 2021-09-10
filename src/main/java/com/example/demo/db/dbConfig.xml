@@ -25,5 +25,6 @@
     <mapper resource="com/example/demo/db/LectureMapper.xml"/>
     <mapper resource="com/example/demo/db/MemberMapper.xml"/>
     <mapper resource="com/example/demo/db/BoardMapper.xml"/>
+    <mapper resource="com/example/demo/db/PaymentMapper.xml"/>
   </mappers>
 </configuration>

@@ -12,12 +12,25 @@
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/hd_ft.css" />
 	<link rel="stylesheet" href="css/main.css" />
+	
+	<style type="text/css">
+	#order_form{
+		visibility: hidden;
+	}
+	</style>
+	
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 	<script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 	<script src="js/main.js"></script>
 	
 	<script type="text/javascript">
+	$(function(){
+		
+	});
+	
+	
 	
 		/**
 		 * 결제하기 버튼이 눌렸을 때, 실행되는 함수
@@ -107,12 +120,16 @@
 			alert(msg);
 			
 			// 1. 서버 기록
+		//	alert("서버에 기록합니다.");
+			document.getElementById("payment_form").submit();
+			
+		//데이터베이스 payment에 insert할 sql mapping 파일, dbmanager,dao파일 만들기
 			
 			// 2. 화면 이동
 			// location.href = "payok.html";
 		}
 		
-		
+		///이부분에 데이터 테이블에 집어넣는거 넣기
 		/**
 		 * 아임포트 결제에 실패할 경우
 		 * - [ ] 어떻게 할지 확인 필요 (얼럿 띄우고 페이지 이동할지, 이동해서 띄울지, 이동하지 않을지 등등)
@@ -240,6 +257,18 @@
           <button onclick="onclickPaymentButton();">결제하기</button>
         </div>
       </div>
+      
+      
+     <div id="order_form">
+      <form id="payment_form" action="paymentOK.do" method = "post"> 
+      	<input type="text" name="mem_no" value="${memberVo.mem_no }">
+      	<input type="text" name="lec_no" value="${lec_no }">
+      	<input type="text" name="pay_type" value="신용카드">
+      	<input type="text" name="pay_amount" value="${lectureVo.lec_price }">
+      	<input type="submit" value="db저장" >
+      </form>
+      </div>
+      
     </section>
 
     <footer>

@@ -4,9 +4,19 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board">
 
+ <!-- 페이징 처리 -->
+   <select id="findAll" resultType="boardVo">
+    select brd_no,brd_title,brd_content,brd_date,brd_rec,brd_viewc,brd_hashtag,mem_no,brd_pwd
+from (select rownum n, brd_no,brd_title,brd_content,brd_date,brd_rec,brd_viewc,brd_hashtag,mem_no,brd_pwd from (
+select brd_no,brd_title,brd_content,brd_date,brd_rec,brd_viewc,brd_hashtag,mem_no,brd_pwd from board order by brd_no)) 
+where n between #{start} and #{end}
+  </select>
+ 
+ <!--  기존에 있던 게시판 불러오는 
   <select id="findAll" resultType="boardVo">
     select * from board order by brd_no
   </select>
+  -->
   
 
   <insert id="insert" parameterType="boardVo">
@@ -36,6 +46,12 @@
   <delete id="deleteBoard" >
   	delete board where brd_no=#{brd_no} and brd_pwd=#{brd_pwd}
   </delete>
+  
+  <!-- 페이징 처리 -->
+  <select id="totalRecord" resultType="int">
+  	select count(*) from board
+  </select>
+  
 </mapper>
 
 

@@ -6,16 +6,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.dao.LectureDao;
+import com.example.demo.dao.PaymentDao;
 import com.example.demo.vo.LectureVo;
 import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.PaymentVo;
 
 @Controller
 public class PaymentController {
 
 	@Autowired
 	LectureDao lectureDao;
+	
+	@Autowired
+	PaymentDao paymentDao;
+	
+	@RequestMapping(value =  "/paymentOK.do",method = RequestMethod.POST)
+	public void paymentOK( PaymentVo p) {
+	System.out.println("paymentOK 동작함");
+	
+		p.setPay_no(paymentDao.getPay_no());
+		paymentDao.insertPayment(p);
+	}
 	
 	/**
 	 * 주문 페이지:
