@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <title>Insert title here</title>
+  <link rel="stylesheet" href="css/commu.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -19,6 +19,10 @@ $(function(){
 </script>
 </head>
 <body>
+	 <%@ include file = "header.jsp" %>
+	 <section>
+     	<div class="commuWrap">
+
 	<h2>커뮤니티 자유게시판</h2>
 	<a href="insertBoard.do">등록</a>
 	<hr>
@@ -47,6 +51,9 @@ $(function(){
 	<c:forEach var="i" begin="1" end="${totalPage }">
 		<a href="listBoard.do?pageNUM=${i }">${i }</a>&nbsp;
 	</c:forEach>
+	
+	     </div>
+    </section>
 	
 </body>
 </html>
