@@ -51,6 +51,7 @@ public class DBManager {
 	public static int insertMember(MemberVo m) {
 		SqlSession session = factory.openSession(true);
 		int re = session.insert("member.insertMember",m);
+		System.out.println("insert결과"+re);
 		session.close();
 		return re;
 	}

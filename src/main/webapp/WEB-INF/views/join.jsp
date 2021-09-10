@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="css/hd_ft.css" />
   </head>
   <body>
-    <!-- header -->
+   	<%@ include file = "header.jsp" %>
+	<!-- end header -->
+	
+    <!-- header: clace 로고 표시 
     <div id="header">
       <a href="index.html"><img src="images/main/logo.png" id="logo" alt="클레이스" /></a>
     </div>
+    -->
 
     <!-- wrapper -->
     <div id="wrapper">
@@ -25,35 +29,40 @@
       <div id="content">
   
     <form action="join.do" method="post">
-        <!-- ID -->
-	아이디 : <input type="text" name="mem_id"><br>
+     <h3>회원가입</h3>
+        <!-- ID -->	
+	<div >
+	아이디<input type="text" class="design" name="mem_id"><br>
+	</div>
+
         <!-- PW1 -->
-  	비밀번호 : <input type="password" name="mem_pwd"><br>
+  	비밀번호<input type="password" class="design" name="mem_pwd"><br>
+  	
         <!-- PW2
   	비밀번호 재확인: <input type="text" name="mem_pwd"><br>  -->
+  	
         <!-- NAME -->
-    이름 : <input type="text" name="mem_name"><br>
+    이름<input type="text" class="design" name="mem_name"><br>
+    
         <!-- NICKNAME -->
-    닉네임 : <input type="text" name="mem_nickname"><br>  
+    닉네임<input type="text" class="design" name="mem_nickname"><br>  
 
         <!-- EMAIL -->
-    이메일 : <input type="text" name="mem_email"><br>    
+    이메일<input type="text" class="design" name="mem_email"><br>    
 
         <!-- MOBILE -->
-    휴대폰번호 : <input type="text" name="mem_phone"><br>  
+    휴대폰번호<input type="text" class="design" name="mem_phone"><br>  
       
         <!-- GENDER -->
-     성별 :      
-     <select id="mem_gender" name="mem_gender">
-     		 <option>선택안함</option>
+    성별<select id="mem_gender" class="design" name="mem_gender">
+     		 <option>성별을 선택해주세요</option>
               <option value="M">남자</option>
               <option value="F">여자</option>            
-      </select>
+     	</select>
        
         <!-- JOB -->
-
-  직업 :       <select id="job_no" name="job_no">
-              <option>선택안함</option>
+  	직업<select id="job_no" class="design" name="job_no">
+              <option>직업을 선택해주세요</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -62,26 +71,24 @@
               <option value="6">6</option>
               <option value="7">7</option>
             </select>
- 		1.학생 2.취준생 3.직장인 4.프리랜서 5.자영업자 6.주부 7.기타<br>
+ 	1.학생 &nbsp;2.취준생 &nbsp;3.직장인 &nbsp;4.프리랜서 &nbsp;5.자영업자 &nbsp;6.주부 &nbsp;7.기타<br>
      
         <!-- AGE -->
-    연령대 : 
-            <select id="age_no" name="age_no">
-              <option>선택안함</option>
+   	연령대<select id="age_no" class="design" name="age_no">
+              <option>연령대를 선택해주세요</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-
-            </select>            
-        1.20세 이하 2.21~30세 3.31~40세 4.41~50세 5.51~60세 <br>    
+            </select>                        
+      1.20세 이하 &nbsp;2.21~30세 &nbsp;3.31~40세 &nbsp;4.41~50세 &nbsp;5.51~60세 <br>    
     
         <!-- JOIN BTN-->
         <div class="btn_area">
-          <a href="login.html">
+
              <input type="submit" value="등록">
-			</a>		 
+		 
         </div>
          </form>
       </div>

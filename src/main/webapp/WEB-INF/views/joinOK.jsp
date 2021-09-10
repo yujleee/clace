@@ -17,5 +17,6 @@
 		</c:if>
 		<hr>
 		<a href="index.do">메인</a>
+		<a href="login.do">로그인 하러 가기</a>
 </body>
 </html>
