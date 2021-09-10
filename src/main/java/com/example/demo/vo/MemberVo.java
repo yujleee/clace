@@ -1,6 +1,7 @@
 package com.example.demo.vo;
 
 import java.util.Date;
+import org.springframework.web.multipart.MultipartFile;
 
 public class MemberVo {
 	private int mem_no;
@@ -16,6 +17,8 @@ public class MemberVo {
 	private String mem_gender;
 	private int job_no;
 	private int age_no;
+	
+	private MultipartFile uploadProfileFile;
 	
 	public int getMem_no() {
 		return mem_no;
@@ -95,10 +98,15 @@ public class MemberVo {
 	public void setAge_no(int age_no) {
 		this.age_no = age_no;
 	}
-
+	public MultipartFile getUploadProfileFile() {
+		return uploadProfileFile;
+	}
+	public void setUploadProfileFile(MultipartFile uploadProfileFile) {
+		this.uploadProfileFile = uploadProfileFile;
+	}
 	public MemberVo(int mem_no, String mem_id, String mem_name, String mem_pwd, String mem_nickname, String mem_profile,
 			String mem_phone, String mem_email, String mem_type, Date mem_date, String mem_gender, int job_no,
-			int age_no) {
+			int age_no, MultipartFile uploadProfileFile) {
 		super();
 		this.mem_no = mem_no;
 		this.mem_id = mem_id;
@@ -113,6 +121,7 @@ public class MemberVo {
 		this.mem_gender = mem_gender;
 		this.job_no = job_no;
 		this.age_no = age_no;
+		this.uploadProfileFile = uploadProfileFile;
 	}
 	public MemberVo() {
 		super();
@@ -123,8 +132,7 @@ public class MemberVo {
 		return "MemberVo [mem_no=" + mem_no + ", mem_id=" + mem_id + ", mem_name=" + mem_name + ", mem_pwd=" + mem_pwd
 				+ ", mem_nickname=" + mem_nickname + ", mem_profile=" + mem_profile + ", mem_phone=" + mem_phone
 				+ ", mem_email=" + mem_email + ", mem_type=" + mem_type + ", mem_date=" + mem_date + ", mem_gender="
-				+ mem_gender + ", job_no=" + job_no + ", age_no=" + age_no + "]";
-	}
-	
-	
+				+ mem_gender + ", job_no=" + job_no + ", age_no=" + age_no + ", uploadProfileFile=" + uploadProfileFile
+				+ "]";
+	}	
 }
