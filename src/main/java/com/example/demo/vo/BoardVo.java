@@ -85,5 +85,4 @@ public class BoardVo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
 }

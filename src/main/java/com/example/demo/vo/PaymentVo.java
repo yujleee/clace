@@ -9,6 +9,7 @@ public class PaymentVo {
 	private int pay_amount;
 	private int mem_no;
 	private int lec_no;
+	
 	public int getPay_no() {
 		return pay_no;
 	}

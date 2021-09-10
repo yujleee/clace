@@ -1,10 +1,15 @@
 package com.example.demo.controller;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
+
 import javax.servlet.http.HttpServletRequest;
+
+import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,8 +20,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.dao.LectureDao;
+
 import com.example.demo.vo.CategoryVo;
+
+import com.example.demo.db.MyPageManager;
+
 import com.example.demo.vo.LectureVo;
+import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.ReviewVo;
 
 @Controller
 public class LectureController {
@@ -27,6 +38,7 @@ public class LectureController {
 	public void setDao(LectureDao dao) {
 		this.dao = dao;
 	}
+
 
 	@RequestMapping("/index")
 	public void index() {
