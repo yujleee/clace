@@ -2,6 +2,7 @@ package com.example.demo.dao;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.db.MyPageManager;
@@ -40,6 +41,26 @@ public class MemberDao {
 	
 	public List<ReviewVo> listMyReview(int mem_no){
 		return MyPageManager.listMyReview(mem_no);
+	}
+	
+	public List<LectureVo> listMyLecture(int mem_no){
+		return MyPageManager.listMyLecture(mem_no);
+	}
+
+	public int insertMyReview(ReviewVo r) {
+		return MyPageManager.insertMyReview(r);
+	}
+	
+	public ReviewVo getMyReview(int re_no) {
+		return MyPageManager.getMyReview(re_no);
+	}
+	
+	public int updateMyReview(ReviewVo r) {
+		return MyPageManager.updateMyReview(r);
+	}
+	
+	public int deleteMyReview(int re_no) {
+		return MyPageManager.deleteMyReview(re_no);
 	}
 	
 }

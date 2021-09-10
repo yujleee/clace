@@ -53,108 +53,111 @@
         </nav>
       </div>
     </header>
-
-	<h2>회원정보수정</h2>
-	<form action="updateMemberInfo.do" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="mem_no" value="${m.mem_no }"><br>
-		<input type="hidden" name="mem_profile" value="${m.mem_profile }"><br>
-		
-		<table>
-			<tr>
-				<td>
-					<label for="mem_pwd">비밀번호</label>
-				</td>
-				<td>
-					<input type="text" name="mem_pwd" id="mem_pwd">
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="mem_nickname">닉네임</label>
-				</td>
-				<td>
-					<input type="text" name="mem_nickname" id="mem_nickname">
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="mem_profile">프로필사진</label>
-				</td>
-				<td>
-					<input type="file" name="uploadProfileFile" id="mem_profile" >
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="mem_phone">휴대폰 번호</label>
-				</td>
-				<td>
-					<input type="text" name="mem_phone" id="mem_phone" >
-				</td>
-			</tr>
-			
-			<tr>
-				<td>
-					<label for="mem_email">이메일</label>
-				</td>
-				<td>
-					<input type="text" name="mem_email" id="mem_email" >
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<label for="mem_gender">성별</label>
-				</td>
-				<td>
-				<input type="hidden" name="mem_gender" value="${m.mem_gender }">
-				<select id="mem_gender_data" name="mem_gender_data">
-					<option  value="0">성별선택</option>
-					<option value="male">male</option>
-					<option value="female">female</option>
-				</select>
-				</td>
-			</tr>
+    
+    <div id="updateMemberInfoForm">
+		<h2 id="updateMemberInfo">회 원 정 보 수 정</h2>
+		<form action="updateMemberInfo.do" method="post" enctype="multipart/form-data">
+			  <input type="hidden" name="mem_no" value="${loginM.mem_no }"><br>
+			<!--<input type="hidden" name="mem_profile" value="${loginM.mem_profile }"><br>-->
+			<img  src="/resources/profile/${loginM.mem_profile }" name="mem_profile" width="80" height="80"><br>
+			<table>
 				<tr>
 					<td>
-						<label for="job_no">직업</label>
+						<label for="mem_pwd">비밀번호</label>
 					</td>
 					<td>
-					<input type="hidden" name="job_no" value="${m.job_no }">
-					<select id="job_no_data" name="job_no_data">
-						<option value="0">직업선택</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-					</select><br>
-					1:학생, 2:취준생, 3:직장인, 4:프리랜서, 5:자영업자, 6:주부, 7:기타
-				</td>
+						<input type="text" name="mem_pwd" id="mem_pwd">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label for="mem_nickname">닉네임</label>
+					</td>
+					<td>
+						<input type="text" name="mem_nickname" id="mem_nickname">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label for="mem_profile">프로필사진&nbsp;</label>
+					</td>
+					<td>
+						<input type="file" name="uploadProfileFile" id="mem_profile">
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label for="mem_phone">휴대폰번호&nbsp;</label>
+					</td>
+					<td>
+						<input type="text" name="mem_phone" id="mem_phone" >
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<label for="mem_email">이메일</label>
+					</td>
+					<td>
+						<input type="text" name="mem_email" id="mem_email" >
+					</td>
 				</tr>
 				<tr>
 					<td>
-						<label for="age_no">연령대</label>
+						<label for="mem_gender">성별</label>
 					</td>
 					<td>
-						<input type="hidden" name="age_no" value="${m.age_no }">
-						<select id="age_no_data" name="age_no_data">
-							<option value="0">연령대선택</option>
+					<input type="hidden" name="mem_gender" value="${m.mem_gender }">
+					<select id="mem_gender_data" name="mem_gender_data" class="option">
+						<option  value="0">성별선택</option>
+						<option value="male">male</option>
+						<option value="female">female</option>
+					</select>
+					</td>
+				</tr>
+					<tr>
+						<td>
+							<label for="job_no">직업</label>
+						</td>
+						<td>
+						<input type="hidden" name="job_no" value="${m.job_no }">
+						<select id="job_no_data" name="job_no_data" class="option">
+							<option value="0">직업선택</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
 							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
 						</select><br>
-						1:10대, 2:20대, 3:30대, 4:40대, 5:50대
+						1&nbsp;:&nbsp;학생&nbsp; 2&nbsp;:&nbsp;취준생&nbsp; 3&nbsp;:&nbsp;직장인&nbsp; 4&nbsp;:&nbsp;프리랜서&nbsp; 
+						5&nbsp;:&nbsp;자영업자&nbsp; 6&nbsp;:&nbsp;주부&nbsp; 7&nbsp;:&nbsp;기타
 					</td>
-				</tr>
-		</table>
-		<input type="submit" value="수정하기">
+					</tr>
+					<tr>
+						<td>
+							<label for="age_no">연령대</label>
+						</td>
+						<td>
+							<input type="hidden" name="age_no" value="${m.age_no }">
+							<select id="age_no_data" name="age_no_data" class="option">
+								<option value="0">연령대선택</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+							</select><br>
+							1&nbsp;:&nbsp;10대&nbsp; 2&nbsp;:&nbsp;20대&nbsp; 3&nbsp;:&nbsp;30대&nbsp; 4&nbsp;:&nbsp;40대&nbsp; 5&nbsp;:&nbsp;50대
+						</td>
+					</tr>
+			</table>
+			<input type="submit" value="수정하기" id="updateInfoBtn">
+			</div>
 	</form>
 	 <footer>
       <div class="ftWrap">

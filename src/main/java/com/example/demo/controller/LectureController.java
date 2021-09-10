@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.dao.LectureDao;
+import com.example.demo.db.MyPageManager;
 import com.example.demo.vo.LectureVo;
+import com.example.demo.vo.MemberVo;
+import com.example.demo.vo.ReviewVo;
 
 @Controller
 public class LectureController {
@@ -23,7 +28,13 @@ public class LectureController {
 	}
 	
 	@RequestMapping("/index.do")
-	public void index() {
+	public void index(HttpSession session) {
+		// 실습을 위하여 로그인한 회원을 다음에 객체로 상태유지합니다.
+		// 팀원들과 통합할떄, 삭제해야함
+		int mem_no = 1;
+		MemberVo m = MyPageManager.getMemberInfo(mem_no);
+		System.out.println(" 로그인한 회원:"+m);
+		session.setAttribute("loginM",m);
 	}
 
 	@RequestMapping("/newLecture.do")

@@ -60,20 +60,23 @@
         </nav>
       </div>
     </header>
-	<h2>회원정보</h2>
-	프로필이미지: ${m.mem_profile }
-	<img src="resources/profile/${m.mem_profile }"><br>
-	아이디: ${m.mem_id }<br>
-	비밀번호:  ${m.mem_pwd }<br>
-	이름:  ${m.mem_name }<br>
-	닉네임:  ${m.mem_nickname }<br>
-	휴대폰번호:  ${m.mem_phone }<br>
-	이메일:  ${m.mem_email }<br>
-	성별:  ${m.mem_gender }<br>
-	직업:  ${m.job_no }<br>
-	연령대:  ${m.age_no }<br>
-	<a href="updateMemberInfo.do?mem_no=${m.mem_no }">수정하기</a>
-	<a href="#" onclick="confirmDelete(${m.mem_no})">탈퇴하기</a>
+    
+    <div id="getMemberInfoForm">
+		<h2 id="MemberInfo">  회 원 정 보 </h2>
+			<img src="resources/profile/${m.mem_profile }" height="80" width="80"><br>
+			아이디: ${m.mem_id }<br>
+			비밀번호:  ${m.mem_pwd }<br>
+			이름:  ${m.mem_name }<br>
+			닉네임:  ${m.mem_nickname }<br>
+			휴대폰번호:  ${m.mem_phone }<br>
+			이메일:  ${m.mem_email }<br>
+			성별:  ${m.mem_gender }<br>
+			직업:  ${m.job_no }<br>
+			연령대:  ${m.age_no }<br>
+			<a href="updateMemberInfo.do?mem_no=${m.mem_no }" id="updateInfoBtn">수정하기</a>
+			<a href="#" onclick="confirmDelete(${m.mem_no})" id="deleteInfoBtn">탈퇴하기</a>
+	</div>
+	
 	<footer>
       <div class="ftWrap">
         <h1></h1>

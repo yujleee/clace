@@ -38,7 +38,7 @@
               <a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
             </li>
             <li>
-              <a href="myPage.do"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
+              <a href="myPage.do?mem_no=1"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
             </li>
           </ul>
         </div>
@@ -60,7 +60,7 @@
 	<textarea rows="10" cols="80" readonly="readonly">${b.brd_content }</textarea><br>
 	게시물작성일자: ${b.brd_date }<br>
 	게시물해시태그: ${b.brd_hashtag }<br>
-	<button><a href="myPage.do">마이페이지로 돌아가기</a></button>
+	<button><a href="myPage.do?mem_no=1">마이페이지로 돌아가기</a></button>
 	<footer>
       <div class="ftWrap">
         <h1></h1>

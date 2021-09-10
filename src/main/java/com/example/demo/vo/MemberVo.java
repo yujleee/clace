@@ -18,7 +18,9 @@ public class MemberVo {
 	private String mem_gender;
 	private int job_no;
 	private int age_no;
+	
 	private MultipartFile uploadProfileFile;
+	
 	public int getMem_no() {
 		return mem_no;
 	}
@@ -125,6 +127,14 @@ public class MemberVo {
 	public MemberVo() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "MemberVo [mem_no=" + mem_no + ", mem_id=" + mem_id + ", mem_name=" + mem_name + ", mem_pwd=" + mem_pwd
+				+ ", mem_nickname=" + mem_nickname + ", mem_profile=" + mem_profile + ", mem_phone=" + mem_phone
+				+ ", mem_email=" + mem_email + ", mem_type=" + mem_type + ", mem_date=" + mem_date + ", mem_gender="
+				+ mem_gender + ", job_no=" + job_no + ", age_no=" + age_no + ", uploadProfileFile=" + uploadProfileFile
+				+ "]";
 	}
 	
 }

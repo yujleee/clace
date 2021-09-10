@@ -39,7 +39,7 @@
               <a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
             </li>
             <li>
-              <a href="myPage.do"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
+              <a href="myPage.do?mem_no=1"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
             </li>
           </ul>
         </div>

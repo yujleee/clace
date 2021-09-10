@@ -1,6 +1,7 @@
 package com.example.demo.db;
 
 import java.io.Reader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class MyPageManager {
 			System.out.println("예외발생:"+e.getMessage());
 		}
 	}
+	
 	//회원정보 수정을 위한 정보를 가지고 옴
 	public static MemberVo getMemberInfo(int mem_no) {
 		SqlSession session = factory.openSession();
@@ -78,6 +80,50 @@ public class MyPageManager {
 	public static List<ReviewVo> listMyReview(int mem_no){
 		SqlSession session = factory.openSession();
 		List<ReviewVo> list = session.selectList("mypage.listMyReview",mem_no);
+		session.close();
+		return list;
+	}
+	
+	//나의리뷰 작성하기
+	public static int insertMyReview(ReviewVo r) {
+		//System.out.println("mem_no:"+r.getMem_no());
+		//System.out.println("lec_no:"+r.getLec_no());
+		int re = -1;
+		SqlSession session = factory.openSession(true);
+		re = session.insert("mypage.insertMyReview", r);
+		session.close();
+		return re;
+	}
+		
+	//나의리뷰가지고오기
+	public static ReviewVo getMyReview(int re_no) {
+		SqlSession session = factory.openSession();
+		ReviewVo r = session.selectOne("mypage.getMyReview",re_no);
+		session.close();
+		return r;
+	}
+	
+	//나의리뷰수정하기
+	public static int updateMyReview(ReviewVo r) {
+		SqlSession session = factory.openSession(true);
+		int re = session.update("mypage.updateMyReview", r);
+		session.close();
+		return re;
+	}
+	
+	//리뷰삭제하기
+	public static int deleteMyReview(int re_no) {
+		int re = -1;
+		SqlSession session = factory.openSession(true);
+		re = session.delete("mypage.deleteMyReview", re_no);
+		session.close();
+		return re;
+	}
+		
+	//나의 수강클래스 목록가지고오기
+	public static List<LectureVo> listMyLecture(int mem_no){
+		SqlSession session = factory.openSession();
+		List<LectureVo> list = session.selectList("mypage.listMyLecture",mem_no);
 		session.close();
 		return list;
 	}

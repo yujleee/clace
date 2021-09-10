@@ -121,7 +121,6 @@ section .lectures {
 #wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
 }
 
 #contentheader {
@@ -236,3 +235,49 @@ section .lectures {
 	border-left: solid 1px #eeeeee;
 	border-top: solid 1px #eeeeee;
 }
+#getMemberInfoForm ,#updateMemberInfoForm{
+	width: 1200px;
+	height: 1200px;
+	margin: 0 auto;
+	padding: 120px;
+	font-size: 22px;
+}
+#updateInfoBtn, #deleteInfoBtn, #updateInfoBtn{
+	font-size: 20px;
+	color:#ffffff;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 1px solid;
+	background: #13aa92;	
+}
+#MemberInfo{
+	font-size: 20px;
+	color:#777777;
+}
+#updateMemberInfo{
+	font-size: 30px;
+	color:#777777;
+}
+#input[type="text"]{
+	width: 20px;
+	height: 20px;
+	background-color: #777777;
+	border-radius: 5px;
+}
+#mem_pwd,#mem_nickname,#mem_phone,#mem_email{
+	width: 200px;
+	height: 25px;
+	border-radius: 5px;
+	border: 1px solid;
+	color: #777777;
+	background-color: #ffffff;
+}
+.option{
+	width: 200px;
+	height: 25px;
+	border-radius: 5px;
+	border: 1px solid;
+	color: #777777;
+	background-color: #ffffff;
+}
+

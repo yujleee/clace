@@ -1,5 +1,7 @@
 package com.example.demo.vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ReviewVo {
 	private int re_no;
 	private String re_title;
@@ -9,7 +11,14 @@ public class ReviewVo {
 	private int mem_no;
 	private int lec_no;
 	private String lec_name;
+	private MultipartFile uploadFile;
 	
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
 	public int getRe_no() {
 		return re_no;
 	}
