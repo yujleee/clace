@@ -1,6 +1,4 @@
 $(function () {
-  let addr='';
-  
   $('.slider').bxSlider({
     auto: true,
     speed: 1200,
@@ -9,7 +7,7 @@ $(function () {
     pager: true,
     onSlideBefore: function ($slideElement, oldIndex, newIndex) {
       if ((oldIndex == 0, newIndex == 1)) {
-        $('.bx-wrapper').css('background', '#ff97b7');
+        $('.bx-wrapper').css('background', '#4360ff');
       } else if ((oldIndex == 1, newIndex == 0)) {
         $('.bx-wrapper').css('background', '#e9e5e2');
       }
@@ -18,13 +16,10 @@ $(function () {
   
   //-------------------------------------------------------------메인페이지 슬라이드 배너
 
-  let sections = ['recommand', 'sale', 'new', 'aroundMe'];
+  let sections = ['recommand', 'sale', 'new', 'content', 'aroundMe'];
   let urlName = ['listBestLecture', 'listSaleLecture', 'listNewLecture', 'listAroundMe'];
   
   function listLecture(sectionName, urlName) {
-	if(urlName == 'listAroundMe'){
-		urlName = 'listAroundMe?place='+addr;
-	}
     $.ajax({
       url: urlName,
       method: 'GET',
@@ -69,20 +64,22 @@ $(function () {
   listLecture(sections[2], urlName[2]);
   
   
-	function getLocation() {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-				let lon = position.coords.latitude; //위도
-				let lat = position.coords.longitude; //경도
-				toAddress(lon,lat);
-		    }, function(error) {
-		      console.error(error);
-		    }, {
-		      enableHighAccuracy: false,
-		      maximumAge: 0,
-		      timeout: Infinity
-		    });
-		}
+  function getLocation() {
+	if (navigator.geolocation) { // GPS를 지원하면
+		navigator.geolocation.getCurrentPosition(function(position) {
+			let lon = position.coords.latitude; //위도
+			let lat = position.coords.longitude; //경도
+			toAddress(lon,lat);
+	    }, function(error) {
+	      console.error(error);
+	    }, {
+	      enableHighAccuracy: false,
+	      maximumAge: 0,
+	      timeout: Infinity
+	    });
+	  } else {
+	    alert('현재 위치를 읽어올 수 없습니다.');
+	  }
 	}
 	
 
@@ -95,16 +92,28 @@ $(function () {
 		      'Authorization' : 'KakaoAK a51df8e1d171bf4525d47934c151ed3b'
 		    },
 		    success : function(result) {
+				let addressName = '';
 				let totatlCount = result.meta.total_count; //총 문서 수 
 		    	 if (totatlCount > 0) {
 		            if (result.documents[0].road_address === null) {
-		                addressName = result.documents[0].address.region_1depth_name; //지역(시) 이름 
+		                addressName = result.documents[0].address.region_1depth_name; //시 이름 
 		            } else {
 		                addressName = result.documents[0].road_address.region_1depth_name;
 		            }
 		        }
-		        console.log('주소:' + addressName);
-		        addr = addressName;
+		        console.log(addressName);
+		        
+		        $.ajax({
+					url:'/listAroundMe',
+					type: 'POST',
+					data: {place: addressName},
+					success: function (data) {
+						listLecture(sections[3], urlName[3]);
+					}, 
+					error : function(e) {
+		     			console.log(e);
+		    		}
+				});
 		    },
 		    error : function(e) {
 		      console.log(e);
@@ -112,14 +121,9 @@ $(function () {
 		});
 	}
 	
-	
 	const aroundDiv = document.querySelector(".around");
 	aroundDiv.addEventListener("click", function(){
-				getLocation();
-				setTimeout(function(){
-					$(".around").css("display", "none");
-					listLecture(sections[3], urlName[3]);
-				},4000);
+		getLocation();
 		
 	});
 	
