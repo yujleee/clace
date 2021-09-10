@@ -45,3 +45,7 @@ p {
   color: #555;
   margin: 1em 0;
 }
+
+button{
+	cursor: pointer;
+}

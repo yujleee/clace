@@ -17,11 +17,8 @@
 	<resultMap type="paymentVo" id="paymentMap">
 		<id property="pay_no" column="pay_no" />
 	</resultMap> 
-<!-- <select id="findAll" resultType="lectureVo">
- 	select * from lecture
-</select>
- -->
-  <select id="listBestLecture" resultMap="listBestlectureMap">
+
+  <select id="mainBestLecture" resultMap="listBestlectureMap">
 	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no
 	from lecture l, (select l.lec_no, nvl(count(pay_no),0) cnt 
 	from payment p right join lecture l on l.lec_no = p.lec_no 
@@ -29,19 +26,122 @@
 	where l.lec_no = pay.lec_no order by pay.cnt desc
   </select>
   
-  <select id="listSaleLecture" resultType="lectureVo">
+  <select id="mainSaleLecture" resultType="lectureVo">
   	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no 
 	from lecture l where lec_sale > 0 order by lec_sale desc
   </select>
   
-  <select id="listNewLecture" resultType="lectureVo">
+  <select id="mainNewLecture" resultType="lectureVo">
   	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no 
 	from lecture l order by lec_reg desc
   </select>
   
-  <select id="listAroundMe" resultType="lectureVo">
+  <select id="mainAroundMe" resultType="lectureVo">
   	select lec_image, lec_name, lec_price, lec_sale, lec_grade, lec_no  
   	from lecture where lec_place like '%'||#{place}||'%'
   </select>
+  
+  <select id="getTotalLecture" resultType="int">
+  	select count(*) from lecture
+  </select> 
+  
+  <select id="getTotalSaleLecture" resultType="int">
+  	select count(*) from lecture where lec_sale > 0
+  </select> 
+  
+  <select id="getTotalRecommandLecture" resultType="int">
+  	select count(*) from lecture 
+  	where (age_no = #{age_no} or job_no= #{job_no} or lec_gender= #{lec_gender})
+  </select> 
+  
+  <select id="getTotalCategoryLecture" resultType="int">
+  	select count(*) from lecture l, category 
+	where l.lec_category=cate_no and cate_title=#{category}
+  </select> 
+  
+  <select id="getTotalSearchLecture" resultType="int"> 
+  	select count(*) from lecture l, member m, creator c, category cate
+	where l.cr_no = c.cr_no and l.lec_category = cate.cate_no and
+	c.mem_no = m.mem_no and (m.mem_nickname like '%'||#{keyword}||'%'
+	or lec_name like '%'||#{keyword}||'%' or lec_place like '%'||#{keyword}||'%' or 
+	lec_content like '%'||#{keyword}||'%' or lec_hashtag like '%'||#{keyword}||'%' or
+	cate_title like '%'||#{keyword}||'%')
+  </select>
+  
+  
+  <select id="listBestLecture" resultMap="listBestlectureMap">
+  	select l.lec_no, l.lec_name, l.lec_price, l.lec_sale, l.lec_grade, l.lec_image
+	from lecture l, (select l.lec_no, nvl(count(pay_no),0) cnt 
+	from payment p right join lecture l on l.lec_no = p.lec_no 
+	group by l.lec_no order by cnt desc) pay,
+	(select rownum n, lec_no from (select * from lecture order by lec_no))page 
+	where l.lec_no = pay.lec_no and l.lec_no = page.lec_no and 
+	n between #{start} and #{end} order by pay.cnt desc
+  </select>
+  
+  <select id="listSaleLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no 
+	from lecture l, (select rownum n, lec_no from (select * from lecture order by lec_no))page 
+	where l.lec_no = page.lec_no and n between #{start} and #{end} and lec_sale > 0 order by lec_sale desc
+  </select>
+  
+  <select id="listNewLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no
+	from lecture l,  (select rownum n, lec_no from (select * from lecture order by lec_reg desc))page  
+	where l.lec_no = page.lec_no and n between #{start} and #{end} order by lec_reg desc
+  </select>
+  
+  <select id="listRecommandLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no
+	from lecture l, (select rownum n, lec_no from (select * from lecture order by lec_no))page 
+	where l.lec_no = page.lec_no and n between #{start} and #{end} and (age_no = #{age_no} or job_no= #{job_no} or lec_gender= #{lec_gender})
+  </select>
+  
+ <!--  <select id="listMaxLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no 
+	from lecture l, (select rownum n, lec_no from (select * from lecture order by lec_no))page  
+	where l.lec_no = page.lec_no and n between #{start} and #{end} order by lec_price desc
+  </select>
+  
+  <select id="listMinLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no 
+	from lecture l, (select rownum n, lec_no from (select * from lecture order by lec_no))page  
+	where l.lec_no = page.lec_no and n between #{start} and #{end} order by lec_price desc
+  </select>
+  
+  <select id="listReviewLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade
+	from lecture l, (select l.lec_no, nvl(count(re_no),0) cnt
+	from review r right join lecture l on r.lec_no = l.lec_no
+	group by l.lec_no order by cnt desc) rw, 
+	(select rownum n, lec_no from (select * from lecture order by lec_no))page  
+	where l.lec_no = rw.lec_no and l.lec_no = page.lec_no and n between #{start} and #{end} order by rw.cnt desc
+  </select> -->
+  
+  <select id="searchLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade
+	from member m, lecture l, creator c, category cate,
+	(select l.lec_no, nvl(count(pay_no),0) cnt from payment p right join lecture l 
+	on l.lec_no = p.lec_no group by l.lec_no order by cnt desc) pay,
+	(select rownum n, lec_no from (select * from lecture order by lec_reg desc))page 
+	where l.lec_no = page.lec_no and n between #{start} and #{end} and 
+	l.lec_no = pay.lec_no and l.cr_no = c.cr_no and l.lec_category = cate.cate_no and
+	c.mem_no = m.mem_no and (m.mem_nickname like '%'||#{keyword}||'%'
+	or lec_name like '%'||#{keyword}||'%' or lec_place like '%'||#{keyword}||'%' or 
+	lec_content like '%'||#{keyword}||'%' or lec_hashtag like '%'||#{keyword}||'%' or
+	 cate_title like '%'||#{keyword}||'%') order by pay.cnt desc
+  </select>
+  
+	<select id="listCategory" resultType="categoryVo">
+		select cate_title from category
+	</select>
+	
+	<select id="categoryLecture" resultType="lectureVo">
+		select lec_image, lec_name, lec_price, lec_sale, lec_grade
+		from lecture l, category cate, (select rownum n, lec_no from 
+		(select * from lecture order by lec_no))page 
+		where l.lec_category = cate.cate_no and l.lec_no = page.lec_no 
+		and cate_title= #{category} and n between #{start} and #{end}
+	</select>
   
 </mapper>
