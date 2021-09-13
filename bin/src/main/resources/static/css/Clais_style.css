@@ -1,0 +1,204 @@
+@charset "EUC-KR";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Noto Sans KR;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 21px;
+}
+
+.login_section {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login_input > input {
+  width: 465px;
+  height: 48px;
+  border: solid 1px #ccc;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.login-button {
+  padding-top: 13px;
+}
+.login-button input {
+  width: 465px;
+  height: 60px;
+  font-size: 18px;
+  background: #13aa92;
+  color: white;
+  border: solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.login-button button:hover {
+  background-color: #08917b;
+}
+
+.find_id_password span {
+  padding-left: 5px;
+  line-height: 25px;
+}
+
+.Easy_login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  margin-bottom: 50px;
+}
+.Easy_login h2 {
+  font-size: 20px;
+}
+.Easy_login .sign_button_list {
+  padding-top: 24px;
+  list-style: none;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Easy_login > button {
+  width: 400px;
+  height: 60px;
+  border: solid 1px;
+  text-align: left;
+  background: #eee;
+  border: none;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Easy_login button img {
+  display: block;
+  margin: auto;
+}
+
+.Easy_login .kakao {
+  background: #fee500;
+}
+
+.Easy_login .naver {
+  background: #03c75a;
+}
+
+.Easy_login .google {
+  background: #4285f4;
+}
+
+.find_id_password {
+  cursor: pointer;
+  font-size: 14px;
+  padding-top: 10px;
+  color: #777;
+}
+
+.find_id_password a {
+  color: #777;
+}
+
+/* payment css */
+
+#payment {
+  width: 100%;
+}
+
+#paymentWrap {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+article {
+  margin-bottom: 50px;
+}
+
+article div > input[type|='text'] {
+  width: 300px;
+  height: 44px;
+  border: 1px solid #ccc;
+  margin: 4px 0 30px 0;
+}
+
+.order_info .infoWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.order_info .infoWrap .lec_img {
+  margin-right: 1em;
+}
+
+.payment_method .payment_btn {
+  padding-top: 25px;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.payment_method .payment_btn li {
+  width: 200px;
+  height: 56px;
+  color: #555;
+  text-align: center;
+  line-height: 56px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.payment_method .payment_btn li:nth-child(3) {
+  background: #00c73c;
+}
+.payment_method .payment_btn li:last-child {
+  background: #ffeb00;
+}
+
+.payment_method .payment_btn li:last-child img {
+  padding-top: 14px;
+}
+
+.payment_button {
+  padding-top: 13px;
+  text-align: center;
+}
+.payment_button button {
+  width: 465px;
+  height: 60px;
+  font-size: 18px;
+  background: #13aa92;
+  color: white;
+  border: solid 1px;
+  border-radius: 5px;
+}
+.payment_button button:hover {
+  background-color: #08917b;
+}
+
+.payment p,
+.payment h4 {
+  padding-left: 20px;
+}
+.payment span {
+  float: right;
+  padding-right: 20px;
+}
+.payment .total {
+  height: 50px;
+  background: #f5f5f5;
+  line-height: 50px;
+}

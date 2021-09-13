@@ -1,0 +1,172 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h2,
+h3,
+h4 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+.lectures .lecture h4{
+  font-size: 18px;
+  color: #13aa92;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin: 1em 0;
+}
+
+#content {
+  width: 100%;
+  height: auto;
+}
+
+#content .wrap {
+  width: 1000px;
+  margin: 30px auto;
+}
+
+#content .title {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#sort {
+  width: 80px;
+  height: 20px;
+  border: none;
+}
+
+section .lectures {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.lectures .lecture {
+  width: 240px;
+  margin-bottom: 70px;
+  margin-right: 10px;
+}
+
+.lectures .lecture:nth-child(n/4){
+	margin-right: 0;
+}
+
+.lectures .lecture .img_lecture {
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.lectures .lecture:hover .img_lecture > img {
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
+.lectures .lecture p {
+  width: 100%;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #555;
+}
+
+.lectures .lecture h4 {
+  margin-bottom: 1em;
+}
+
+.lecture .star > img {
+  padding-top: 1px;
+}
+
+.lecture .star .rw_total {
+  font-size: 14px;
+  color: #777;
+  margin-left: 4px;
+  padding-bottom: 10px;
+}
+
+.pager {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+}
+
+.pager > span {
+  width: 30px;
+  height: 30px;
+  color: #777;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.pager > span:nth-child(2) {
+  color: #13aa92;
+}
+
+/*------------------------------------------------------------------------------ */
+
+
+/*카테고리*/
+.cateList{
+	width: 100%;
+	height: 120px;
+	margin: 40px 0;
+	border-bottom: 1px solid #eee;
+}
+
+cateList ul{
+	list-style: none;
+}
+
+.cateList ul li{
+	float: left;
+	margin: 0 1em 1em 0;
+	padding: 4px 10px;
+	height: 1.3em;
+	line-height: 1.3em;
+	border: 1px solid #ccc;
+	border-radius: 1.3em;
+}
+
+.cateList ul li a{
+	display: block;
+	font-size: 1.1em;
+	color: #777;
+	cursor: pointer;
+}
+
+.cateList ul li:hover{
+	background: #13aa92;
+	border-color: #13aa92;
+}
+
+.cateList ul li:hover > a{
+	color: #fff;
+} 
+
+.cateList .on{
+	background: #13aa92;
+	border-color: #13aa92;
+	color:#fff;
+}

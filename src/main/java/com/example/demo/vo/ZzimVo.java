@@ -4,7 +4,6 @@ public class ZzimVo {
 	private int zzim_no;
 	private int mem_no;
 	private int lec_no;
-	
 	public int getZzim_no() {
 		return zzim_no;
 	}
@@ -33,4 +32,7 @@ public class ZzimVo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	
 }
