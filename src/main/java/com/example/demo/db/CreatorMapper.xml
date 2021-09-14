@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="creator">
+
+
+  <select id="getMemberInfo" resultType="memberVo">
+    select mem_no,mem_id,mem_name,mem_pwd,mem_nickname,mem_profile,mem_phone,
+    mem_email,mem_type,mem_date,mem_gender,job_no,age_no
+    from member where mem_no=#{mem_no}
+  </select>
+  
+   <select id="getCreatorInfo" resultType="creatorVo">
+    select cr_no, cr_bsname, cr_bsno, cate_no, cr_info, mem_no
+    from creator where mem_no=#{mem_no}
+  </select>
+  
+  
+  <update id="updateCreatorInfo" parameterType="creatorVo">
+  	update creator set cr_bsname=#{cr_bsname},cr_bsno=#{cr_bsno},
+  	cate_no=#{cate_no},cr_info=#{cr_info}
+  	where mem_no=#{mem_no}
+  </update>
+  
+ 
+   <select id="categoryList" resultType="categoryVo">
+  	select cate_no, cate_title from category
+  </select>
+  
+  <select id="jobList" resultType="jobVo">
+  	select job_no, job_title from job
+  </select>
+  
+  <select id="ageList" resultType="ageVo">
+  	select age_no, age_group from age
+  </select>
+  
+</mapper>

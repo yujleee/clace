@@ -24,14 +24,6 @@
       <div class="wrap">
         <div class="title">
           <h3>특가 할인 클래스</h3>
-          <form>
-            <select name="sort" id="sort">
-              <option value="popular">인기순</option>
-              <option value="maxr">최고가순</option>
-              <option value="popular">최저가순</option>
-              <option value="review">후기순</option>
-            </select>
-          </form>
         </div>
         <div class="lectures">
         	<c:forEach var="l" items="${list }">
@@ -54,7 +46,7 @@
         </div>
         <div class="pager">
           	<c:forEach var="i" begin="1" end="${totalPage }">
-				<a href="saleLecture?pageNum=${i }">${i }</a>&nbsp;
+				<span><a href="saleLecture?pageNum=${i }">${i }</a></span>
 			</c:forEach>
         </div>
       </div>

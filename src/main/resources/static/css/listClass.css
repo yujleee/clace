@@ -111,17 +111,21 @@ section .lectures {
   text-align: center;
 }
 
-.pager > span {
+.pager span a{
   width: 30px;
   height: 30px;
   color: #777;
+  border: 1px solid #ccc;
+  border-radius: 50%;
   display: inline-block;
   margin: 0 10px;
+  padding-top: 4px;
   cursor: pointer;
 }
 
-.pager > span:nth-child(2) {
+.pager span a:hover {
   color: #13aa92;
+  border: 1px solid #13aa92;
 }
 
 /*------------------------------------------------------------------------------ */

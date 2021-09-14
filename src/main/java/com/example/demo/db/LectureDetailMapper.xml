@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="detail">
+  <select id="getLecture" resultType="lectureVo">
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, lec_no, lec_content, lec_start, lec_end from lecture where lec_no=#{lec_no}
+  </select>
+  
+  <select id="getCreator" resultType="creatorVo">
+	select c.cr_no, mem_profile, mem_nickname from creator c, member m, lecture l where c.mem_no=m.mem_no and l.cr_no=c.cr_no and lec_no=#{lec_no}
+	</select>
+	
+	<select id="getReview" resultType="reviewVo">
+	select re_no, re_title, re_conent, re_grade, re_img, lec_no, mem_nickname from review r, member m where m.mem_no=r.mem_no and lec_no=#{lec_no}	
+	</select>
+	
+	<select id="getReviewCount" resultType="int">
+	select count(*) from review where lec_no=#{lec_no}	
+	</select>
+	
+	<select id="getAsk" resultType="askVo">
+	select ask_no, ask_title, ask_content, ask_date, ask_open_close, ask_status, mem_nickname from ask a, member m where a.mem_no=m.mem_no and lec_no=#{lec_no}
+	</select>
+	
+	<select id="getZzimCount" resultType="int">
+	select count(*) from zzim where lec_no=#{lec_no}	
+	</select>
+	
+	<insert id="registerZzim" parameterType="zzimVo">
+	insert into zzim(zzim_no, mem_no, lec_no) values(zzim_no.nextval, 1, #{lec_no})
+	</insert>
+	
+	<select id="getZzim" resultType="zzimVo">
+	select zzim_no from zzim where lec_no=#{lec_no} and mem_no=1	
+	</select>
+	
+	<delete id="deleteZzim">
+	delete zzim where lec_no=#{lec_no} and mem_no=1
+	</delete>
+
+</mapper>

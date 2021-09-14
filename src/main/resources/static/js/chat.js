@@ -1,7 +1,9 @@
 $(function() {
+
 	$("#fixed").click(function() {
 		$("#chat").css({ 'display': 'block' });
 		$("#chat").animate({ 'right': '8%' }, { 'duration': '1000' });
+		connect();
 	});
 
 	$(".btnSend").click(function() {
@@ -16,25 +18,31 @@ $(function() {
 	$(".btnClose").click(function(){
 		$("#chat").animate({ 'right': '-30%' }, { 'duration': '1000' })
 		.css({ 'display': 'none' });
+		webSocket.close();
+	})
+
+	let webSocket = null;
+	function connect(){
+		
+		webSocket = new WebSocket("ws://" + location.host + "/chat");
+		webSocket.onopen = function(e) {
+			//소켓 오픈시 초기화
+			console.log("socket on");
+	
+		};
+	
+		webSocket.onmessage = onMessage;
+	
+		webSocket.onerror = function(e) {
+			console.log(e);
+		}
+	
 		webSocket.onclose = function(){
 			console.log("socket off");
 		};
-	})
-
-
-	const webSocket = new WebSocket("ws://" + location.host + "/chatting");
-	webSocket.onopen = function(e) {
-		//소켓 오픈시 초기화
-		console.log("socket on");
-
-	};
-
-	webSocket.onmessage = onMessage;
-
-	webSocket.onerror = function(e) {
-		console.log(e);
 	}
 
+	
 	function onMessage(data) {
 		let sendingData = data.data;
 		console.log(`onMessage: ${sendingData}`);
@@ -67,8 +75,8 @@ $(function() {
 			send(); //엔터누르면 전송
 			console.log("전송 동작");
 		}
-	});
-*/
+	}); */
+
 	function send() {
 		let msg = $("#msg").val();
 		//webSocket.send(`${userName}:${msg}`);
@@ -76,6 +84,5 @@ $(function() {
 		$("#msg").val("");
 		console.log(`보낸 메세지: ${msg}`);
 	}
-
 
 });

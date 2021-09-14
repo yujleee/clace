@@ -51,7 +51,7 @@ public class MemberController {
 			MemberVo m = dao.getMember(mem_id);
 			System.out.println("로그인한 사용자:"+m);
 			session.setAttribute("loginM", m);
-			mav.setViewName("redirect:/loginOK.do");
+			mav.setViewName("redirect:/index");
 		}else {
 			mav.setViewName("redirect:/login.do");
 		}
@@ -60,7 +60,7 @@ public class MemberController {
 	
 	@RequestMapping("/logout.do")
 	public ModelAndView logout(HttpSession session) {
-		ModelAndView mav = new ModelAndView("redirect:/index.do");
+		ModelAndView mav = new ModelAndView("redirect:/index");
 		session.invalidate();
 		return mav;
 		

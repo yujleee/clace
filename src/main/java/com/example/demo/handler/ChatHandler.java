@@ -61,7 +61,5 @@ public class ChatHandler extends TextWebSocketHandler {
 		sessionMap.remove(session.getId());
 	}
 	
-	
-	
-	
+
 }

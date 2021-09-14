@@ -11,6 +11,13 @@
   	<typeAlias type="com.example.demo.vo.MemberVo" alias="memberVo"/>
   	<typeAlias type="com.example.demo.vo.BoardVo" alias="boardVo"/>
   	<typeAlias type="com.example.demo.vo.ReviewVo" alias="reviewVo"/>
+  	<typeAlias type="com.example.demo.vo.CreatorVo" alias="creatorVo"/>
+  	<typeAlias type="com.example.demo.vo.JobVo" alias="jobVo"/>
+  	<typeAlias type="com.example.demo.vo.AgeVo" alias="ageVo"/>
+  	<typeAlias type="com.example.demo.vo.AskVo" alias="askVo"/>
+  	<typeAlias type="com.example.demo.vo.ZzimVo" alias="zzimVo"/>
+  	<typeAlias type="com.example.demo.vo.AnswerVo" alias="answerVo"/>
+  	<typeAlias type="com.example.demo.vo.BookmarkVo" alias="bookmarkVo"/>
   </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -28,7 +35,10 @@
     <mapper resource="com/example/demo/db/MemberMapper.xml"/>
     <mapper resource="com/example/demo/db/BoardMapper.xml"/>
     <mapper resource="com/example/demo/db/PaymentMapper.xml"/>
-     <mapper resource="com/example/demo/db/MyPageMapper.xml"/>
+    <mapper resource="com/example/demo/db/MyPageMapper.xml"/>
+    <mapper resource="com/example/demo/db/CreatorMapper.xml"/>
+    <mapper resource="com/example/demo/db/LectureDetailMapper.xml"/>
+    <mapper resource="com/example/demo/db/AskDetailMapper.xml"/>
   </mappers>
   
 </configuration>

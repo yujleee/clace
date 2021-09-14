@@ -1,16 +1,5 @@
 @charset "EUC-KR";
 
-#logo {
-  width: 200px;
-  height: 50px;
-  cursor: pointer;
-}
-
-#header {
-  padding-top: 62px;
-  padding-bottom: 20px;
-  text-align: center;
-}
 
 #wrapper {
   width: 840px;
@@ -23,7 +12,7 @@
   height: 400px;
   margin-bottom: 30px;
 }
-#img_box {
+.img_box {
   width: 400px;
   height: 400px;
   left: 0%;

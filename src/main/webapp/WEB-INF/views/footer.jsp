@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/hd_ft.css" />
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
 	 <footer>

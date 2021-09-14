@@ -24,14 +24,6 @@
       <div class="wrap">
         <div class="title">
           <h3>'${keyword }' 검색 결과</h3>
-          <form>
-            <select name="sort" id="sort">
-              <option value="popular">인기순</option>
-              <option value="max">최고가순</option>
-              <option value="popular">최저가순</option>
-              <option value="review">후기순</option>
-            </select>
-          </form>
         </div>
         <div class="lectures">
         	<c:forEach var="l" items="${list }">
@@ -54,8 +46,7 @@
         </div>
         <div class="pager">
           	<c:forEach var="i" begin="1" end="${totalPage }">
-				<!-- 상태유지한 TotalPage까지 페이지번호 출력-->
-				<a href="searchLecture?pageNum=${i }">${i }</a>&nbsp;
+				<span><a href="searchLecture?pageNum=${i }">${i }</a></span>
 			</c:forEach>
         </div>
       </div>

@@ -89,18 +89,6 @@ public class LectureDao {
 		return LectureManager.listRecommand(map);
 	}
 	
-	public List<LectureVo> listMax(HashMap map){
-		return LectureManager.listMax(map);
-	}
-	
-	public List<LectureVo> listMin(HashMap map){
-		return LectureManager.listMin(map);
-	}
-	
-	public List<LectureVo> listReview(HashMap map){
-		return LectureManager.listReview(map);
-	}
-	
 	public List<LectureVo> searchLecture(HashMap map){
 		return LectureManager.searchLecture(map);
 	}

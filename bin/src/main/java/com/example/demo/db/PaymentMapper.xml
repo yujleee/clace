@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="payment">
+
+  
+  <select id="getPayment" resultType="paymentVo">
+  	select * from payment where mem_no=#{mem_no}
+  </select>
+  
+  <insert id="insertPayment" parameterType="paymentVo">
+  	insert into payment(pay_no,pay_type, pay_time, pay_amount, mem_no, lec_no) 
+  	values(#{pay_no},#{pay_type},sysdate,#{pay_amount},#{mem_no},#{lec_no})  
+  </insert>
+  
+  <select id="getPay_no" resultType="int">
+ 	 select nvl(max(pay_no),0)+1 from payment
+  </select>
+</mapper>

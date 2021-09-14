@@ -10,9 +10,18 @@ public class ReviewVo {
 	private String re_img;
 	private int mem_no;
 	private int lec_no;
+	private String mem_nickname;
 	private String lec_name;
 	private MultipartFile uploadFile;
 	
+	
+	
+	public String getMem_nickname() {
+		return mem_nickname;
+	}
+	public void setMem_nickname(String mem_nickname) {
+		this.mem_nickname = mem_nickname;
+	}
 	public MultipartFile getUploadFile() {
 		return uploadFile;
 	}
@@ -67,8 +76,11 @@ public class ReviewVo {
 	public void setLec_name(String lec_name) {
 		this.lec_name = lec_name;
 	}
+	
+	
+	
 	public ReviewVo(int re_no, String re_title, String re_conent, int re_grade, String re_img, int mem_no, int lec_no,
-			String lec_name) {
+			String mem_nickname, String lec_name, MultipartFile uploadFile) {
 		super();
 		this.re_no = re_no;
 		this.re_title = re_title;
@@ -77,7 +89,9 @@ public class ReviewVo {
 		this.re_img = re_img;
 		this.mem_no = mem_no;
 		this.lec_no = lec_no;
+		this.mem_nickname = mem_nickname;
 		this.lec_name = lec_name;
+		this.uploadFile = uploadFile;
 	}
 	public ReviewVo() {
 		super();
