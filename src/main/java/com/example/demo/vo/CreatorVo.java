@@ -5,8 +5,16 @@ public class CreatorVo {
 	private String cr_bsname;
 	private String cr_bsno;
 	private String cr_info;
+	private String mem_nickname;
 	private int mem_no;
 	
+	
+	public String getMem_nickname() {
+		return mem_nickname;
+	}
+	public void setMem_nickname(String mem_nickname) {
+		this.mem_nickname = mem_nickname;
+	}
 	public int getCr_no() {
 		return cr_no;
 	}
@@ -37,12 +45,14 @@ public class CreatorVo {
 	public void setMem_no(int mem_no) {
 		this.mem_no = mem_no;
 	}
-	public CreatorVo(int cr_no, String cr_bsname, String cr_bsno, String cr_info, int mem_no) {
+	
+	public CreatorVo(int cr_no, String cr_bsname, String cr_bsno, String cr_info, String mem_nickname, int mem_no) {
 		super();
 		this.cr_no = cr_no;
 		this.cr_bsname = cr_bsname;
 		this.cr_bsno = cr_bsno;
 		this.cr_info = cr_info;
+		this.mem_nickname = mem_nickname;
 		this.mem_no = mem_no;
 	}
 	public CreatorVo() {

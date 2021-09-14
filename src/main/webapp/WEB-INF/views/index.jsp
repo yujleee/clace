@@ -26,7 +26,7 @@
 	<header>
 		<div id="nevUser">
 			<div class="headerwrap">
-				<span class="login"><a href="#">로그인/회원가입</a></span>
+				<span class="login"><a href="login.do">로그인/회원가입</a></span>
 				<div class="userLogin">
 					<span class="currentUser">ㅇㅇ(hi00)님</span>
 					<span class="logout"><a href="#">로그아웃</a></span>
@@ -72,7 +72,7 @@
 			<nav>
 				<ul>
 					<li class="menu"></li>
-					<li><a href="recommandLecture?age=2&gender=2&job=3">추천 클래스</a></li>
+					<li><a href="recommandLecture">추천 클래스</a></li>
 					<li><a href="saleLecture">특가 할인</a></li>
 					<li><a href="bestLecture">핫한 클래스</a></li>
 					<li><a href="newLecture">새로운 클래스</a></li>
@@ -82,7 +82,7 @@
 	</header>
 	<!-- end header-->
 	<div id="fixed">
-		<img src="images/main/btn_talk.png" alt="실시간 문의" />
+		<img src="images/main/btn_talk.png" alt="실시간 채팅" />
 	</div>
 	<div id="btn_top">
 		<a href="#navTop" class="topBtn"><img
@@ -91,7 +91,7 @@
 	<!-- end buttons-->
 	<div id="chat">
 		<div class="chatTop">
-			<h4>실시간 문의</h4>
+			<h4>실시간 채팅</h4>
 			<button class="btnClose"><img src="images/main/btn_chatClose.png" width="80%" alt="창닫기" /></button>
 		</div>
 		<div class="showMsg"></div>

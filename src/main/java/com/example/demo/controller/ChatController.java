@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@ServerEndpoint("/chatting")
+@ServerEndpoint("/chat")
 public class ChatController {
 	private static final List<Session> session = new ArrayList<Session>();
-	//private final SimpMessagingTemplate simpMessagingTemplate;
 	
 	@RequestMapping("/chat")
 	@ResponseBody

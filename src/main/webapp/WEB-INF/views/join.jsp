@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
     <title>회원가입</title>
-    <link rel="stylesheet" href="css/join.css" />
     <link rel="stylesheet" href="css/hd_ft.css" />
+    <link rel="stylesheet" href="css/join.css" />
   </head>
   <body>
    	<%@ include file = "header.jsp" %>

@@ -1,0 +1,32 @@
+.lectures .lecture h4 {
+	font-size: 18px;
+	color: #13aa92;
+}
+
+p {
+	font-size: 16px;
+	color: #555;
+	margin: 1em 0;
+}
+
+#content {
+	width: 100%;
+	height: auto;
+}
+
+#content .wrap {
+	width: 1000px;
+	height: 400px;
+	margin: 30px auto;
+}
+
+#content h4 {
+	margin: 100px 0 50px;
+	text-align: center;
+}
+
+#content .img{
+	width: 200px;
+	height: 200px;
+	margin: 30px auto 0;
+}

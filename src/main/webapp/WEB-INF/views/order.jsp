@@ -146,7 +146,7 @@
 	<title>클레이스</title>
 </head>
 <body>
- 	      <header>
+ <header>
       <div class="headerwrap">
         <div id="navTop">
           <h1>

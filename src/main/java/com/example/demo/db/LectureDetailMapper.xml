@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="getReview" resultType="reviewVo">
-	select re_no, re_title, re_content, re_grade, re_img, lec_no, mem_nickname from review r, member m where m.mem_no=r.mem_no and lec_no=#{lec_no}	
+	select re_no, re_title, re_conent, re_grade, re_img, lec_no, mem_nickname from review r, member m where m.mem_no=r.mem_no and lec_no=#{lec_no}	
 	</select>
 	
 	<select id="getReviewCount" resultType="int">

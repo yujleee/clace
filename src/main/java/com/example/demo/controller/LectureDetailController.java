@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +34,7 @@ public class LectureDetailController {
 		this.dao = dao;
 	}
 
-	@RequestMapping(value={"/detailLecture.do","/zzimOk.do","/unZzimOk.do"})
+	@RequestMapping(value="/detailLecture.do")
 	public void detailLecture(int lec_no, Model model) {
 		model.addAttribute("l", dao.getLecture(lec_no));
 		model.addAttribute("c", dao.getCreator(lec_no));
@@ -45,7 +47,8 @@ public class LectureDetailController {
 	}
 	
 	@RequestMapping(value="/zzimOk.do", method = RequestMethod.GET)
-	public ModelAndView zzim(ZzimVo z) {
+	public ModelAndView zzim(ZzimVo z, HttpSession session) {
+		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
 		ModelAndView mav = new ModelAndView();
 		int re = dao.registerZzim(z);
 		if(re != 1) {
@@ -56,7 +59,8 @@ public class LectureDetailController {
 	}
 	
 	@RequestMapping(value="/unZzimOk.do" ,method = RequestMethod.GET)
-	public ModelAndView unZzim(ZzimVo z) {
+	public ModelAndView unZzim(ZzimVo z, HttpSession session) {
+		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
 		ModelAndView mav = new ModelAndView();
 		int re = dao.deleteZzim(z);
 		if(re != 1) {
