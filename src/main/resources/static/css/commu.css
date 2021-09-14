@@ -112,3 +112,19 @@ input {
 /*input:hover {
   background-color: #08917b;
 }*/
+
+<!--	-->
+.commuWrap .Page_view {
+  padding-top: 30px;
+  text-align: center;
+}
+.btnWrap button {
+  background-color: #f5f5f5;
+  width: 80px;
+  height: 26px;
+  margin: 15px;
+  border-radius: 5px;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}

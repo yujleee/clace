@@ -14,6 +14,7 @@
 </head>
 <body>
 	<%@ include file = "header.jsp" %>
+	
 	<!-- end header -->
 
     <div id="fixed"><img src="images/main/btn_talk.png" alt="실시간 문의" /></div>

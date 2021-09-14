@@ -16,8 +16,9 @@
 	<c:if test="${empty loginM }">
 		<a href="/login.do">로그인</a>
 	</c:if>
+	
 	<h2>clace </h2>
-	<a href="/index.do">메인으로 돌아가기</a>
+	<a href="/index">메인으로 돌아가기</a>
 	<hr>
 
 
