@@ -18,14 +18,16 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<h3>리뷰 상세</h3>
-    리뷰번호:${r.re_no }<br> 
-	리뷰제목:${r.re_title }<br>
-	리뷰내용:${r.re_conent }<br>
-	리뷰평점:${r.re_grade }<br>
+<div id="MyReviewForm">
+	<h3 id="myReview">리뷰</h3>
+    리뷰번호&nbsp;:&nbsp;${r.re_no }<br> 
+	리뷰제목&nbsp;:&nbsp;${r.re_title }<br>
+	리뷰내용&nbsp;:&nbsp;${r.re_conent }<br>
+	리뷰평점&nbsp;:&nbsp;${r.re_grade }<br>
 	<img src="resources/profile/${r.re_img }" width="200" height="200"><br>
-	<a href="listMyReview.do">리뷰 목록</a>
-	<a href="updateMyReview.do?re_no=${r.re_no }">리뷰 수정</a>
+	<a href="listMyReview.do" id="backReviewListBtn">리뷰 목록</a>
+	<a href="updateMyReview.do?re_no=${r.re_no }" id="updateReviewBtn">리뷰 수정</a>
+</div>
 	<%@include file="footer.jsp" %>
 </body>
 </html>

@@ -28,10 +28,11 @@
               <a href="#"><img src="images/main/ic_home.png" alt="강사홈" /></a>
             </li>
             <li>
-              <a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
+              <a href="listMyZzimLecture.do"><img src="images/main/ic_zzim.png" alt="찜" /></a>
             </li>
             <li>
-              <a href="#"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
+              <a href="myPage.do"><img src="/resources/profile/${loginM.mem_profile }" 
+              						   alt="마이페이지" width="45" height="45"/></a>
             </li>
           </ul>
         </div>

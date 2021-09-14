@@ -109,16 +109,7 @@ public class MyPageManager {
 		int re = session.update("mypage.updateMyReview", r);
 		session.close();
 		return re;
-	}
-	
-	//리뷰삭제하기
-	public static int deleteMyReview(int re_no) {
-		int re = -1;
-		SqlSession session = factory.openSession(true);
-		re = session.delete("mypage.deleteMyReview", re_no);
-		session.close();
-		return re;
-	}
+	}	
 		
 	//나의 수강클래스 목록가지고오기
 	public static List<LectureVo> listMyLecture(int mem_no){

@@ -20,7 +20,7 @@
 <body>
 	<%@include file="header.jsp" %>
 	<!-- end header -->
-	<h2>나의 수강중인 클래스</h2>
+	<h2 id="listMyLecture">나의 수강중인 클래스</h2>
 	<table border="1" width="80%">
 		<tr>
 			<th>클래스번호</th>

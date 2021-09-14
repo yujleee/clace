@@ -18,19 +18,21 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-	<h2>리뷰작성</h2>
+<div id="myReviewForm">
+	<h2 id="writemyReview">리뷰작성</h2>
 	<form action="insertReview.do" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="lec_no" value="${lec_no }">
 		<input type="hidden" name="mem_no" value="0">
 		
-		리뷰제목:<input type="text" name="re_title"><br>
+		리뷰제목&nbsp;:&nbsp;<input type="text" name="re_title" id="re_title"><br>
 		리뷰내용:<br>
 		<textarea rows="10" cols="70" name="re_conent"></textarea><br>
-		리뷰평점:<input type="text" name="re_grade"><br>
-		리뷰이미지: <input type="file" name="uploadFile"><br>
-		<input type="submit" value="작성">
-		<input type="reset" value="취소">
+		리뷰평점&nbsp;:&nbsp;<input type="text" name="re_grade" id="re_grade"><br>
+		리뷰이미지&nbsp;: <input type="file" name="uploadFile"><br>
+		<input type="submit" value="작성" id="writeMyReviewBtn">
+		<input type="reset" value="취소" id="resetMyReviewBtn">
 	</form>
+</div>
 	<%@include file="footer.jsp" %>
 </body>
 </html>

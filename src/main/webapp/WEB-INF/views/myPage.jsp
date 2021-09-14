@@ -35,10 +35,11 @@
               <a href="community.html"><img src="images/main/ic_comu.png" alt="커뮤니티" /></a>
             </li>
             <li>
-              <a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
+              <a href="listMyZzimLecture.do"><img src="images/main/ic_zzim.png" alt="찜" /></a>
             </li>
             <li>
-              <a href="myPage.do"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
+              <a href="myPage.do"><img src="/resources/profile/${loginM.mem_profile }" 
+              						alt="마이페이지" width="45" height="45"/></a>
             </li>
           </ul>
         </div>
@@ -103,7 +104,7 @@
 
     <section id="content">
       <div class="wrap">
-      <h2>나의 수강중인 클래스</h2>
+      <h2 id="listMyLecture">나의 수강중인 클래스</h2>
 	<table border="1" width="80%">
 		<tr>
 			<th>클래스번호</th>

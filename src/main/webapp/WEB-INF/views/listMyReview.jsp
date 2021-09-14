@@ -19,7 +19,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<h2>리뷰 목록</h2>
+	<h2 id="listMyReview">리뷰 목록</h2>
 	<table border="1" width="80%">
 		<tr>
 			<th>리뷰번호</th>

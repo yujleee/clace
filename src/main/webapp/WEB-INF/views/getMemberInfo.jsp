@@ -24,69 +24,28 @@
 </script>
 </head>
 <body>
-<header>
-      <div class="headerwrap">
-        <div id="navTop">
-          <h1>
-            <a href="index.html"><img src="images/main/logo.png" width="120" alt="클레이스" /></a>
-          </h1>
-          <div class="search">
-            <input type="search" placeholder="듣고 싶은 클래스가 있으신가요?" name="search" />
-            <span class="ic_search"></span>
-          </div>
-          <ul class="gnbIcons">
-            <li>
-              <a href="creator_home.html"><img src="images/main/ic_home.png" alt="강사홈" /></a>
-            </li>
-            <li>
-              <a href="community.html"><img src="images/main/ic_comu.png" alt="커뮤니티" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
-            </li>
-            <li>
-              <a href="myPage.do"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
-            </li>
-          </ul>
-        </div>
-        <nav>
-          <ul>
-            <li></li>
-            <li><a href="#">추천 클래스</a></li>
-            <li><a href="#">특가 할인</a></li>
-            <li><a href="new_lectures.html">신규 클래스</a></li>
-            <li><a href="community.html">커뮤니티</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<%@include file ="header.jsp" %>
     
     <div id="getMemberInfoForm">
 		<h2 id="MemberInfo">  회 원 정 보 </h2>
 			<img src="resources/profile/${m.mem_profile }" height="80" width="80"><br>
-			아이디: ${m.mem_id }<br>
-			비밀번호:  ${m.mem_pwd }<br>
-			이름:  ${m.mem_name }<br>
-			닉네임:  ${m.mem_nickname }<br>
-			휴대폰번호:  ${m.mem_phone }<br>
-			이메일:  ${m.mem_email }<br>
-			성별:  ${m.mem_gender }<br>
-			직업:  ${m.job_no }<br>
-			연령대:  ${m.age_no }<br>
-			<a href="updateMemberInfo.do?mem_no=${m.mem_no }" id="updateInfoBtn">수정하기</a>
+			아이디&nbsp;:&nbsp; ${m.mem_id }<br>
+			비밀번호&nbsp;:&nbsp;  ${m.mem_pwd }<br>
+			이름&nbsp;:  ${m.mem_name }<br>
+			닉네임&nbsp;:  ${m.mem_nickname }<br>
+			휴대폰번호&nbsp;:  ${m.mem_phone }<br>
+			이메일&nbsp;:  ${m.mem_email }<br>
+			성별&nbsp;:  ${m.mem_gender }<br>
+			직업&nbsp;:  ${m.job_no }<br>
+			(&nbsp;1&nbsp;:&nbsp;학생&nbsp; 2&nbsp;:&nbsp;취준생&nbsp; 3&nbsp;:&nbsp;직장인&nbsp; 
+			4&nbsp;:&nbsp;프리랜서&nbsp;5&nbsp;:&nbsp;자영업자&nbsp; 6&nbsp;:&nbsp;주부&nbsp; 7&nbsp;:&nbsp;기타&nbsp;)<br>
+			연령대&nbsp;:  ${m.age_no }<br>
+			(&nbsp;1&nbsp;:&nbsp;10대&nbsp; 2&nbsp;:&nbsp;20대&nbsp; 3&nbsp;:&nbsp;30대&nbsp; 
+			4&nbsp;:&nbsp;40대&nbsp; 5&nbsp;:&nbsp;50대&nbsp;)<br>
+			<a href="updateMemberInfo.do?mem_no=${m.mem_no }" id="getupdateInfoBtn">수정하기</a>
 			<a href="#" onclick="confirmDelete(${m.mem_no})" id="deleteInfoBtn">탈퇴하기</a>
 	</div>
 	
-	<footer>
-      <div class="ftWrap">
-        <h1></h1>
-        <ul class="ft_info clear">
-          <li>클레이스</li>
-          <li>contact@clace.com</li>
-          <li>TEL 02-123-124</li>
-          <li>clace All rights reserved</li>
-        </ul>
-      </div>
-    </footer>
+	<%@include file="footer.jsp" %>
 </body>
 </html>

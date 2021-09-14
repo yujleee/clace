@@ -59,8 +59,4 @@ public class MemberDao {
 		return MyPageManager.updateMyReview(r);
 	}
 	
-	public int deleteMyReview(int re_no) {
-		return MyPageManager.deleteMyReview(re_no);
-	}
-	
 }
