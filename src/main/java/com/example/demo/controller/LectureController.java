@@ -30,11 +30,11 @@ public class LectureController {
 	@RequestMapping("/index.do")
 	public void index(HttpSession session) {
 		// 실습을 위하여 로그인한 회원을 다음에 객체로 상태유지합니다.
-		// 팀원들과 통합할떄, 삭제해야함
+		/* 팀원들과 통합할떄, 삭제해야함
 		int mem_no = 1;
 		MemberVo m = MyPageManager.getMemberInfo(mem_no);
 		System.out.println(" 로그인한 회원:"+m);
-		session.setAttribute("loginM",m);
+		session.setAttribute("loginM",m);*/
 	}
 
 	@RequestMapping("/newLecture.do")
