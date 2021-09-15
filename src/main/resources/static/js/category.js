@@ -17,7 +17,7 @@ $(function() {
 				$.each(data, function(i, cate) {
 					let title = cate.cate_title;
 					let li = $("<li></li>");
-					let a = $("<a></a>").attr("href", `/categoryLecture?category=${title}`).html(title);
+					let a = $("<a></a>").attr("href", `categoryLecture?category=${title}`).html(title);
 					$(li).append(a);
 					$("#category ul").append(li);
 				});
@@ -29,7 +29,6 @@ $(function() {
 
 	//현재 페이지 패스에 따른 목록 출력   
 	let currentPathName = window.location.pathname;
-
 
 	if (currentPathName === '/categoryLecture') {
 		
@@ -44,7 +43,7 @@ $(function() {
 				$.each(data, function(i, cate) {
 					let title = cate.cate_title;
 					let li = $("<li></li>");
-					let a = $("<a></a>").attr("href", `/categoryLecture?category=${title}`).html(title);
+					let a = $("<a></a>").attr("href", `categoryLecture?category=${title}`).html(title);
 					
 					if(currentCategory === title){ //카테고리가 페이지패스와 일치하면 클래스 적용
 						$(li).addClass("on");

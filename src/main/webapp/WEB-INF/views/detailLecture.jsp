@@ -7,19 +7,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap"
-	rel="stylesheet" />
-<link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/hd_ft.css" />
 <link rel="stylesheet" href="css/detailClass.css" />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<title>클레이스: 지금 핫한 클래스</title>
+<%@include file="header.jsp"%>
+<title>클레이스: ${l.lec_name }</title>
 
 <script type="text/javascript">
 	function zzim() {
@@ -37,10 +27,14 @@
 	function login(){		
 		location.href = "login.do";			
 	}
+	if ($("#schedule").val()== '') {
+		alert("일정을 선택해주세요");
+		console.log("dd");
+	}
+	
 </script>
 </head>
 <body>
-	<%@include file="header.jsp"%>
 	<!-- end header-->
 	<section id="detail">
 
@@ -62,8 +56,8 @@
 					</ul>				
 						<div class="scheduleBox">
 							<select id="schedule">
-								<option>----일정 선택하기----</option>
-								<option>${l.lec_start }</option>
+								<option value="">----일정 선택하기----</option>
+								<option value="${l.lec_start }" >${l.lec_start }</option>
 							</select>
 						</div>
 					<div class="btnBox">
@@ -84,6 +78,7 @@
 								</c:when>
 							</c:choose>
 						</div>
+						<c:if test="${value }"></c:if>
 						<c:choose>
 							<c:when test="${empty loginM }">
 								<button id="btnApply" onclick="login()">
@@ -121,15 +116,15 @@
 				<h4>
 					수강생들의 만족도
 					<c:choose>
-						<c:when test="${l.lec_grade != 0}">
+						<c:when test="${l.lec_grade > 0}">
 							<c:forEach var="i" begin="1" end="${l.lec_grade }">
 								<img src="images/detail/ic_star_on.png">
 							</c:forEach>
-							<c:forEach var="j" begin="${r.re_grade }" end="4">
-											<img src="images/detail/ic_star.png">
+							<c:forEach var="i" begin="${5 - r.re_grade }" end="${5 - r.re_grade }">
+								<img src="images/detail/ic_star.png">
 							</c:forEach>
 						</c:when>
-						<c:when test="${l.lec_grade eq 5 || l.lec_grade eq 0}">						
+						<c:when test="${l.lec_grade == 5 or l.lec_grade == 0}">						
 							<c:forEach var="i" begin="1" end="5">
 								<img src="images/detail/ic_star_on.png">
 							</c:forEach>						
@@ -153,15 +148,17 @@
 									</c:forEach>
 								</span>
 							</div>
-							<h4>${r.re_title }</h4>
-							<p>${r.re_conent }</p> 
-							<c:choose>
-								<c:when test="${not empty r.re_img}">
-									<div class="reviewImg">
-										<img src="resources/profile/${r.re_img }" width="200px">
-									</div>
-								</c:when>
-							</c:choose>
+							<div class="reviewContent">
+								<h4>${r.re_title }</h4>
+								<p>${r.re_conent }</p> 							
+								<c:choose>
+									<c:when test="${not empty r.re_img}">
+										<div class="reviewImg">
+											<img src="resources/profile/${r.re_img }" width="200px">
+										</div>
+									</c:when>
+								</c:choose>
+							</div>
 						</li>
 					</c:forEach>
 				</ul>
@@ -206,9 +203,6 @@
 		</div>
 	</section>
 
-
-	<!-- end buttons-->
-	<%@include file="footer.jsp"%>
-
 </body>
+	<%@include file="footer.jsp"%>
 </html>

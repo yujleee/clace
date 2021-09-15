@@ -49,7 +49,6 @@ public class LectureDao {
 	}
 
 	public List<LectureVo> listAroundMe(String place){ 
-		System.out.println("Dao:"+ place); 
 		return LectureManager.listAroundMe(place); 
 	}
 	

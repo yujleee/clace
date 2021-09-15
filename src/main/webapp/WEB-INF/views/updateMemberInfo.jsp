@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,7 @@
 						<label for="mem_nickname">닉네임</label>
 					</td>
 					<td>
-						<input type="text" name="mem_nickname" id="mem_nickname">
+						<input type="text" name="mem_nickname" id="mem_nickname" value="${loginM.mem_nickname}">
 					</td>
 				</tr>
 				
@@ -58,7 +59,7 @@
 						<label for="mem_phone">휴대폰번호&nbsp;</label>
 					</td>
 					<td>
-						<input type="text" name="mem_phone" id="mem_phone" >
+						<input type="text" name="mem_phone" id="mem_phone" value="${loginM.mem_phone}">
 					</td>
 				</tr>
 				
@@ -67,7 +68,7 @@
 						<label for="mem_email">이메일</label>
 					</td>
 					<td>
-						<input type="text" name="mem_email" id="mem_email" >
+						<input type="text" name="mem_email" id="mem_email" value="${loginM.mem_email}">
 					</td>
 				</tr>
 				<tr>
@@ -91,13 +92,13 @@
 						<input type="hidden" name="job_no" value="${m.job_no }">
 						<select id="job_no_data" name="job_no_data" class="option">
 							<option value="0">직업선택</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
+							<option value="1" <c:if test="${m.job_no == 1}">selected</c:if>>학생</option>
+							<option value="2" <c:if test="${m.job_no == 2}">selected</c:if>>취준생</option>
+							<option value="3" <c:if test="${m.job_no == 3}">selected</c:if>>직장인</option>
+							<option value="4" <c:if test="${m.job_no == 4}">selected</c:if>>프리랜서</option>
+							<option value="5" <c:if test="${m.job_no == 5}">selected</c:if>>자영업자</option>
+							<option value="6" <c:if test="${m.job_no == 6}">selected</c:if>>주부</option>
+							<option value="7" <c:if test="${m.job_no == 7}">selected</c:if>>기타</option>
 						</select><br>
 						1&nbsp;:&nbsp;학생&nbsp; 2&nbsp;:&nbsp;취준생&nbsp; 3&nbsp;:&nbsp;직장인&nbsp; 4&nbsp;:&nbsp;프리랜서&nbsp; 
 						5&nbsp;:&nbsp;자영업자&nbsp; 6&nbsp;:&nbsp;주부&nbsp; 7&nbsp;:&nbsp;기타

@@ -40,6 +40,10 @@ public class LectureController {
 	}
 
 
+	@RequestMapping("/")
+	public String main() {
+		return "index";
+	}
 	@RequestMapping("/index")
 	public void index() {
 	}
@@ -79,7 +83,6 @@ public class LectureController {
 		
 		if(currentPath.equals("/saleLecture")) {
 			total = dao.getTotalSaleLecture();
-			System.out.println("세일 클래스 수 :" + total);
 		} else {
 			total = dao.getTotalLecture();
 		}
@@ -88,8 +91,7 @@ public class LectureController {
 		int start = (pageNum - 1) * LectureDao.pageSize + 1; // 시작
 		int end = start + LectureDao.pageSize - 1; // 끝
 
-		
-		if (end < total) {
+		if (end > total) {
 			end = total;
 		}
 
@@ -114,6 +116,7 @@ public class LectureController {
 	@RequestMapping("/recommandLecture")
 	public void listRecommand(HttpSession session,
 			@RequestParam(value = "pageNum", defaultValue = "1") int pageNum, Model model) {
+		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
 		int total = LectureDao.totalLecture;
 		
 		int age = ((MemberVo)session.getAttribute("loginM")).getAge_no();
@@ -138,6 +141,7 @@ public class LectureController {
 
 		model.addAttribute("list", dao.listRecommand(map));
 		model.addAttribute("totalPage", LectureDao.totalPage);
+		model.addAttribute("memberVo", memberVo);
 	}
 
 	@RequestMapping("/searchLecture")

@@ -5,20 +5,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/hd_ft.css" />
     <link rel="stylesheet" href="css/listClass.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>클레이스: 추천 클래스</title>
+	<%@include file ="header.jsp" %>
 </head>
 <body>
-	<%@include file ="header.jsp" %>
     <!-- end header-->
     <section id="content">
       <div class="wrap">
@@ -52,6 +43,6 @@
         </div>
       </div>
     </section>
-   <%@include file = "footer.jsp" %>
 </body>
+   <%@include file = "footer.jsp" %>
 </html>
