@@ -72,14 +72,15 @@
 					</form>
 				</div>
 				<ul class="gnbIcons">
-					<li><a href="#"><img src="images/main/ic_home.png"
-							alt="강사홈" /></a></li>
+
 					<li><a href="listBoard.do"><img
 							src="images/main/ic_comu.png" alt="커뮤니티" /></a></li>
 					<li><a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
 					</li>
-					<li><a href="myPage.do"><img src="images/detail/profile_user.png"
-							alt="마이페이지" /></a></li>
+					<li><a href="myPage.do">
+					<div><img src="images/detail/profile_user.png"
+							alt="마이페이지" /></div>
+					</a></li>
 				</ul>
 			</div>
 			<div id="category">

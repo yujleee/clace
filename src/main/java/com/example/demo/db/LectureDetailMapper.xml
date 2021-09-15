@@ -20,7 +20,7 @@
 	</select>
 	
 	<select id="getAsk" resultType="askVo">
-	select ask_no, ask_title, ask_content, ask_date, ask_open_close, ask_status, mem_nickname from ask a, member m where a.mem_no=m.mem_no and lec_no=#{lec_no}
+	select ask_no, ask_content, ask_date, ask_open_close, ask_status, mem_nickname from ask a, member m where a.mem_no=m.mem_no and lec_no =${lec_no}
 	</select>
 	
 	<select id="getZzimCount" resultType="int">
@@ -38,5 +38,10 @@
 	<delete id="deleteZzim">
 	delete zzim where lec_no=#{lec_no} and mem_no=1
 	</delete>
+	
+	<insert id="insertAsk">
+	INSERT INTO ASK (ASK_NO, ASK_CONTENT ,ASK_DATE, ASK_OPEN_CLOSE, MEM_NO, LEC_NO, ASK_STATUS) VALUES ((select nvl(max(ASK_NO),0)+1 FROM ASK), #{ask_content}, 
+sysdate, #{ask_open_close}, #{mem_no}, #{lec_no}, 'wating')
+	</insert>
 
 </mapper>

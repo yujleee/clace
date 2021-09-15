@@ -21,15 +21,25 @@
 	}
 	
 	function order(){
+		if ($("#schedule").val()== '') {
+			alert("일정을 선택해주세요");
+			console.log("dd");
+			return false;
+		}
 		location.href = "order.do?lec_no=${l.lec_no}&selectDate=${l.lec_start }";			
 	}
 	
 	function login(){		
 		location.href = "login.do";			
 	}
-	if ($("#schedule").val()== '') {
-		alert("일정을 선택해주세요");
-		console.log("dd");
+	
+	function askCheck(obj){
+		let checked = obj.checked;
+		if(checked){
+			obj.value = "close";
+		} else{
+			obj.value = "open";
+		}
 	}
 	
 </script>
@@ -71,9 +81,10 @@
 								</c:when>
 
 								<c:when test="${not empty z.zzim_no }">
-									<button id="btnZzim" onclick="unZzim()">
-										<img src="images/detail/ic_zzim_active.png"
-											id="ic_zzim_active"> <span id="zzim_cnt">${zzimcnt}</span>
+									<button id="btnZzim" class="activeZzim" onclick="unZzim()">
+							 
+											<span id="zzim_cnt"><img src="images/detail/ic_zzim_active.png"
+											id="ic_zzim_active"> ${zzimcnt}</span>
 									</button>
 								</c:when>
 							</c:choose>
@@ -172,32 +183,37 @@
 			</ul>
 
 			<article id="lec_ask">
-				<h2>문의 목록</h2>
-				<a href="insertAsk.do">등록</a>
-				<hr>
-				<table border="1" width="80%">
-					<tr>
-						<th>문의답변여부</th>
-						<th>문의제목</th>
-						<th>닉네임</th>
-						<th>문의날짜</th>
-					</tr>
+				<form action="insertAsk">
+				<input type="hidden" value="${l.lec_no }" name="lec_no">
+					<div class="inputAsk">
+						<textarea rows="6" cols="124" class="ask" name="ask_content" placeholder="문의사항을 입력해주세요."></textarea>
+						<div class="applyBox">
+							<input type="checkbox" name="ask_open_close" onchange="askCheck(this)"><label>비밀글</label>
+							<input type="submit" value="등록">
+						</div>
+					</div>
+				</form>
+				<ul class="listAsk">
 					<c:forEach var="a" items="${askList }">
-						<tr>
-							<td>${a.ask_status }</td>
-							<c:choose>
-								<c:when test="${a.ask_open_close eq '공개' }">
-									<td><a href="detailAsk.do?ask_no=${a.ask_no}">${a.ask_title }</a></td>
-								</c:when>
-								<c:when test="${a.ask_open_close eq '비공개' }">
-									<td>비밀글입니다.</td>
-								</c:when>
-							</c:choose>
-							<td>${a.mem_nickname }</td>
-							<td>${a.ask_date }</td>
-						</tr>
+						<li>
+								<div class="userInfo">
+									<h4>${a.mem_nickname }</h4>
+									<p>${a.ask_date }</p>
+								</div>
+								<p class="askContent">
+									<c:choose>
+										<c:when test="${a.ask_open_close eq 'open' }">
+											<td>${a.ask_content }</td>
+										</c:when>
+										<c:when test="${a.ask_open_close eq 'close' }">
+											<td>비밀글입니다.</td>
+										</c:when>
+									</c:choose>
+								</p>
+						</li>
 					</c:forEach>
-				</table>
+				</ul>
+				
 			</article>
 
 		</div>

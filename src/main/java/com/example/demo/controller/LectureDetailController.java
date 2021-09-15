@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import com.example.demo.dao.LectureDetailDao;
+import com.example.demo.vo.AskVo;
 import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.ZzimVo;
 
@@ -47,9 +48,9 @@ public class LectureDetailController {
 	}
 	
 	@RequestMapping(value="/zzimOk.do", method = RequestMethod.GET)
-	public ModelAndView zzim(ZzimVo z, HttpSession session) {
+	public ModelAndView zzim(ZzimVo z, int lec_no, HttpSession session) {
 		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
-		ModelAndView mav = new ModelAndView();
+		ModelAndView mav = new ModelAndView("redirect:/detailLecture.do?lec_no=" + lec_no);
 		int re = dao.registerZzim(z);
 		if(re != 1) {
 			mav.addObject("msg", "찜등록에 실패하였습니다.");
@@ -59,9 +60,9 @@ public class LectureDetailController {
 	}
 	
 	@RequestMapping(value="/unZzimOk.do" ,method = RequestMethod.GET)
-	public ModelAndView unZzim(ZzimVo z, HttpSession session) {
+	public ModelAndView unZzim(ZzimVo z, int lec_no, HttpSession session) {
 		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
-		ModelAndView mav = new ModelAndView();
+		ModelAndView mav = new ModelAndView("redirect:/detailLecture.do?lec_no=" + lec_no);
 		int re = dao.deleteZzim(z);
 		if(re != 1) {
 			mav.addObject("msg", "찜취소에 실패하였습니다.");
@@ -70,5 +71,32 @@ public class LectureDetailController {
 		return mav;
 	}
 	
-
+	
+	
+	@RequestMapping(value = "/insertAsk", method = RequestMethod.GET)
+	public void askForm(Model model, int lec_no) {
+		System.out.println("insert 동작");
+		model.addAttribute("lec_no", lec_no);
+	}
+	
+	@RequestMapping(value = "/insertAsk", method = RequestMethod.POST)
+	public ModelAndView insertAsk(AskVo a, HttpSession session) {
+		System.out.println("post 동작");
+		int lec_no = a.getLec_no();
+		ModelAndView mav = new ModelAndView("redirect:/detailLecture.do?lec_no=" + lec_no);
+		
+		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
+		int mem_no = memberVo.getMem_no();
+		
+		a.setMem_no(mem_no);
+		a.setAsk_content(a.getAsk_content().replaceAll("\r\n", "<br>"));
+		int re = dao.insertAsk(a);
+		if(re != 1) {
+			mav.addObject("msg", "문의 등록에 실패했습니다.");
+			mav.setViewName("error");
+		}
+		System.out.println("동작");
+		
+		return mav;
+	}
 }
