@@ -66,3 +66,43 @@ table tr:hover {
 	font-weight: bold;
  	background-color: #eeeeee;
 }
+
+/*게시물 등록	*/
+
+#container {
+
+  margin-top: 30px;
+  margin-left: 200px;
+  margin-bottom: 200px;
+
+}
+.update_button > input {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  background: #13aa92;
+  color: white;
+  border: solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+    margin-top: 20px;
+}
+.update_button :hover {
+  background-color: #08917b;
+}
+.update_button > button {
+   width: 100px;
+  height: 30px;
+  font-size: 18px;
+  background: #13aa92;
+  color: white;
+  border: solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+
+
