@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	 <%@ include file = "header.jsp" %>
+	 
 	<h2>게시물 등록</h2>
 	<hr>
 	<form action="insertBoard.do" method="post" enctype="multipart/form-data">
@@ -24,5 +26,7 @@
 	<input type="submit" value="등록">
 	<input type="reset" value="취소">
 </form>
+
+ <%@ include file = "footer.jsp" %>	
 </body>
 </html>

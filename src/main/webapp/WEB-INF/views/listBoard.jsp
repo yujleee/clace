@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
   <link rel="stylesheet" href="css/commu.css" />
+  <link rel="stylesheet" href="css/board.css" />
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -24,8 +25,7 @@ $(function(){
      	<div class="commuWrap">
 
 	<h2>커뮤니티 자유게시판</h2>
-	<a href="insertBoard.do">등록</a>
-	<hr>
+
 	<table border="1" width="80%">
 	<tr>
 			<th>글번호</th>
@@ -48,12 +48,16 @@ $(function(){
 	</table>
 	
 	<!-- 페이징 기능 추가 -->
-	<c:forEach var="i" begin="1" end="${totalPage }">
-		<a href="listBoard.do?pageNUM=${i }">${i }</a>&nbsp;
-	</c:forEach>
-	
+	  <div class="btnWrap">		      
+			<div class="Page_view">
+				<c:forEach var="i" begin="1" end="${totalPage }">
+					<a href="listBoard.do?pageNUM=${i }">${i }</a>&nbsp; 
+				</c:forEach><br>
+			</div>	
+				<button><a href="insertBoard.do">글쓰기</a></button>		
 	     </div>
+	    </div>	     
     </section>
-	
+ <%@ include file = "footer.jsp" %>	
 </body>
 </html>

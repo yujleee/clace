@@ -22,9 +22,7 @@ header .headerwrap {
 	color: #777;
 }
 
-#nevUser .headerwrap .userLogin{
-	display:none;
-}
+
 
 #nevUser .headerwrap .currentUser{
 	margin-right: 30px;

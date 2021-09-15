@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+ <%@ include file = "header.jsp" %>
+ 
 	<h2>게시물 상세</h2>
 	<hr>
 	글번호 : ${b.brd_no }<br>
@@ -21,5 +23,7 @@
 
 	<a href="updateBoard.do?no=${b.brd_no }">수정</a>
 	<a href="deleteBoard.do?no=${b.brd_no }">삭제</a>
+	
+	 <%@ include file = "footer.jsp" %>	
 </body>
 </html>

@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<c:if test="${re==1 }">
 			회원가입에 성공하였습니다.
 		</c:if>
