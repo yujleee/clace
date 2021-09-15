@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.db.AskDetailManager;
 import com.example.demo.db.LectureDetailManager;
+import com.example.demo.vo.AnswerVo;
 import com.example.demo.vo.AskVo;
 import com.example.demo.vo.CreatorVo;
 import com.example.demo.vo.LectureVo;
@@ -49,5 +51,9 @@ public class LectureDetailDao {
 
 	public ZzimVo getZzim(int lec_no) {
 		return LectureDetailManager.getZzim(lec_no);
+	}
+	
+	public int insertAsk(AskVo a) {
+		return LectureDetailManager.insertAsk(a);
 	}
 }

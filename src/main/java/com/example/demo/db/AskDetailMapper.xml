@@ -4,11 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="detail">
   <select id="getAskInfo" resultType="askVo">
-  	select ask_no, ask_title, ask_content, ask_date, ask_open_close, ask_status, mem_nickname from ask a, member m where a.mem_no=m.mem_no and ask_no=#{ask_no}
+  	select ask_no, ask_content, ask_date, ask_open_close, ask_status, mem_nickname from ask a, member m where a.mem_no=m.mem_no and ask_no=#{ask_no}
   </select>
 
 	<select id="getAnswer" resultType="answerVo">
-  	select ans_no, ans_title, ans_content, ans_date, ans_open_close, cr_no, ask_no from answer where ask_no=#{ask_no}
+  	select ans_no, ans_content, ans_date, ans_open_close, cr_no, ask_no from answer where ask_no=#{ask_no}
   </select>
 	
 </mapper>

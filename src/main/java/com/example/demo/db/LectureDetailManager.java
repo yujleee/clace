@@ -92,4 +92,11 @@ public class LectureDetailManager {
 		session.close();
 		return re;
 	}
+	
+	public static int insertAsk(AskVo a) {
+		SqlSession session = factory.openSession(true);
+		int re = session.insert("detail.askVo", a);
+		session.close();
+		return re;
+	}
 }

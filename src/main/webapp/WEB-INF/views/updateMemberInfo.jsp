@@ -112,11 +112,11 @@
 							<input type="hidden" name="age_no" value="${m.age_no }">
 							<select id="age_no_data" name="age_no_data" class="option">
 								<option value="0">연령대선택</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
+								<option value="1" <c:if test="${m.age_no == 1}">selected</c:if>>10대</option>
+								<option value="2" <c:if test="${m.age_no == 2}">selected</c:if>>20대</option>
+								<option value="3" <c:if test="${m.age_no == 3}">selected</c:if>>30대</option>
+								<option value="4" <c:if test="${m.age_no == 4}">selected</c:if>>40대</option>
+								<option value="5" <c:if test="${m.age_no == 5}">selected</c:if>>50대 이상</option>
 							</select><br>
 							1&nbsp;:&nbsp;10대&nbsp; 2&nbsp;:&nbsp;20대&nbsp; 3&nbsp;:&nbsp;30대&nbsp; 4&nbsp;:&nbsp;40대&nbsp; 5&nbsp;:&nbsp;50대
 						</td>
