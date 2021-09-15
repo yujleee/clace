@@ -3,17 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap"
-	rel="stylesheet" />
-<link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/hd_ft.css" />
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/chat.js"></script>
-<title>클레이스</title>
 </head>
 <body>
 	<div id="chat">

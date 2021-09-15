@@ -16,7 +16,6 @@
 <script src="js/search.js"></script>
 <script src="js/category.js"></script>
 <script src="js/chat.js"></script>
-<title>클레이스</title>
 </head>
 <body>
 	<header>
@@ -56,7 +55,7 @@
 		<div class="headerwrap">
 			<div id="navTop">
 				<h1>
-					<a href="index"><img src="images/main/logo.png" width="120"
+					<a href="/"><img src="images/main/logo.png" width="120"
 						alt="클레이스" /></a>
 				</h1>
 				<div class="search">
@@ -75,8 +74,6 @@
 					</form>
 				</div>
 				<ul class="gnbIcons">
-					<li><a href="#"><img src="images/main/ic_home.png"
-							alt="강사홈" /></a></li>
 					<li><a href="community.html"><img
 							src="images/main/ic_comu.png" alt="커뮤니티" /></a></li>
 					<li><a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>

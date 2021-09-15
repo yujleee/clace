@@ -93,7 +93,7 @@ $(function() {
 	 $(".recent li").on('click',function() {
 		let word = $(this).html();
 		console.log(`word: ${word}`);
-        location.href=`/searchLecture?keyword=${word}`;
+        location.href=`searchLecture?keyword=${word}`;
      });
 
 	

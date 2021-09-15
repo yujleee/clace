@@ -98,7 +98,7 @@
   </select>
   
   <select id="searchLecture" resultType="lectureVo">
-  	select lec_image, lec_name, lec_price, lec_sale, lec_grade
+  	select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no
 	from member m, lecture l, creator c, category cate,
 	(select l.lec_no, nvl(count(pay_no),0) cnt from payment p right join lecture l 
 	on l.lec_no = p.lec_no group by l.lec_no order by cnt desc) pay,
@@ -116,7 +116,7 @@
 	</select>
 	
 	<select id="categoryLecture" resultType="lectureVo">
-		select lec_image, lec_name, lec_price, lec_sale, lec_grade
+		select lec_image, lec_name, lec_price, lec_sale, lec_grade, l.lec_no
 		from lecture l, category cate, (select rownum n, lec_no from 
 		(select * from lecture order by lec_no))page 
 		where l.lec_category = cate.cate_no and l.lec_no = page.lec_no 

@@ -12,7 +12,14 @@ public class LoginConfig implements WebMvcConfigurer {
 		// TODO Auto-generated method stub
 		//WebMvcConfigurer.super.addInterceptors(registry);
 		registry.addInterceptor(new LoginInterceptor())
-		.addPathPatterns("/member/**");
+		.addPathPatterns("/**") 
+		.excludePathPatterns("/css/**") 
+		.excludePathPatterns("/js/**") 
+		.excludePathPatterns("/images/**") 
+		.excludePathPatterns("/login.do", "/loginOk.do","/join.do", "/joinOk.do", "/","/index", 
+				"/bestLecture", "/saleLecture", "/categoryLecture", "/recommandLecture", "/newLecture",
+				"/listBestLecture", "/listSaleLecture", "/listNewLecture", "/listArundMe", "/listCategory",
+				"/searchLecture","/detailLecture.do","/chat"); 
 	}
 
 	
