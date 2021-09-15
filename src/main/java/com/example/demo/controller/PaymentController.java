@@ -47,7 +47,10 @@ public class PaymentController {
 	 */
 	@RequestMapping("/order.do")
 	public void order(int lec_no, String selectDate, HttpSession session, Model model) {
-		LectureVo lectureVo = lectureDao.selectLectureOne(lec_no); // 변수의 선언과 초기화 // =,그리고 좌항, 우항 // 좌항은.. 변수다 // 우항은.. 값이다
+	//	LectureVo lectureVo = lectureDao.selectLectureOne(lec_no); // 변수의 선언과 초기화 // =,그리고 좌항, 우항 // 좌항은.. 변수다 // 우항은.. 값이다
+		
+		LectureVo lectureVo = lectureDao.getLecture(lec_no);
+		
 		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
 		
 		model.addAttribute("lec_no", lec_no);

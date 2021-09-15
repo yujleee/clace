@@ -122,5 +122,11 @@
 		where l.lec_category = cate.cate_no and l.lec_no = page.lec_no 
 		and cate_title= #{category} and n between #{start} and #{end}
 	</select>
+
+<!--  결제로 강의 정보를 넘겨주기 위한 -->	
+	<select id="getLecture" resultType="lectureVo">
+	select lec_no,lec_name,lec_image,lec_price from lecture
+	where lec_no=#{lec_no}
+	</select>
   
 </mapper>

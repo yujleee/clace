@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +27,26 @@
 	<header>
 		<div id="nevUser">
 			<div class="headerwrap">
+			<!-- 			
 				<span class="login"><a href="login.do">로그인/회원가입</a></span>
 				<div class="userLogin">
 					<span class="currentUser">ㅇㅇ(hi00)님</span>
 					<span class="logout"><a href="#">로그아웃</a></span>
-				</div>
+				</div>				
+				 -->
+				<c:choose>
+			<c:when test="${empty loginM }">
+				<span class="login"><a href="login.do">로그인/회원가입</a></span>	
+			</c:when>
+				
+			<c:when test="${not empty loginM }">
+				<div class="userLogin">
+					<span class="currentUser">${loginM.mem_name }(${loginM.mem_id })님 환영합니다.</span>
+					<span class="logout"><a href="logout.do">로그아웃</a></span>				
+				</div>	
+			</c:when>	
+			</c:choose>	 
+				  
 			</div>
 		</div>
 		<div id="recentKeyword">
