@@ -74,7 +74,7 @@
 					</form>
 				</div>
 				<ul class="gnbIcons">
-					<li><a href="community.html"><img
+					<li><a href="listBoard.do"><img
 							src="images/main/ic_comu.png" alt="커뮤니티" /></a></li>
 					<li><a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
 					</li>

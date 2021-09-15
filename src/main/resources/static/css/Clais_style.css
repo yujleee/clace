@@ -1,4 +1,3 @@
-@charset "EUC-KR";
 
 * {
   margin: 0px;
@@ -114,13 +113,19 @@
 
 /* payment css */
 
+#container{
+  margin-bottom: 500px;
+}
+
 #payment {
   width: 100%;
+
 }
 
 #paymentWrap {
   width: 1000px;
   margin: 50px auto;
+  
 }
 
 article {
