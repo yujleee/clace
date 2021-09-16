@@ -54,10 +54,10 @@ $(function(){
 	  <div class="btnWrap">		      
 			<div class="Page_view">
 				<c:forEach var="i" begin="1" end="${totalPage }">
-					<a href="listBoard.do?pageNUM=${i }">${i }</a>&nbsp; 
+					<a class="btn_color_black" href="listBoard.do?pageNUM=${i }">${i }</a>&nbsp; 
 				</c:forEach><br>
 			</div>	
-				<button><a href="insertBoard.do">글쓰기</a></button>		
+				<button><a class="btn_color_black" href="insertBoard.do">글쓰기</a></button>		
 	     </div>
 	    </div>	     
     </section>

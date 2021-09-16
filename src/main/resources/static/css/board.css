@@ -6,8 +6,12 @@ textarea{
 	 font-family: 'Noto Sans KR', sans-serif;
 }
 
-a:link {
-  color : white;
+.btn_color_black{
+	color : black;
+}
+
+.btn_color_white{
+	color : white;
 }
 
 section {

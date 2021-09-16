@@ -79,7 +79,7 @@
 				pay_method:'card',
 				merchant_uid:'merchant_'+ new Date().getTime(),
 				name: lec_name,
-				amount: lec_price,
+				amount: lec_saleprice,
 				buyer_email: mem_email,
 				buyer_name: mem_name,
 				buyer_tel: mem_phone,

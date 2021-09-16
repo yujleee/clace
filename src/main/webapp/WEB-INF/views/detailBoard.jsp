@@ -30,8 +30,8 @@
 			조회수 : ${b.brd_viewc }<br>
 
 			<div class="update_button">
-				<button><a href="updateBoard.do?no=${b.brd_no }">수정</a></button>
-				<button><a href="deleteBoard.do?no=${b.brd_no }">삭제</a></button>
+				<button><a class="btn_color_white" href="updateBoard.do?no=${b.brd_no }">수정</a></button>
+				<button><a class="btn_color_white" href="deleteBoard.do?no=${b.brd_no }">삭제</a></button>
 			</div>
 	
 	</div>
