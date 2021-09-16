@@ -16,9 +16,10 @@ public class LoginConfig implements WebMvcConfigurer {
 		.excludePathPatterns("/css/**") 
 		.excludePathPatterns("/js/**") 
 		.excludePathPatterns("/images/**") 
+		.excludePathPatterns("/resources/**") 
 		.excludePathPatterns("/login.do", "/loginOk.do","/join.do", "/joinOk.do", "/","/index", 
 				"/bestLecture", "/saleLecture", "/categoryLecture", "/recommandLecture", "/newLecture",
-				"/listBestLecture", "/listSaleLecture", "/listNewLecture", "/listArundMe", "/listCategory",
+				"/listBestLecture", "/listSaleLecture", "/listNewLecture", "/listAroundMe", "/listCategory",
 				"/searchLecture","/detailLecture.do","/chat"); 
 	}
 

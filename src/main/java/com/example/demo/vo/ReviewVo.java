@@ -11,11 +11,18 @@ public class ReviewVo {
 	private int mem_no;
 	private int lec_no;
 	private String mem_nickname;
+	private String mem_profile;
 	private String lec_name;
 	private MultipartFile uploadFile;
 	
 	
 	
+	public String getMem_profile() {
+		return mem_profile;
+	}
+	public void setMem_profile(String mem_profile) {
+		this.mem_profile = mem_profile;
+	}
 	public String getMem_nickname() {
 		return mem_nickname;
 	}

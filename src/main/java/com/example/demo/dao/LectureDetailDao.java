@@ -49,8 +49,8 @@ public class LectureDetailDao {
 		return LectureDetailManager.deleteZzim(z);
 	}
 
-	public ZzimVo getZzim(int lec_no) {
-		return LectureDetailManager.getZzim(lec_no);
+	public ZzimVo getZzim(int lec_no, int mem_no) {
+		return LectureDetailManager.getZzim(lec_no, mem_no);
 	}
 	
 	public int insertAsk(AskVo a) {

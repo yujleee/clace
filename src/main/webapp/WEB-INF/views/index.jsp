@@ -125,7 +125,7 @@
 			<div class="lectures"></div>
 		</section>
 		<!-- end sale-->
-		<section id="bnr"></section>
+		<section id="bnr"><a href="#"></a></section>
 		<section id="new">
 			<div class="title">
 				<h3>새로운 클래스</h3>

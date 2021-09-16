@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,22 +37,24 @@ public class LectureDetailController {
 	public void setDao(LectureDetailDao dao) {
 		this.dao = dao;
 	}
-
-	@RequestMapping(value="/detailLecture.do")
+	
+	@GetMapping(value="/detailLecture.do")
 	public void detailLecture(int lec_no, Model model) {
+		
 		model.addAttribute("l", dao.getLecture(lec_no));
 		model.addAttribute("c", dao.getCreator(lec_no));
 		model.addAttribute("reviewList", dao.getReview(lec_no));
 		model.addAttribute("reviewcnt", dao.getReviewCount(lec_no));
 		model.addAttribute("askList", dao.getAsk(lec_no));
-		model.addAttribute("zzimcnt", dao.getZzimCount(lec_no));
-		model.addAttribute("z", dao.getZzim(lec_no));
-
+		model.addAttribute("zzimcnt", dao.getZzimCount(lec_no));		
 	}
 	
 	@RequestMapping(value="/zzimOk.do", method = RequestMethod.GET)
 	public ModelAndView zzim(ZzimVo z, int lec_no, HttpSession session) {
-		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
+		int mem_no = ((MemberVo) session.getAttribute("loginM")).getMem_no();
+		
+		z.setMem_no(mem_no);
+		
 		ModelAndView mav = new ModelAndView("redirect:/detailLecture.do?lec_no=" + lec_no);
 		int re = dao.registerZzim(z);
 		if(re != 1) {
@@ -61,8 +66,9 @@ public class LectureDetailController {
 	
 	@RequestMapping(value="/unZzimOk.do" ,method = RequestMethod.GET)
 	public ModelAndView unZzim(ZzimVo z, int lec_no, HttpSession session) {
-		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
 		ModelAndView mav = new ModelAndView("redirect:/detailLecture.do?lec_no=" + lec_no);
+		int mem_no = ((MemberVo) session.getAttribute("loginM")).getMem_no();
+		z.setMem_no(mem_no);
 		int re = dao.deleteZzim(z);
 		if(re != 1) {
 			mav.addObject("msg", "찜취소에 실패하였습니다.");
@@ -75,18 +81,21 @@ public class LectureDetailController {
 	
 	@RequestMapping(value = "/insertAsk", method = RequestMethod.GET)
 	public void askForm(Model model, int lec_no) {
-		System.out.println("insert 동작");
 		model.addAttribute("lec_no", lec_no);
 	}
 	
 	@RequestMapping(value = "/insertAsk", method = RequestMethod.POST)
 	public ModelAndView insertAsk(AskVo a, HttpSession session) {
-		System.out.println("post 동작");
 		int lec_no = a.getLec_no();
 		ModelAndView mav = new ModelAndView("redirect:/detailLecture.do?lec_no=" + lec_no);
 		
 		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
 		int mem_no = memberVo.getMem_no();
+		
+		if(a.getAsk_open_close() == null) {
+			a.setAsk_open_close("open");
+		}
+		
 		
 		a.setMem_no(mem_no);
 		a.setAsk_content(a.getAsk_content().replaceAll("\r\n", "<br>"));

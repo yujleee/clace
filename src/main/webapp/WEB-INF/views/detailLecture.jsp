@@ -37,9 +37,19 @@
 		let checked = obj.checked;
 		if(checked){
 			obj.value = "close";
-		} else{
-			obj.value = "open";
 		}
+	}
+	
+	function clipBoard(){
+		let dummy = document.createElement("input");
+		const url = location.href;
+		
+		document.body.appendChild(dummy);
+		dummy.value = url;
+		dummy.select();
+		document.execCommand("copy");
+		alert("URL을 클립보드에 복사했습니다.");
+		document.body.removeChild(dummy);
 	}
 	
 </script>
@@ -55,10 +65,14 @@
 						alt="${l.lec_name}" id="lec_img">
 				</div>
 				<div class="detailBox">
-					<h3>${l.lec_name}</h3>
-					<h3 class="price">
-						<fmt:formatNumber pattern="#,###">${l.lec_price - (l.lec_price* l.lec_sale)}</fmt:formatNumber>원
-					</h3>
+					<div class="infoTop">
+						<div class="lectureInfo">
+							<h3>${l.lec_name}</h3>
+							<h3 class="price"><fmt:formatNumber pattern="#,###">${l.lec_price - (l.lec_price* l.lec_sale)}</fmt:formatNumber>원</h3>
+						</div>
+						<div class="clipboard" onclick="clipBoard()"><img src="images/detail/ic_share.png" alt="공유하기" /></div>
+					</div>
+						
 					<ul class="detailCreator">
 
 						<li><img src="images/detail/profile_cr.png" alt="강사프로필" /></li>
@@ -124,7 +138,8 @@
 				<li><a href="#">취소/환불규정</a></li>
 			</ul>
 			<article id="lec_review">
-				<h4>
+			<div class="avgReview">
+				<h3>
 					수강생들의 만족도
 					<c:choose>
 						<c:when test="${l.lec_grade > 0}">
@@ -141,15 +156,19 @@
 							</c:forEach>						
 						</c:when>
 					</c:choose>
-
-					<span class="cntReview">후기(${reviewcnt})</span>
-				</h4>
+				</h3>
+				<span class="cntReview">후기(${reviewcnt})</span>
+			</div>
 
 				<ul>
 					<c:forEach var="r" items="${reviewList }">
 						<li>
+						<div class="reviewContent">
 							<div class="reviewTop">
-								<h4>${r.mem_nickname }</h4> 
+								<div class="mem">
+									<div class="memProfile"><img src="/resources/profile/${r.mem_profile }" width="100%" alt="프로필" /></div>
+									<h4>${r.mem_nickname }</h4> 
+								</div>
 								<span class="star"> 
 									<c:forEach var="i" begin="1" end="${r.re_grade }">
 										<img src="images/detail/ic_star_on.png">
@@ -159,7 +178,7 @@
 									</c:forEach>
 								</span>
 							</div>
-							<div class="reviewContent">
+							
 								<h4>${r.re_title }</h4>
 								<p>${r.re_conent }</p> 							
 								<c:choose>
@@ -183,37 +202,60 @@
 			</ul>
 
 			<article id="lec_ask">
-				<form action="insertAsk">
+				<form action="insertAsk" method="post">
 				<input type="hidden" value="${l.lec_no }" name="lec_no">
 					<div class="inputAsk">
-						<textarea rows="6" cols="124" class="ask" name="ask_content" placeholder="문의사항을 입력해주세요."></textarea>
+						<textarea rows="3" cols="118" class="ask" name="ask_content" placeholder="문의사항을 입력해주세요."></textarea>
 						<div class="applyBox">
-							<input type="checkbox" name="ask_open_close" onchange="askCheck(this)"><label>비밀글</label>
+							<input type="checkbox" name="ask_open_close" value="open" onclick="askCheck(this)"><label>비밀글</label>
 							<input type="submit" value="등록">
 						</div>
 					</div>
 				</form>
+				<p>${m.mem_no }</p>	
 				<ul class="listAsk">
 					<c:forEach var="a" items="${askList }">
 						<li>
-								<div class="userInfo">
+							<div class="userInfo">
+							<c:choose>
+								<c:when test="${a.ask_open_close eq 'open'}">
 									<h4>${a.mem_nickname }</h4>
-									<p>${a.ask_date }</p>
-								</div>
-								<p class="askContent">
-									<c:choose>
-										<c:when test="${a.ask_open_close eq 'open' }">
-											<td>${a.ask_content }</td>
-										</c:when>
-										<c:when test="${a.ask_open_close eq 'close' }">
-											<td>비밀글입니다.</td>
-										</c:when>
-									</c:choose>
-								</p>
+								</c:when>
+								<c:when test="${a.ask_open_close eq 'close' }">
+									<h4>비밀글</h4>
+								</c:when>
+							</c:choose>
+								
+								<p>${a.ask_date }</p>
+							</div>
+							<c:choose>
+								<c:when test="${a.ask_open_close eq 'open'}">
+									<p class="askContent">${a.ask_content }</p>
+								</c:when>
+								<c:when test="${a.mem_no eq m.mem_no}">
+									<p class="askContent">${a.ask_content}</p> 
+									<button class="btnDelete">삭제</button>
+								</c:when>
+								<c:when test="${a.ask_open_close eq 'close' }">
+									<p class="askContent">비밀글입니다.</p>
+								</c:when>
+							</c:choose>
 						</li>
 					</c:forEach>
 				</ul>
 				
+			</article>
+			
+			<ul id="tab">
+				<li><a href="#lec_content">클래스 소개</a></li>
+				<li><a href="#lec_review">리뷰</a></li>
+				<li><a href="#lec_ask">문의</a></li>
+				<li class="on"><a href="#lec_cancle">취소/환불규정</a></li>
+			</ul>
+			<article id="lec_cancle">
+			
+				<p>클래스 구매 후 2주 이내 : 100% 환불<br>
+				클래스 구매 후 2주 후 : 환불 불가</p>
 			</article>
 
 		</div>

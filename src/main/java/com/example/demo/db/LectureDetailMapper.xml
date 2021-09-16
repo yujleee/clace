@@ -12,7 +12,7 @@
 	</select>
 	
 	<select id="getReview" resultType="reviewVo">
-	select re_no, re_title, re_conent, re_grade, re_img, lec_no, mem_nickname from review r, member m where m.mem_no=r.mem_no and lec_no=#{lec_no}	
+	select re_no, re_title, re_conent, re_grade, re_img, lec_no, mem_nickname, mem_profile from review r, member m where m.mem_no=r.mem_no and lec_no=#{lec_no}	
 	</select>
 	
 	<select id="getReviewCount" resultType="int">
@@ -20,7 +20,8 @@
 	</select>
 	
 	<select id="getAsk" resultType="askVo">
-	select ask_no, ask_content, ask_date, ask_open_close, ask_status, mem_nickname from ask a, member m where a.mem_no=m.mem_no and lec_no =${lec_no}
+	select ask_no, ask_content, ask_date, ask_open_close, ask_status, mem_nickname from ask a, member m 
+	where a.mem_no=m.mem_no and lec_no =${lec_no} order by ask_date desc
 	</select>
 	
 	<select id="getZzimCount" resultType="int">
@@ -28,15 +29,15 @@
 	</select>
 	
 	<insert id="registerZzim" parameterType="zzimVo">
-	insert into zzim(zzim_no, mem_no, lec_no) values(zzim_no.nextval, 1, #{lec_no})
+	insert into zzim(zzim_no, mem_no, lec_no) values(zzim_no.nextval, #{mem_no}, #{lec_no})
 	</insert>
 	
 	<select id="getZzim" resultType="zzimVo">
-	select zzim_no from zzim where lec_no=#{lec_no} and mem_no=1	
+	select zzim_no from zzim where lec_no=#{lec_no} and mem_no=#{mem_no}	
 	</select>
 	
 	<delete id="deleteZzim">
-	delete zzim where lec_no=#{lec_no} and mem_no=1
+	delete zzim where lec_no=#{lec_no} and mem_no=#{mem_no}
 	</delete>
 	
 	<insert id="insertAsk">
