@@ -125,7 +125,7 @@
 
 <!--  결제로 강의 정보를 넘겨주기 위한 -->	
 	<select id="getLecture" resultType="lectureVo">
-	select lec_no,lec_name,lec_image,lec_price from lecture
+	select lec_no,lec_name,lec_image,lec_price,lec_sale from lecture
 	where lec_no=#{lec_no}
 	</select>
   

@@ -1,3 +1,15 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+textarea{
+	 font-family: 'Noto Sans KR', sans-serif;
+}
+
+a:link {
+  color : white;
+}
+
 section {
   width: 100%;
   height: auto;
@@ -86,7 +98,8 @@ table tr:hover {
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 50px;
-    margin-top: 20px;
+  margin-top: 20px;
+
 }
 .update_button :hover {
   background-color: #08917b;

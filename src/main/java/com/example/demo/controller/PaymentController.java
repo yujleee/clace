@@ -50,7 +50,9 @@ public class PaymentController {
 	//	LectureVo lectureVo = lectureDao.selectLectureOne(lec_no); // 변수의 선언과 초기화 // =,그리고 좌항, 우항 // 좌항은.. 변수다 // 우항은.. 값이다
 		
 		LectureVo lectureVo = lectureDao.getLecture(lec_no);
-		
+		double sale = lectureVo.getLec_sale();
+		System.out.println("lec_no:" + lec_no);
+		System.out.println("sale: " + sale);
 		MemberVo memberVo = (MemberVo) session.getAttribute("loginM");
 		
 		model.addAttribute("lec_no", lec_no);

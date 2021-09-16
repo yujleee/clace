@@ -59,8 +59,11 @@
 			// read
 			const lec_name = '${lectureVo.lec_name}';
 			
+			const lec_sale = '${lectureVo.lec_sale}';
+					
 			const lec_price = '${lectureVo.lec_price}';
-			
+			let lec_saleprice = parseInt(${lectureVo.lec_price}) - (parseFloat(${lectureVo.lec_price}) * parseFloat(${lectureVo.lec_sale}));
+
 			const input_mem_name = document.getElementById('input_mem_name');
 			const mem_name = input_mem_name.value;
 			
@@ -211,7 +214,10 @@
           </p> -->
           <h4 class="total">
             최종 결제 금액
-            <span> <fmt:formatNumber type="number" maxFractionDigits="3" value="${lectureVo.lec_price}" />원</span>
+            <span>
+            <!--   <fmt:formatNumber type="number" maxFractionDigits="3" value="${lectureVo.lec_price}" />원</span>	-->
+             <fmt:formatNumber pattern="#,###">${lectureVo.lec_price - (lectureVo.lec_price* lectureVo.lec_sale)}</fmt:formatNumber>원</span>
+            
           </h4>
         </article>
 
