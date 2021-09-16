@@ -21,7 +21,9 @@ a{
 	border: none;
 }
 #main_button > button{
-
+	background-color: #13aa92;
+	border: none;
+	color: white;
 	width: 200px;
 	height: 56px;
 	border-radius: 5px;
