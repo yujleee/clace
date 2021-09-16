@@ -1,0 +1,28 @@
+a{
+  color : white;
+}
+
+#outer{
+	width: 100%;
+	height: auto;
+}
+#inner{
+	width: 1000px;
+	height: 400px;
+	margin: 30px auto;
+	text-align: center;
+}
+#main_button{
+	width: 500px;
+	height: 56px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	border: none;
+}
+#main_button > button{
+
+	width: 200px;
+	height: 56px;
+	border-radius: 5px;
+}
