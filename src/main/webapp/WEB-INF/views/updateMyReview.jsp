@@ -18,22 +18,25 @@
 </head>
 <body>
 <%@include file ="header.jsp" %>
-	<h2>리뷰수정</h2>
+<div id="updateMyReviewForm">
+	<h2 id="updateMyReview">리뷰수정</h2>
 	<form action="updateMyReview.do" method="post" enctype="multipart/form-data">
 		<!--  <input type="hidden" name="lec_no" value="${lec_no }">
 		<input type="hidden" name="mem_no" value="0">-->
+		
 		<input type="hidden" name="re_no" value="${r.re_no }">
 		<input type="hidden" name="re_img" value="${r.re_img }">
 		
-		리뷰제목 : <input type="text" name="re_title" value="${r.re_title }"><br>
+		리뷰제목 : <input type="text" name="re_title" value="${r.re_title }" id="re_title"><br>
 		리뷰내용 : <br>
 		<textarea rows="10" cols="70" name="re_conent">${r.re_conent }</textarea><br>
-		리뷰평점 : <input type="text" name="re_grade" value="${r.re_grade }"><br>
+		리뷰평점 : <input type="text" name="re_grade" value="${r.re_grade }" id="re_grade"><br>
 		리뷰사진 : <input type="file" name="uploadFile"><br>
 		<img src="resources/profile/${r.re_img }" width="80" height="80"><br>
-		<input type="submit" value="수정">
-		<input type="reset" value="취소">
+		<input type="submit" value="수정" id="updateReviewBtn">
+		<input type="reset" value="취소" id="resetReviewBtn">
 	</form>
+</div>
 	<%@include file = "footer.jsp" %>
 </body>
 </html>

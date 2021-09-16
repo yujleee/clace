@@ -36,7 +36,7 @@
   
   <!-- 나의 수강클래스찜 -->
   <select id="listMyZzimLecture" resultType="lectureVo">
-  	select l.lec_no,lec_name,lec_price,lec_place 
+  	select l.lec_no,lec_name,lec_price,lec_place,lec_image,lec_sale,lec_grade 
 	from zzim z, lecture l
 	where z.lec_no = l.lec_no and 
 	mem_no=#{mem_no}

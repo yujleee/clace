@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,15 +18,18 @@
     <title>클레이스: 마이 페이지:게시물상세</title>
 </head>
 <body>
-	<%@include file="header.jsp" %>
-	<h2>나의 작성글상세</h2>
-	게시물번호:${b.brd_no }<br>
-	게시물제목:${b.brd_title }<br>
-	게시물내용<br>
-	<textarea rows="10" cols="80" readonly="readonly">${b.brd_content }</textarea><br>
-	게시물작성일자: ${b.brd_date }<br>
-	게시물해시태그: ${b.brd_hashtag }<br>
-	<button><a href="myPage.do">마이페이지로 돌아가기</a></button>
-	<%@include file="footer.jsp" %>
+     <%@include file ="header.jsp" %>
+<div id="myBoardForm">
+	<h2 id="writeMyBoard">나의 작성글</h2>
+	<p class="myboard">게시물번호 &nbsp; ${b.brd_no }</p>
+	<p class="myboard">게시물제목 &nbsp;${b.brd_title }</p>
+	<p id="brd_content">게시물내용<br><br>
+	<textarea rows="10" cols="80" readonly="readonly">${b.brd_content }</textarea></p>
+	<p class="myboard">게시물작성일자 &nbsp;<fmt:formatDate value="${b.brd_date}" pattern="yyyy-MM-dd"/></p>
+	<p class="myboard">게시물해시태그 &nbsp; ${b.brd_hashtag }</p>
+	<a href="myPage.do?mem_no=1" id="backMyPageBtn">마이페이지로 돌아가기</a>
+</div>
+	<%@include file = "footer.jsp" %>
+
 </body>
 </html>

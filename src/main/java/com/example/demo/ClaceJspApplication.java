@@ -20,7 +20,6 @@ public class ClaceJspApplication {
 	public CommonsMultipartResolver multipartResolver() {
 		return new CommonsMultipartResolver();
 	}
-
 	
 	 @Bean 
 	 public ServerEndpointExporter serverEndpointExporter() { 

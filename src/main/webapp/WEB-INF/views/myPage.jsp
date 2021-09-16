@@ -17,8 +17,10 @@
     <title>클레이스: 마이 페이지</title>
 </head>
 <body>
-	<%@include file="header.jsp" %>
+
+	<%@include file ="header.jsp" %>
     <!-- end header-->
+    
     <div id="fixed"><img src="images/main/btn_talk.png" alt="실시간 문의" /></div>
     <div id="btn_top">
       <a href="#navTop" class="topBtn"><img src="images/main/btn_top.png" alt="top" /></a>
@@ -32,14 +34,17 @@
           <span id="profile">
             <img src="/resources/profile/${loginM.mem_profile }" alt="프로필 사진" width="80" height="80"/>
           </span>
-          <div id="notification">
+          
+         <!--  <div id="notification">
             <a href="#" class="noti_btn"> <img src="images/mypage/ic_noti.png" alt="알람" /></a>
           </div>
+          --> 
+          
           <h3 class="nickname">
             <label for="nickname">${loginM.mem_nickname }</label>
           </h3>
           <div class="modify">
-           <!--   <a href="getMemberInfo.do?mem_no=${m.mem_no }"> --> <!-- 상태유지시키면 이걸로 바꾸기 -->
+           <!--   <a href="getMemberInfo.do?mem_no=${m.mem_no }"> --> 
            <a href="getMemberInfo.do"> 
             <button id="modify_btn">
                 <span>수정</span>
@@ -57,9 +62,9 @@
               <a href="/listMyZzimLecture.do"><button id="btn3">찜한 클래스</button></a>
             </div>
             <div class="tab 2">
-              <a href="#myPage_coupon.html"><button id="btn4">쿠폰</button></a>
-              <a href="/listMyReview.do"><button id="btn5">나의 리뷰</button></a>
-              <a href="#creator_home"><button id="btn6">강사</button></a>
+             <!--  <a href="#myPage_coupon.html"><button id="btn4">쿠폰</button></a> -->
+              <a href="/listMyReview.do"><button id="btn5">나의 리뷰</button></a> 
+             <!--   <a href="#creator_home"><button id="btn6">강사</button></a> -->
             </div>
           </div>
         </div>
@@ -68,7 +73,7 @@
 
     <section id="content">
       <div class="wrap">
-      <h2>나의 수강중인 클래스</h2>
+      <h2 id="listMyLecture">나의 수강중인 클래스</h2>
 	<table border="1" width="80%">
 		<tr>
 			<th>클래스번호</th>
@@ -90,8 +95,8 @@
 	</table>
       </div>
     </section>
-
   <%@include file="footer.jsp" %>
     <!-- end footer -->
+
 </body>
 </html>

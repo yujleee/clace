@@ -51,7 +51,7 @@ public class MyPageController {
 		model.addAttribute("m",dao.getMemberInfo(mem_no));
 	}
 	
-	@RequestMapping(value = "/updateMemberInfo.do", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/updateMemberInfo.do", method = RequestMethod.POST)
 	public ModelAndView submit(MemberVo m,String age_no_data,String job_no_data,String mem_gender_data,
 			HttpServletRequest request, HttpSession session) {
 		
@@ -98,6 +98,68 @@ public class MyPageController {
 			//System.out.println("수정한 회원의 정보를 다시 상태유지하였습니다.");
 			MemberVo m1 = dao.getMemberInfo(m.getMem_no());
 			System.out.println("m1:"+m1);
+		}else {
+			mav.addObject("msg", "회원 수정에 실패하였습니다.");
+			mav.setViewName("error");
+		}
+		
+		return mav;
+	}*/
+	
+	@RequestMapping(value = "/updateMemberInfo.do", method = RequestMethod.POST)
+	public ModelAndView submit(MemberVo m,String age_no_data,String job_no_data,String mem_gender_data,
+			HttpServletRequest request, HttpSession session) {
+		ModelAndView mav = new ModelAndView("redirect:/myPage.do");	
+		
+		if(!age_no_data.equals("0")) {
+			m.setAge_no(Integer.parseInt(age_no_data));
+		}
+		
+		if(!job_no_data.equals("0")) {
+			m.setJob_no(Integer.parseInt(job_no_data));
+		}
+		
+		if(!mem_gender_data.equals("0")) {
+			m.setMem_gender(mem_gender_data);
+		}
+		
+		String path = request.getRealPath("/resources/profile"); 
+		String oldMem_profile = m.getMem_profile();
+		String mem_profile = null;
+		
+		MultipartFile uploadFile = m.getUploadProfileFile();
+		mem_profile = uploadFile.getOriginalFilename();
+		
+		if(mem_profile != null && !mem_profile.equals("")) {
+			System.out.println("파일도 수정함");
+			try {
+				byte []data = uploadFile.getBytes();
+				FileOutputStream fos = new FileOutputStream(path+"/"+mem_profile);
+				fos.write(data);
+				fos.close();
+			}catch (Exception e) {
+				System.out.println("예외발생:"+e.getMessage());
+			}
+		}else {
+			System.out.println("파일은 수정하지 않음");
+		}
+		if(mem_profile != null && !mem_profile.equals("")) {
+			m.setMem_profile(mem_profile);
+		}
+		
+		int re = dao.updateMemberInfo(m);
+		
+		if(re == 1) {
+			if(mem_profile != null && !mem_profile.equals("")) {
+				File file = new File(path+"/"+oldMem_profile);
+				file.delete();
+			}
+			
+			// 수정한 회원의 정보를 다시 꺼내와서 로그인한 회원에 대한 정보를 다시 세션에 저장
+			session.setAttribute("loginM", dao.getMemberInfo(m.getMem_no()));
+			//System.out.println("수정한 회원의 정보를 다시 상태유지하였습니다.");
+			MemberVo m1 = dao.getMemberInfo(m.getMem_no());
+			//System.out.println("m1:"+m1);
 		}else {
 			mav.addObject("msg", "회원 수정에 실패하였습니다.");
 			mav.setViewName("error");

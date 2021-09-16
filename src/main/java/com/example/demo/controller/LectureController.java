@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.HashMap;
 
+
 import java.util.List;
 import java.util.Map;
 
@@ -40,14 +41,15 @@ public class LectureController {
 	}
 
 
+
 	@RequestMapping("/")
 	public String main() {
 		return "index";
 	}
 	@RequestMapping("/index")
 	public void index() {
-	}
 
+	}
 	@RequestMapping("/listBestLecture")
 	@ResponseBody
 	public List<LectureVo> listBestLecture() {
