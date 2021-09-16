@@ -19,7 +19,7 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-	<h2>나의 게시물</h2>
+
 	<br>
 	<br>
     <br>

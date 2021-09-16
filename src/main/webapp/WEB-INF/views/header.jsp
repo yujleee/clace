@@ -19,7 +19,7 @@
 </head>
 <body>
 	<header>
-<<<<<<< HEAD
+
 		<div id="nevUser">
 			<div class="headerwrap">
 				
