@@ -25,4 +25,7 @@ a{
 	width: 200px;
 	height: 56px;
 	border-radius: 5px;
+	background : #13aa92;
+	border: none;
+	color:white;
 }
