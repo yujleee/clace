@@ -1,32 +1,3 @@
-body {
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-div {
-  box-sizing: border-box;
-}
-
-h2,h3,h4 {
-  font-size: 32px;
-  font-weight: 500;
-  color: #222;
-  margin-bottom: 30px;
-}
-
-h3 {
-  font-size: 28px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-p {
-  font-size: 16px;
-  color: #555;
-  margin: 1em 0;
-}
-
 #content {
   width: 100%;
   height: auto;
@@ -55,13 +26,18 @@ p {
 section .lectures {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .lectures .lecture {
   width: 240px;
   margin-bottom: 70px;
+  margin-right: 10px;
+}
+
+.lectures .lecture:nth-child(n/4){
+	margin-right: 0;
 }
 
 .lectures .lecture .img_lecture {
@@ -232,8 +208,13 @@ section .lectures {
 	border-top: solid 1px #eeeeee;
 }
 
-#getMemberInfoForm, #myBoardForm,
-#MyReviewForm, #updateMyReviewForm, #myReviewForm{
+#getMemberInfoForm{
+	width: 750px;
+	height: auto;
+	margin: 0 auto 60px;
+}
+
+#myBoardForm,#MyReviewForm, #updateMyReviewForm, #myReviewForm{
 	width: 750px;
 	height: 750px;
 	margin: 0 auto;
@@ -351,7 +332,9 @@ td{
 }
 
 #listMyBoard, #listMyLecture, #writeMyBoard, 
-#myZzimLecture, #listMyReview,#writemyReview,#myReview{
+#myZzimLecture, #listMyReview,#writemyReview,
+#myReview,#updateMyReview
+{
 	color: #777777;
 	text-align: center;
 	font-size: 30px;
@@ -362,4 +345,17 @@ td{
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+
+.reviewForm, .updateMember, .myboard{
+	border-bottom: 1px solid #ccc;
+	padding: 10px 10px;
+	font-size: 18px;
+}
+#brd_content{
+	font-size: 18px;
+}
+textarea{
+	font-size: 14px;
+    font: Noto Sans KR;
 }

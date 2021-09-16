@@ -20,10 +20,10 @@
 	<%@include file="header.jsp" %>
 <div id="MyReviewForm">
 	<h3 id="myReview">리뷰</h3>
-    리뷰번호&nbsp;:&nbsp;${r.re_no }<br> 
-	리뷰제목&nbsp;:&nbsp;${r.re_title }<br>
-	리뷰내용&nbsp;:&nbsp;${r.re_conent }<br>
-	리뷰평점&nbsp;:&nbsp;${r.re_grade }<br>
+    <p class="reviewForm">리뷰번호&nbsp;&nbsp;${r.re_no }</p>
+	<p class="reviewForm">리뷰제목&nbsp;&nbsp;${r.re_title }</p>
+	<p class="reviewForm">리뷰내용&nbsp;&nbsp;${r.re_conent }</p>
+	<p class="reviewForm">리뷰평점&nbsp;&nbsp;${r.re_grade }</p>
 	<img src="resources/profile/${r.re_img }" width="200" height="200"><br>
 	<a href="listMyReview.do" id="backReviewListBtn">리뷰 목록</a>
 	<a href="updateMyReview.do?re_no=${r.re_no }" id="updateReviewBtn">리뷰 수정</a>

@@ -31,8 +31,9 @@
               <a href="listMyZzimLecture.do"><img src="images/main/ic_zzim.png" alt="찜" /></a>
             </li>
             <li>
-              <a href="myPage.do"><img src="/resources/profile/${loginM.mem_profile }" 
-              						   alt="마이페이지" width="45" height="45"/></a>
+            
+             <div class="memProfile"><a href="myPage.do"><img src="/resources/profile/${loginM.mem_profile }" 
+              						   alt="마이페이지" width="45" height="45"/></a></div> 
             </li>
           </ul>
         </div>

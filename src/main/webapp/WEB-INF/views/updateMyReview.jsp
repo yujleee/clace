@@ -19,7 +19,7 @@
 <body>
 <%@include file ="header.jsp" %>
 <div id="updateMyReviewForm">
-	<h2>리뷰수정</h2>
+	<h2 id="updateMyReview">리뷰수정</h2>
 	<form action="updateMyReview.do" method="post" enctype="multipart/form-data">
 		<!--  <input type="hidden" name="lec_no" value="${lec_no }">
 		<input type="hidden" name="mem_no" value="0">-->

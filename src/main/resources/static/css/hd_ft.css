@@ -111,6 +111,13 @@ nav ul > li:last-child {
   margin-right: 50px;
 }
 
+.memProfile{
+	width: 42px;
+	height: 42px;
+	border-radius: 70%;
+	overflow: hidden;
+}
+
 /* ------------------- header end -------------------- */
 
 #fixed {
