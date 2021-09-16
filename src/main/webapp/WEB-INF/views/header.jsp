@@ -19,6 +19,7 @@
 </head>
 <body>
 	<header>
+<<<<<<< HEAD
 		<div id="nevUser">
 			<div class="headerwrap">
 				
@@ -76,12 +77,13 @@
 				<ul class="gnbIcons">
 					<li><a href="listBoard.do"><img
 							src="images/main/ic_comu.png" alt="커뮤니티" /></a></li>
-					<li><a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
+					<li><a href="listMyZzimLecture.do"><img src="images/main/ic_zzim.png" alt="찜" /></a>
 					</li>
-					<li><a href="myPage.do">
-					<div><img src="images/detail/profile_user.png"
-							alt="마이페이지" /></div>
-					</a></li>
+					<li>
+              <div class="memProfile">
+             	<a href="myPage.do"><img src="/resources/profile/${loginM.mem_profile }" 
+              						   alt="마이페이지" width="45" height="45"/></a></div> 
+            </li>
 				</ul>
 			</div>
 			<div id="category">

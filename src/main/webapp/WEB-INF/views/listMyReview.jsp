@@ -19,7 +19,10 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<h2>리뷰 목록</h2>
+	<br>
+	<br>
+    <br>
+	<h2 id="listMyReview">리뷰 목록</h2>
 	<table border="1" width="80%">
 		<tr>
 			<th>리뷰번호</th>
@@ -38,6 +41,7 @@
 			</c:forEach>
 		</tr>
 	</table>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<%@include file="footer.jsp" %>
 </body>
 </html>

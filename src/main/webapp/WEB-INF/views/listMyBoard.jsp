@@ -20,6 +20,11 @@
 <body>
 <%@include file="header.jsp" %>
 	<h2>나의 게시물</h2>
+	<br>
+	<br>
+    <br>
+	<h2 id="listMyBoard">나의 게시물</h2>
+
         <table border="1" width="80%">
           <tr>
             <th width="100">글번호</th>
@@ -36,8 +41,10 @@
           		<td>${b.brd_date }</td>
           	</tr>
           </c:forEach>
-        </table>
-        
-      <%@include file="footer.jsp" %>
+
+        </table>  
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       <%@include file = "footer.jsp" %>
+
 </body>
 </html>
