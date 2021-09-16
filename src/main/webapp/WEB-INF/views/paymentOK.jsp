@@ -9,23 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="css/board.css" />
+          <link rel="stylesheet" href="css/array.css" />
         
 </head>
 <body>
 	<%@ include file = "header.jsp" %>
 
 	<section>
-		<div id="container">
-			
-		<h3>결제가 완료되었습니다.</h3>
+		<div id="outer">
+			<div id="inner">
 				
-		<div class="update_button">
-			<button><a class="btn_color_white" href="/index">메인으로</a></button>
-		</div>		
-		</div>
+			<h3>결제가 완료되었습니다.</h3>
+					
+			<div class="update_button">
+				<button><a class="btn_color_white" href="/index">메인으로</a></button>
+			</div>		
 
-
-		
+			</div>
+		</div>			
 
 </section> 
 

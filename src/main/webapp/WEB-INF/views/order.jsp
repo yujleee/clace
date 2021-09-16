@@ -116,11 +116,11 @@
 		 */
 		function requestPaySuccess(rsp) {
 			// !TODO 테스트 코드, 나중에 삭제
-			var msg = '결제가 완료되었습니다.';
-			msg += '고유ID:'+rsp.imp_uid;
-			msg += '상점 거래ID:'+rsp.merchant_uid;
-			msg += '결제 금액:'+rsp.paid_amount;
-			msg += '카드 승인번호:'+rsp.apply_num;
+			var msg = '결제가 완료되었습니다.\n';
+			msg += '고유ID:'+rsp.imp_uid +'\n';
+			msg += '상점 거래ID:'+rsp.merchant_uid+'\n';
+			msg += '결제 금액:'+rsp.paid_amount+'\n';
+			msg += '카드 승인번호:'+rsp.apply_num+'\n';
 			alert(msg);
 			
 			// 1. 서버 기록
@@ -236,13 +236,13 @@
         </div>
       </div>
       
-      
+      <!-- 데이터베이스에 결제정보 저장 -->
      <div id="order_form">
       <form id="payment_form" action="paymentOK.do" method = "post"> 
       	<input type="text" name="mem_no" value="${memberVo.mem_no }">
       	<input type="text" name="lec_no" value="${lec_no }">
       	<input type="text" name="pay_type" value="신용카드">
-      	<input type="text" name="pay_amount" value="${lectureVo.lec_price }">
+      	<input type="text" name="pay_amount" value="${lectureVo.lec_price}">
       	<input type="submit" value="db저장" >
       </form>
       </div>
