@@ -20,7 +20,7 @@
 		<h3>결제가 완료되었습니다.</h3>
 				
 		<div class="update_button">
-			<button><a href="/index">메인으로</a></button>
+			<button><a class="btn_color_white" href="/index">메인으로</a></button>
 		</div>		
 		</div>
 
