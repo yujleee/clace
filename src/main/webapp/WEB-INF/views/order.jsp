@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="css/hd_ft.css" />
 	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/Clais_style.css" />
 	
 	<style type="text/css">
 	#order_form{
@@ -58,8 +59,11 @@
 			// read
 			const lec_name = '${lectureVo.lec_name}';
 			
+			const lec_sale = '${lectureVo.lec_sale}';
+					
 			const lec_price = '${lectureVo.lec_price}';
-			
+			let lec_saleprice = parseInt(${lectureVo.lec_price}) - (parseFloat(${lectureVo.lec_price}) * parseFloat(${lectureVo.lec_sale}));
+
 			const input_mem_name = document.getElementById('input_mem_name');
 			const mem_name = input_mem_name.value;
 			
@@ -146,57 +150,28 @@
 	<title>클레이스</title>
 </head>
 <body>
- <header>
-      <div class="headerwrap">
-        <div id="navTop">
-          <h1>
-            <a href="index.html"><img src="images/main/logo.png" width="120" alt="클레이스" /></a>
-          </h1>
-          <div class="search">
-            <input type="search" placeholder="듣고 싶은 클래스가 있으신가요?" name="search" />
-            <span class="ic_search"></span>
-          </div>
-          <ul class="gnbIcons">
-            <li>
-              <a href="creator_home.html"><img src="images/main/ic_home.png" alt="강사홈" /></a>
-            </li>
-            <li>
-              <a href="community.html"><img src="images/main/ic_comu.png" alt="커뮤니티" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
-            </li>
-            <li>
-              <a href="myPage.html"><img src="images/detail/profile_user.png" alt="마이페이지" /></a>
-            </li>
-          </ul>
-        </div>
-        <nav>
-          <ul>
-            <li></li>
-            <li><a href="#">추천 클래스</a></li>
-            <li><a href="#">특가 할인</a></li>
-            <li><a href="new_lectures.html">신규 클래스</a></li>
-            <li><a href="community.html">커뮤니티</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+	<%@ include file = "header.jsp" %>
     <!-- end header-->
+    
     <div id="fixed"><img src="images/main/btn_talk.png" alt="실시간 문의" /></div>
     <div id="btn_top">
       <a href="#navTop" class="topBtn"><img src="images/main/btn_top.png" alt="top" /></a>
     </div>
     <!-- end buttons-->
+    
+  <div id="container">
     <section id="payment">
       <div id="paymentWrap">
         <article class="order_info">
-          <h3>주문정보: ${lec_no}</h3>
+         <!--   <h3>주문정보: ${lec_no}</h3>	-->
+        	 <h3>주문정보</h3>
           <div class="infoWrap">
-            <div class="lec_img"><img src="images/main/img_cls1.jpg" width="80" alt="" /></div>
+            <div class="lec_img"><img src="images/lecture/${lectureVo.lec_image}" width="200px" alt="" /></div>
             <div id="lec_info">
-              <h4>클래스일정: ${lectureVo.lec_name}</h4>
-              <p>선택한 일정: ${selectDate}</p>
+              <h4>${lectureVo.lec_name}</h4>
+              <p>클래스 번호	: ${lectureVo.lec_no}<p>
+              <p>선택한 일정	: ${selectDate}</p>
+				
             </div>
           </div>
         </article>
@@ -239,7 +214,10 @@
           </p> -->
           <h4 class="total">
             최종 결제 금액
-            <span> <fmt:formatNumber type="number" maxFractionDigits="3" value="${lectureVo.lec_price}" />원</span>
+            <span>
+            <!--   <fmt:formatNumber type="number" maxFractionDigits="3" value="${lectureVo.lec_price}" />원</span>	-->
+             <fmt:formatNumber pattern="#,###">${lectureVo.lec_price - (lectureVo.lec_price* lectureVo.lec_sale)}</fmt:formatNumber>원</span>
+            
           </h4>
         </article>
 
@@ -268,20 +246,10 @@
       	<input type="submit" value="db저장" >
       </form>
       </div>
-      
-    </section>
-
-    <footer>
-      <div class="ftWrap">
-        <h1></h1>
-        <ul class="ft_info clear">
-          <li>클레이스</li>
-          <li>contact@clace.com</li>
-          <li>TEL 02-123-124</li>
-          <li>clace All rights reserved</li>
-        </ul>
-      </div>
-    </footer>
+         </section>
+   
+     </div>  
+	<%@ include file = "footer.jsp" %>
     <!-- end footer --> 
 </body>
 </html>

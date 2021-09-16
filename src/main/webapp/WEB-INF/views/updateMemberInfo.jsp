@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,21 +18,24 @@
     <title>클레이스: 마이 페이지</title>
 </head>
   <body>
-   <%@include file="header.jsp" %>
-    
+
+   <%@include file ="header.jsp" %>
+
     <div id="updateMemberInfoForm">
 		<h2 id="updateMemberInfo">회 원 정 보 수 정</h2>
 		<form action="updateMemberInfo.do" method="post" enctype="multipart/form-data">
 			  <input type="hidden" name="mem_no" value="${loginM.mem_no }"><br>
-			<!--<input type="hidden" name="mem_profile" value="${loginM.mem_profile }"><br>-->
-			<img  src="/resources/profile/${loginM.mem_profile }" name="mem_profile" width="80" height="80"><br>
+			  <input type="hidden" name="mem_profile" value="${loginM.mem_profile }">
+			<div id="updateProfileImg"><img  src="/resources/profile/${loginM.mem_profile }" name="mem_profile" 
+					width="80" height="80" id="profileImg"><br>
+			</div>
 			<table>
 				<tr>
 					<td>
 						<label for="mem_pwd">비밀번호</label>
 					</td>
 					<td>
-						<input type="text" name="mem_pwd" id="mem_pwd">
+						<input type="text" name="mem_pwd" id="mem_pwd" value="${m.mem_pwd }">
 					</td>
 				</tr>
 				
@@ -41,7 +44,8 @@
 						<label for="mem_nickname">닉네임</label>
 					</td>
 					<td>
-						<input type="text" name="mem_nickname" id="mem_nickname" value="${loginM.mem_nickname}">
+						<input type="text" name="mem_nickname" id="mem_nickname" value="${m.mem_nickname }">
+
 					</td>
 				</tr>
 				
@@ -50,7 +54,7 @@
 						<label for="mem_profile">프로필사진&nbsp;</label>
 					</td>
 					<td>
-						<input type="file" name="uploadProfileFile" id="mem_profile">
+						<input type="file" name="uploadProfileFile" id="mem_profile" value="${m.mem_profile }">
 					</td>
 				</tr>
 				
@@ -59,7 +63,8 @@
 						<label for="mem_phone">휴대폰번호&nbsp;</label>
 					</td>
 					<td>
-						<input type="text" name="mem_phone" id="mem_phone" value="${loginM.mem_phone}">
+						<input type="text" name="mem_phone" id="mem_phone" value="${m.mem_phone }">
+
 					</td>
 				</tr>
 				
@@ -68,7 +73,8 @@
 						<label for="mem_email">이메일</label>
 					</td>
 					<td>
-						<input type="text" name="mem_email" id="mem_email" value="${loginM.mem_email}">
+						<input type="text" name="mem_email" id="mem_email" value="${m.mem_email }">
+
 					</td>
 				</tr>
 				<tr>
@@ -100,8 +106,6 @@
 							<option value="6" <c:if test="${m.job_no == 6}">selected</c:if>>주부</option>
 							<option value="7" <c:if test="${m.job_no == 7}">selected</c:if>>기타</option>
 						</select><br>
-						1&nbsp;:&nbsp;학생&nbsp; 2&nbsp;:&nbsp;취준생&nbsp; 3&nbsp;:&nbsp;직장인&nbsp; 4&nbsp;:&nbsp;프리랜서&nbsp; 
-						5&nbsp;:&nbsp;자영업자&nbsp; 6&nbsp;:&nbsp;주부&nbsp; 7&nbsp;:&nbsp;기타
 					</td>
 					</tr>
 					<tr>
@@ -118,13 +122,14 @@
 								<option value="4" <c:if test="${m.age_no == 4}">selected</c:if>>40대</option>
 								<option value="5" <c:if test="${m.age_no == 5}">selected</c:if>>50대 이상</option>
 							</select><br>
-							1&nbsp;:&nbsp;10대&nbsp; 2&nbsp;:&nbsp;20대&nbsp; 3&nbsp;:&nbsp;30대&nbsp; 4&nbsp;:&nbsp;40대&nbsp; 5&nbsp;:&nbsp;50대
 						</td>
 					</tr>
 			</table>
 			<input type="submit" value="수정하기" id="updateInfoBtn">
 			</div>
 	</form>
+
 	 <%@include file="footer.jsp" %>
+
 </body>
 </html>

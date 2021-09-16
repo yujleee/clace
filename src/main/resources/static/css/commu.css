@@ -48,11 +48,7 @@ section td {
   color: #555;
   cursor: pointer;
 }
-#find {
-  margin-top: 10px;
-  text-align: center;
-  /* padding: 20px; */
-}
+
 #my_write {
   color: #555;
   border: 1px solid #ccc;

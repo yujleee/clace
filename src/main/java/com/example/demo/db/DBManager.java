@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.example.demo.vo.BoardVo;
+import com.example.demo.vo.LectureVo;
 import com.example.demo.vo.MemberVo;
 import com.example.demo.vo.PaymentVo;
 
@@ -155,6 +156,12 @@ public class DBManager {
 		PaymentVo p = session.selectOne("payment.getPayment", pay_no);
 		session.close();
 		return p;
+	}
+	public static LectureVo getLecture(int lec_no) {
+		SqlSession session = factory.openSession();
+		LectureVo le = session.selectOne("lecture.getLecture", lec_no);
+		session.close();
+		return le;
 	}
 	
 }

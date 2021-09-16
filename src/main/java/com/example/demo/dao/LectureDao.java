@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.db.DBManager;
 import com.example.demo.db.LectureManager;
 import com.example.demo.vo.CategoryVo;
 import com.example.demo.vo.LectureVo;
@@ -36,7 +37,9 @@ public class LectureDao {
 	 * @param lec_no 강의 번호
 	 * @return 강의 정보
 	 */
-	public LectureVo selectLectureOne(int lec_no) {
+/*	임의로 받아오는 코드 
+ * 
+ * public LectureVo selectLectureOne(int lec_no) {
 		// !TODO 테스트 코드, DB와 연결 필요
 		
 		LectureVo lectureVo = new LectureVo(); // 변수의 선언과 초기화
@@ -46,8 +49,11 @@ public class LectureDao {
 		lectureVo.setLec_image(null); // !TODO 이미지 주소가 어떻게 보관되나요?
 		
 		return lectureVo;
+		
+		
 	}
-
+*/
+	
 	public List<LectureVo> listAroundMe(String place){ 
 		return LectureManager.listAroundMe(place); 
 	}
@@ -100,6 +106,9 @@ public class LectureDao {
 		return LectureManager.listCategory();
 	}
 	
+	public LectureVo getLecture(int lec_no) {
+		return DBManager.getLecture(lec_no);
+	}
 
 
 }

@@ -20,7 +20,10 @@
 <body>
 	<%@include file="header.jsp" %>
 	<!-- end header -->
-	<h2>나의 수강중인 클래스</h2>
+	<br>
+	<br>
+    <br>
+	<h2 id="listMyLecture">나의 수강중인 클래스</h2>
 	<table border="1" width="80%">
 		<tr>
 			<th>클래스번호</th>
@@ -40,6 +43,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<%@include file="footer.jsp" %>
 </body>
 </html>

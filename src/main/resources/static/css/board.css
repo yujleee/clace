@@ -1,0 +1,121 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+textarea{
+	 font-family: 'Noto Sans KR', sans-serif;
+}
+
+a:link {
+  color : white;
+}
+
+section {
+  width: 100%;
+  height: auto;
+}
+
+section .commuWrap {
+  width: 1000px;
+  margin: 50px auto 100px;
+}
+
+.commuWrap table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  color: #555;
+}
+
+section th {
+  background-color: #eeeeee;
+  height: 60px;
+}
+section td {
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+}
+
+table tr:hover {
+  background-color: #eeeeee;
+}
+
+.commuWrap > div {
+  float: left;
+}
+
+.btnWrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Page_view{
+	 margin-top: 15px;
+	 text-align: center;
+	 width: 100%;
+
+}
+
+.btnWrap button {
+  background-color: #f5f5f5;
+  width: 100px;
+  height: 30px;
+  margin: 15px;
+  border-radius: 5px;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}
+
+.btnWrap button:hover {
+	font-weight: bold;
+ 	background-color: #eeeeee;
+}
+
+/*게시물 등록	*/
+
+#container {
+
+  margin-top: 30px;
+  margin-left: 200px;
+  margin-bottom: 200px;
+
+}
+.update_button > input {
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  background: #13aa92;
+  color: white;
+  border: solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  margin-top: 20px;
+
+}
+.update_button :hover {
+  background-color: #08917b;
+}
+.update_button > button {
+   width: 100px;
+  height: 30px;
+  font-size: 18px;
+  background: #13aa92;
+  color: white;
+  border: solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+
+

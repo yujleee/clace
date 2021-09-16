@@ -4,12 +4,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>결제완료창</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="css/board.css" />
+        
 </head>
 <body>
-<h3>결제가 완료되었습니다.</h3>
+	<%@ include file = "header.jsp" %>
 
-<a href="/index.do">메인으로 돌아가기</a>
+	<section>
+		<div id="container">
+			
+		<h3>결제가 완료되었습니다.</h3>
+				
+		</div>
+		</section> 
 
+		<div class="update_button">
+			<button><a href="/index">메인으로</a></button>
+		</div>
+
+	<%@ include file = "footer.jsp" %>
 </body>
 </html>

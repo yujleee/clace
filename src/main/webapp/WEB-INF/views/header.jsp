@@ -19,13 +19,29 @@
 </head>
 <body>
 	<header>
+<<<<<<< HEAD
 		<div id="nevUser">
 			<div class="headerwrap">
-				<span class="login"><a href="login.do">로그인/회원가입</a></span>
+				
+			<!--  	<span class="login"><a href="login.do">로그인/회원가입</a></span>
 				<div class="userLogin">
 					<span class="currentUser">ㅇㅇ(hi00)님</span> <span class="logout"><a
 						href="#">로그아웃</a></span>
 				</div>
+			-->
+			<c:choose>
+			<c:when test="${empty loginM }">
+				<span class="login"><a href="login.do">로그인/회원가입</a></span>	
+			</c:when>
+				
+			<c:when test="${not empty loginM }">
+				<div class="userLogin">
+					<span class="currentUser">${loginM.mem_name }(${loginM.mem_id })님 환영합니다.</span>
+					<span class="logout"><a href="logout.do">로그아웃</a></span>				
+				</div>	
+			</c:when>	
+			</c:choose>			
+				
 			</div>
 		</div>
 		<div id="recentKeyword">
@@ -59,14 +75,15 @@
 					</form>
 				</div>
 				<ul class="gnbIcons">
-					<li><a href="community.html"><img
+					<li><a href="listBoard.do"><img
 							src="images/main/ic_comu.png" alt="커뮤니티" /></a></li>
-					<li><a href="#"><img src="images/main/ic_zzim.png" alt="찜" /></a>
+					<li><a href="listMyZzimLecture.do"><img src="images/main/ic_zzim.png" alt="찜" /></a>
 					</li>
-					<li><a href="myPage.do">
-					<div><img src="images/detail/profile_user.png"
-							alt="마이페이지" /></div>
-					</a></li>
+					<li>
+              <div class="memProfile">
+             	<a href="myPage.do"><img src="/resources/profile/${loginM.mem_profile }" 
+              						   alt="마이페이지" width="45" height="45"/></a></div> 
+            </li>
 				</ul>
 			</div>
 			<div id="category">

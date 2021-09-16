@@ -62,7 +62,8 @@
        
         <!-- JOB -->
   	직업<select id="job_no" class="design" name="job_no">
-	        <option value="0">직업선택</option>
+
+	        <option value="0">직업을 선택해주세요</option>
 			<option value="1"<c:if test="${job_no == 1}">selected</c:if>>학생</option>
 			<option value="2"<c:if test="${job_no == 2}">selected</c:if>>취준생</option>
 			<option value="3"<c:if test="${job_no == 3}">selected</c:if>>직장인</option>
@@ -71,18 +72,23 @@
 			<option value="6" <c:if test="${job_no == 6}">selected</c:if>>주부</option>
 			<option value="7" <c:if test="${job_no == 7}">selected</c:if>>기타</option>
        </select>
+<!--  
  	1.학생 &nbsp;2.취준생 &nbsp;3.직장인 &nbsp;4.프리랜서 &nbsp;5.자영업자 &nbsp;6.주부 &nbsp;7.기타<br>
+-->
      
         <!-- AGE -->
    	연령대<select id="age_no" class="design" name="age_no">
               <option>연령대를 선택해주세요</option>
+
               <option value="1"  <c:if test="${age_no == 1}">selected</c:if>>10대</option>
               <option value="2"  <c:if test="${age_no == 2}">selected</c:if>>20대</option>
               <option value="3"  <c:if test="${age_no == 3}">selected</c:if>>30대</option>
               <option value="4"  <c:if test="${age_no == 4}">selected</c:if>>40대</option>
               <option value="5"  <c:if test="${age_no == 5}">selected</c:if>>50대 이상</option>
             </select>                        
+<!-- 
       1.20세 이하 &nbsp;2.21~30세 &nbsp;3.31~40세 &nbsp;4.41~50세 &nbsp;5.51~60세 <br>    
+-->
     
         <!-- JOIN BTN-->
         <div class="btn_area">
@@ -99,6 +105,6 @@
       <a href="#header" class="topBtn"><img src="images/main/btn_top.png" alt="top" title="top" /></a>
     </div>
     
-
+	<%@ include file = "footer.jsp" %>
   </body>
 </html>

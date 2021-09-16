@@ -22,9 +22,7 @@ header .headerwrap {
 	color: #777;
 }
 
-#nevUser .headerwrap .userLogin{
-	display:none;
-}
+
 
 #nevUser .headerwrap .currentUser{
 	margin-right: 30px;
@@ -229,6 +227,13 @@ nav ul>li:first-child {
 
 nav ul>li:last-child {
 	margin-right: 50px;
+}
+
+.memProfile{
+	width: 42px;
+	height: 42px;
+	border-radius: 70%;
+	overflow: hidden;
 }
 
 /* ------------------- header end -------------------- */
