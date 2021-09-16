@@ -72,30 +72,34 @@ public class LectureDetailManager {
 	
 	public static int registerZzim(ZzimVo z) {
 		SqlSession session = factory.openSession(true);
+				
 		int re = session.insert("detail.registerZzim", z);
 		session.commit();
 		session.close();
 		return re;
 	}
 	
-	public static ZzimVo getZzim(int lec_no){
+	public static ZzimVo getZzim(int lec_no, int mem_no){
 		SqlSession session = factory.openSession();
-		ZzimVo z = session.selectOne("detail.getZzim", lec_no);
+		HashMap map = new HashMap();
+		map.put("lec_no", lec_no);
+		map.put("mem_no", mem_no);
+		ZzimVo z = session.selectOne("detail.getZzim", map);
 		session.close();
 		return z;
 	}
 	
 	public static int deleteZzim(ZzimVo z) {
 		SqlSession session = factory.openSession(true);
+		
 		int re = session.delete("detail.deleteZzim", z);
-		session.commit();
 		session.close();
 		return re;
 	}
 	
 	public static int insertAsk(AskVo a) {
 		SqlSession session = factory.openSession(true);
-		int re = session.insert("detail.askVo", a);
+		int re = session.insert("detail.insertAsk", a);
 		session.close();
 		return re;
 	}
