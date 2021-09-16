@@ -21,7 +21,7 @@
 </head>
 <body>
 <%@include file ="header.jsp" %>
-	<section>
+	<section id="content">
 		<div class="wrap">		
 			<h2 id="myZzimLecture">찜한 클래스</h2>
 			  <div class="lectures">

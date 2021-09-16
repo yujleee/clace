@@ -19,7 +19,6 @@
 </head>
 <body>
 	<header>
-<<<<<<< HEAD
 		<div id="nevUser">
 			<div class="headerwrap">
 				
@@ -80,9 +79,22 @@
 					<li><a href="listMyZzimLecture.do"><img src="images/main/ic_zzim.png" alt="찜" /></a>
 					</li>
 					<li>
-              <div class="memProfile">
-             	<a href="myPage.do"><img src="/resources/profile/${loginM.mem_profile }" 
-              						   alt="마이페이지" width="45" height="45"/></a></div> 
+              	<c:choose>
+              		<c:when test="${not empty loginM }">
+		              <div class="memProfile">
+		             	<a href="myPage.do">
+		             		<img src="/resources/profile/${loginM.mem_profile }" alt="마이페이지" width="45" height="45"/>
+		             	</a>
+		             </div>               		
+              		</c:when>
+              		<c:otherwise>
+		              <div class="memProfile">
+		             	<a href="myPage.do">
+		             		<img src="/resources/profile/profile_user.png" alt="마이페이지" width="45" height="45"/>
+		             	</a>
+		             </div>               		
+              		</c:otherwise>
+              	</c:choose>
             </li>
 				</ul>
 			</div>
