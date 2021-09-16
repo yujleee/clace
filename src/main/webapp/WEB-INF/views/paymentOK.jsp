@@ -17,7 +17,7 @@
 	<section>
 		<div id="container">
 			
-		<h4>결제가 완료되었습니다.</h4>
+		<h3>결제가 완료되었습니다.</h3>
 				
 		</div>
 		</section> 
