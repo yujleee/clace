@@ -12,12 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/board.css" />
+    <link rel="stylesheet" href="css/array.css" />
 </head>
 <body>
  <%@ include file = "header.jsp" %>
  	
  	<section>
-		<div id="container">
+		<div id="outer">
+		<div id="inner_board">
 		
 			<h2>게시물 상세</h2>			
 			글번호 : ${b.brd_no }<br>
@@ -34,6 +36,7 @@
 				<button><a class="btn_color_white" href="deleteBoard.do?no=${b.brd_no }">삭제</a></button>
 			</div>
 	
+	</div>
 	</div>
 	</section> 
 			

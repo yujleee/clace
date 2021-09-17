@@ -1,16 +1,41 @@
 a{
   color : white;
+  	font: Noto Sans KR;
 }
 
 #outer{
 	width: 100%;
 	height: auto;
+	padding-bottom: 50px;
 }
 #inner{
 	width: 1000px;
 	height: 400px;
 	margin: 30px auto;
 	text-align: center;
+}
+
+#inner_board{
+	width: 1000px;
+	height: auto;
+	margin: 30px auto;
+	text-align: left;
+	padding-bottom: 250px;
+}
+#inner_board_delete{
+	width: 1000px;
+	height: auto;
+	margin: 30px auto;
+	text-align: left;
+	padding-bottom: 500px;
+}
+
+#inner_paymentOK{
+	width: 1000px;
+	height: auto;
+	margin: 30px auto;
+	text-align: center;
+	padding-bottom: 500px;
 }
 #main_button{
 	width: 500px;
@@ -19,6 +44,7 @@ a{
 	display: flex;
 	justify-content: space-between;
 	border: none;
+
 }
 #main_button > button{
 	background-color: #13aa92;
@@ -30,4 +56,5 @@ a{
 	background : #13aa92;
 	border: none;
 	color:white;
+	font: Noto Sans KR;
 }

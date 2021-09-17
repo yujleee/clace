@@ -18,7 +18,7 @@
 	<section>
 
 		<div id="outer">
-			<div id="inner">
+			<div id="inner_paymentOK">
 				
 			<h3>결제가 완료되었습니다.</h3>
 					

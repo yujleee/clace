@@ -9,12 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/board.css" />
+        <link rel="stylesheet" href="css/array.css" />
 </head>
 <body>
  <%@ include file = "header.jsp" %>
  
 	<section>
-		<div id="container">
+		<div id="outer">
+		<div id="inner_board">
+		
 			<h2>게시물 수정</h2>
 
 			<form action="updateBoard.do" method="post" enctype="multipart/form-data">			
@@ -33,6 +36,7 @@
 				</div>
 			</form>
 		
+		</div>
 		</div>
 	</section> 
 
