@@ -79,7 +79,7 @@
 				pay_method:'card',
 				merchant_uid:'merchant_'+ new Date().getTime(),
 				name: lec_name,
-				amount: lec_price,
+				amount: lec_saleprice,
 				buyer_email: mem_email,
 				buyer_name: mem_name,
 				buyer_tel: mem_phone,
@@ -236,13 +236,15 @@
         </div>
       </div>
       
-      
+      	<c:set var="calPrice" value="${lectureVo.lec_price - (lectureVo.lec_price* lectureVo.lec_sale)}"/>
+      	<fmt:parseNumber  var="salePrice" value="${calPrice}" type="number" integerOnly="true"/>   
      <div id="order_form">
       <form id="payment_form" action="paymentOK.do" method = "post"> 
       	<input type="text" name="mem_no" value="${memberVo.mem_no }">
       	<input type="text" name="lec_no" value="${lec_no }">
       	<input type="text" name="pay_type" value="신용카드">
-      	<input type="text" name="pay_amount" value="${lectureVo.lec_price }">
+      	
+      	<input type="text" name="pay_amount" value="${salePrice }">
       	<input type="submit" value="db저장" >
       </form>
       </div>

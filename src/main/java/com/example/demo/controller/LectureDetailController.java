@@ -51,16 +51,24 @@ public class LectureDetailController {
 	
 	@RequestMapping(value="/zzimOk.do", method = RequestMethod.GET)
 	public ModelAndView zzim(ZzimVo z, int lec_no, HttpSession session) {
+		
 		int mem_no = ((MemberVo) session.getAttribute("loginM")).getMem_no();
+		ModelAndView mav = new ModelAndView();
+		ZzimVo zzim = dao.getZzim(lec_no, mem_no);
 		
-		z.setMem_no(mem_no);
-		
-		ModelAndView mav = new ModelAndView("redirect:/detailLecture.do?lec_no=" + lec_no);
-		int re = dao.registerZzim(z);
-		if(re != 1) {
-			mav.addObject("msg", "찜등록에 실패하였습니다.");
-			mav.setViewName("error");
+		if(zzim == null) {
+			z.setMem_no(mem_no);
+			int re = dao.registerZzim(z);
+			mav.addObject("z", zzim);
+			mav.setViewName("redirect:/detailLecture.do?lec_no=" + lec_no);
+			if(re != 1) {
+				mav.addObject("msg", "찜등록에 실패하였습니다.");
+				mav.setViewName("error");
+			}
+		} else {
+			mav.setViewName("redirect:unZzimOk.do?lec_no=" + lec_no);
 		}
+		
 		return mav;
 	}
 	
@@ -77,6 +85,12 @@ public class LectureDetailController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/getZzim.do")
+	@ResponseBody
+	public ZzimVo getZzim(Model model, HttpSession session, @RequestParam(value = "lecNo", defaultValue = "1")int lec_no) {
+		int mem_no = ((MemberVo) session.getAttribute("loginM")).getMem_no();
+		return dao.getZzim(lec_no, mem_no);
+	}
 	
 	
 	@RequestMapping(value = "/insertAsk", method = RequestMethod.GET)

@@ -14,6 +14,7 @@
 <script type="text/javascript">
 	function zzim() {
 		location.href = "zzimOk.do?lec_no=${l.lec_no}";
+		getZzim(loginM);
 	}
 
 	function unZzim() {
@@ -86,24 +87,11 @@
 						</div>
 					<div class="btnBox">
 						<div class="zzim">
-							<c:choose>
-								<c:when test="${empty z.zzim_no }">
-									<button id="btnZzim" onclick="zzim()">
-										<img src="images/detail/ic_zzim.png" id="ic_zzim"> <span
-											id="zzim_cnt">${zzimcnt}</span>
-									</button>
-								</c:when>
-
-								<c:when test="${not empty z.zzim_no }">
-									<button id="btnZzim" class="activeZzim" onclick="unZzim()">
-							 
-											<span id="zzim_cnt"><img src="images/detail/ic_zzim_active.png"
-											id="ic_zzim_active"> ${zzimcnt}</span>
-									</button>
-								</c:when>
-							</c:choose>
+							<button id="btnZzim" onclick="zzim()">
+								<img src="images/detail/ic_zzim_active.png" id="ic_zzim"> <span
+									id="zzim_cnt">${zzimcnt}</span>
+							</button>
 						</div>
-						<c:if test="${value }"></c:if>
 						<c:choose>
 							<c:when test="${empty loginM }">
 								<button id="btnApply" onclick="login()">
