@@ -65,10 +65,10 @@
 								<input type="search" placeholder="듣고 싶은 클래스가 있으신가요?"
 									name="keyword" id="keyword" />
 							</c:when>
-							<c:otherwise>
+							<c:when test="${not empty keyword }">
 								<input type="search" value="${keyword }" autocomplete="name"
 									name="keyword" id="keyword" />
-							</c:otherwise>
+							</c:when>
 						</c:choose>
 						<input type="submit" value="" class="ic_search"></input>
 					</form>

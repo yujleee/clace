@@ -16,6 +16,7 @@
 	<%@ include file = "header.jsp" %>
 
 	<section>
+
 		<div id="outer">
 			<div id="inner">
 				
@@ -29,6 +30,7 @@
 		</div>			
 
 </section> 
+
 
 	<%@ include file = "footer.jsp" %>
 </body>

@@ -49,6 +49,10 @@ section td {
   cursor: pointer;
 }
 
+.btnWrap button a{
+	color: #555;
+}
+
 #my_write {
   color: #555;
   border: 1px solid #ccc;
