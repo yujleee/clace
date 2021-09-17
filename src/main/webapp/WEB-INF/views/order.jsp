@@ -236,7 +236,8 @@
         </div>
       </div>
       
-      <!-- 데이터베이스에 결제정보 저장 -->
+      <!-- 데이터베이스에 결제정보 저장 할인율 계산전-->
+      <!--  
      <div id="order_form">
       <form id="payment_form" action="paymentOK.do" method = "post"> 
       	<input type="text" name="mem_no" value="${memberVo.mem_no }">
@@ -247,8 +248,23 @@
       </form>
       </div>
          </section>
-   
-     </div>  
+        -->
+        <c:set var="calPrice" value="${lectureVo.lec_price - (lectureVo.lec_price* lectureVo.lec_sale)}"/>
+      	<fmt:parseNumber  var="salePrice" value="${calPrice}" type="number" integerOnly="true"/>   
+		     <div id="order_form">
+		      <form id="payment_form" action="paymentOK.do" method = "post"> 
+		      	<input type="text" name="mem_no" value="${memberVo.mem_no }">
+		      	<input type="text" name="lec_no" value="${lec_no }">
+		      	<input type="text" name="pay_type" value="신용카드">
+		      	
+		      	<input type="text" name="pay_amount" value="${salePrice }">
+		      	<input type="submit" value="db저장" >
+		      </form>
+		      </div>  
+		      
+        </section>    
+        </div>   
+     
 	<%@ include file = "footer.jsp" %>
     <!-- end footer --> 
 </body>
