@@ -209,6 +209,17 @@ article{
 	text-align: center;
 }
 
+#lec_review{
+	height: auto;	
+	margin-bottom: 100px;
+}
+
+#lec_review .noContent, #lec_ask .listAsk .noContent{
+	height: 100px;
+	text-align: center;
+	padding-top: 120px;
+	border-bottom: none;
+}
 
 #lec_review .avgReview{
 	width: 100%;

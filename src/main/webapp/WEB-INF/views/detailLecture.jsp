@@ -149,6 +149,9 @@
 			</div>
 
 				<ul>
+					<c:if test="${empty reviewList}">
+						<li class="noContent">리뷰가 존재하지 않습니다.</li>
+					</c:if>
 					<c:forEach var="r" items="${reviewList }">
 						<li>
 						<div class="reviewContent">
@@ -190,6 +193,7 @@
 			</ul>
 
 			<article id="lec_ask">
+				<h3>문의</h3>
 				<form action="insertAsk" method="post">
 				<input type="hidden" value="${l.lec_no }" name="lec_no">
 					<div class="inputAsk">
@@ -202,6 +206,9 @@
 				</form>
 				<p>${m.mem_no }</p>	
 				<ul class="listAsk">
+					<c:if test="${empty askList}">
+						<li class="noContent">문의가 존재하지 않습니다.</li>
+					</c:if>
 					<c:forEach var="a" items="${askList }">
 						<li>
 							<div class="userInfo">
